@@ -1,0 +1,47 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#padre{
+    width: 100%;
+    background-color: blueviolet;
+}
+
+#ficha{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+
+    /*Este es el contenedor padre que contiene los campos de la ficha
+    está dentrro del formulario y no tiene color A PRIORI*/
+}
+
+#namePj{
+    width: 539px;
+    height: 157px;
+    background-color: blue;
+    font-size: 35px;
+    margin-top: 90px;
+    /*Ajuste de fuente del nombre del personaje*/
+}
+
+
+#classBackground{
+    height: 263px;
+    width: 50%;
+    background-color: red;
+    
+}
+
+
+
+#inputClassLevel{
+    width: 424px;
+}
+
+.fields{
+    width: 90%;
+}
