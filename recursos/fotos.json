@@ -1,0 +1,21 @@
+{
+    "titulo": "Clases",
+    "imagenes": [
+      {
+        "id": "bardo",
+        "url": "https://static.thenounproject.com/png/5400752-200.png",
+        "value": "bard"
+      },
+      {
+        "id": "warlock",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfv-bQlGpIZp8YDBnv1YyGUy9XR3HusZoOA&s",
+        "value": "wl"
+      },
+      {
+        "id": "barbarian",
+        "url": "https://static.thenounproject.com/png/5400744-200.png",
+        "value": "barb"
+      }
+    ]
+  }
+  

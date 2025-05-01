@@ -1,18 +1,38 @@
+<<<<<<< HEAD
 
 
 *{
+=======
+body{
+    width: 100%;
+>>>>>>> ac91414 (commit scripts)
     margin: 0;
     padding: 0;
 }
 
 #padre{
+<<<<<<< HEAD
     width: 100%;
     background-color: blueviolet;
+=======
+    width: 98%;
+}
+
+.fields{
+    width: 99%;
+    background-color: antiquewhite;
+    /*NO CAMBIAR, MEDIDAS AJUSTADAS A LA VENTANA DONDE SE PROCESE
+    EL DOCUMENTO*/
+>>>>>>> ac91414 (commit scripts)
 }
 
 #ficha{
     display: flex;
+<<<<<<< HEAD
     flex-wrap: nowrap;
+=======
+    flex-wrap: wrap;
+>>>>>>> ac91414 (commit scripts)
     gap: 50px;
 
     /*Este es el contenedor padre que contiene los campos de la ficha
@@ -30,6 +50,7 @@
 
 
 #classBackground{
+<<<<<<< HEAD
     height: 263px;
     width: 50%;
     background-color: red;
@@ -44,4 +65,31 @@
 
 .fields{
     width: 90%;
+=======
+    display: flex;
+    height: 263px;
+    width: 50%;
+    flex-wrap: wrap;
+    background-color: red;
+    gap: 10px;
+    
+}
+
+#inputClassLevel{
+    width: 150px;
+}
+
+#imagenClase{
+    width: 192px;
+    height: 192px;
+}
+
+#parrafos{
+    font-size: 35px; margin-bottom: 0; margin-top: 10px; margin-left: 30px;
+}
+
+#numeroNivel{
+    width: 50px;
+    margin-left: 40px;
+>>>>>>> ac91414 (commit scripts)
 }

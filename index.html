@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/objetoFotos.js"></script>
     <title>Document</title>
 </head>
+
+
 <body>
     <div id="padre">
         
         <fieldset class="fields">
-            <legend>Ficha de personaje</legend>
+            <legend><h1>Ficha de personaje</h1></legend>
                 <form action="" method="get">
                     <div id="ficha">
                         <input type="text" name="" id="namePj" placeholder="Paquito ''El destructor''">
-                        
+
                         <div id="classBackground">
                             <div id="classLevel">
+                                <p id="parrafos">Clase</p>
                                 <select name="" id="inputClassLevel" >
                                     <option selected="true" disabled value="0">Selecciona una clase</option>
-
-                                    <option value="wl">
+                                    <option value="wl" id = "warlock">
                                         <div id="warlock">
                                             Warlock
                                         </div>
                                     </option>
-                                    <option value="bard">
+                                    <option value="bard" id = "bardo">
                                         <div id="bardo">
                                             Bardo
                                         </div>
                                     </option>
+                                    <option value="barb" id = "barbarian">
+                                        Bárbaro
+                                    </option>
+                                    <option value="wiz" id = "wizard">
+                                        Mago
+                                    </option>
                                 </select>
+                            </div>
 
+                            <div id="level">
+                                <p id="parrafos">Level</p>
+                                <input type="number" name="" id="numeroNivel">
                             </div>
 
                             <div id="background">
@@ -53,8 +67,11 @@
                             <div id="experiencePoint">
 
                             </div>
-                            
-                            
+
+                        </div>
+                                                    
+                        <div id="imagenClase">
+
                         </div>
                     </div>
 
