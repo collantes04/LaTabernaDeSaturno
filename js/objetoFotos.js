@@ -10,8 +10,7 @@ fetch('./recursos/fotos.json')
 
             try {
                 resultado.innerHTML = `
-                <img src="${imagen.url}" style="max-width: 192px;">
-                `;
+                <img src="${imagen.url}" style="max-width: 192px;">`;
             } catch (error) {
                 resultado.innerHTML = '<p>ExceptionNoImage: Imagen no encontrada.</p>';
             }
