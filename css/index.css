@@ -61,7 +61,13 @@ header{
 #info{
     background-color: aqua;
     height: 50%;
-    width: 40%;
-    margin: 50px;
+    width: 60%;
+    margin: 40px;
     padding: 20px;
+}
+
+#pieDePagina{
+    background-color: darkgray;
+    /*Al footer no se le pone altura para que vaya adaptandola sola y no hayan espacios en blanco
+    los divs van ANTES DE LA ETIQUETA FOOTER*/
 }
