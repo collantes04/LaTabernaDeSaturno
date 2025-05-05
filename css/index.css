@@ -3,8 +3,13 @@
     padding: 0;
 }
 
+html, body{
+    height: 100%;
+}
+
 #padre{
     width: 100%;
+    min-height: 100vh;
     background-color: blueviolet;
 }
 
@@ -42,4 +47,23 @@
 
 .fields{
     width: 90%;
+}
+
+header{
+    font-size: large;
+    background-color: darkgrey;
+}
+
+#cabecera{
+    background-color: darkslategrey;
+    text-align: center;
+    width: 100%;
+}
+
+#info{
+    background-color: aqua;
+    height: 50%;
+    width: 40%;
+    margin: 50px;
+    padding: 20px;
 }
