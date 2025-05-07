@@ -126,6 +126,10 @@ header{
     font-family: fuenteDnD;
     src: url(../fonts/DragonHunter-9Ynxj.otf) format('opentype');
 }
+@font-face {
+    font-family: fuenteMinusDnD;
+    src: url();
+}
 #tituloCabecera{
     color: #B83236;
     font-family: fuenteDnD;

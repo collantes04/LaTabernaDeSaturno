@@ -7,6 +7,17 @@ html, body{
     height: 100%;
 }
 
+header{
+    font-size: large;
+    background-color: darkgrey;
+}
+
+#cabecera{
+    background-color: darkslategrey;
+    text-align: center;
+    width: 100%;
+}
+
 #parrafoExplicacion{
     width: 30%;
     height: max-content;
@@ -20,16 +31,6 @@ html, body{
     background-color: blueviolet;
 }
 
-header{
-    font-size: large;
-    background-color: darkgrey;
-}
-
-#cabecera{
-    background-color: darkslategrey;
-    text-align: center;
-    width: 100%;
-}
 
 #pieDePagina{
     background-color: darkgray;
@@ -39,12 +40,15 @@ header{
 
 #parrafoDnD{
     text-wrap: wrap;
-
 }
 
 @font-face {
     font-family: fuenteDnD;
     src: url(../fonts/DragonHunter-9Ynxj.otf) format('opentype');
+}
+@font-face {
+    font-family: fuenteMinusDnD;
+    src: url(../fonts/MiddleEarthPersonalUseRegular-axlP5.otf);
 }
 #tituloCabecera{
     color: #B83236;
@@ -52,4 +56,15 @@ header{
     font-size: 70px;
     font-weight: normal;
     text-shadow: 3px 3px 2px #631924;
+}
+
+#alinearParrafo{
+    display: flex;
+    padding: 10px
+}
+
+#parrafoExplicacion{
+    margin: auto;
+    padding: 10px;
+    border-radius: 25px;
 }
