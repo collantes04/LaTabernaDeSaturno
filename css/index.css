@@ -7,6 +7,7 @@ html, body{
     height: 100%;
 }
 
+
 #padre{
     width: 100%;
     min-height: 100vh;
@@ -15,39 +16,87 @@ html, body{
 
 #ficha{
     display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 10px;
 
     /*Este es el contenedor padre que contiene los campos de la ficha
     está dentrro del formulario y no tiene color A PRIORI*/
 }
 
-#namePj{
-    width: 539px;
-    height: 157px;
-    background-color: blue;
-    font-size: 35px;
-    margin-top: 90px;
-    /*Ajuste de fuente del nombre del personaje*/
+
+
+#config{
+    width: 21vh;
+    height: 70vh;
+    margin-top: 5vh;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 
+#race{
+    width: 18vh;
+    height: 5vh;
+    margin-top: 1vh;
+    margin-left: 1.5vh;
+    background-color: white;
+}
 
-#classBackground{
-    height: 263px;
-    width: 50%;
+#subrace{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
+    background-color: darkgrey;
+}
+
+#class{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
+    background-color: gray;
+}
+
+#background{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
+    background-color: darkslategray;
+}
+
+#abilities{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
+    background-color: black;
+}
+
+#mainscreen{
+    width: 58vh;
+    height: 90vh;
+    margin-left: 5px;
+    margin-top: 5vh;
     background-color: red;
-    
 }
 
-#inputClassLevel{
-    width: 424px;
+#book{
+    width: 82vh;
+    height: 98vh;
+    margin-left: 5px;
+    background-color: coral;
+}
+
+#charsheet{
+    width: 36vh;
+    height: 90vh;
+    margin-left: 5px;
+    margin-top: 5vh;
+    background-color: aquamarine;
 }
 
 .fields{
     width: 90%;
 }
-
-
 
 #info{
     background-color: aqua;
