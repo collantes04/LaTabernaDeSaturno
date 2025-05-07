@@ -18,12 +18,13 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-left: 10px;
 
     /*Este es el contenedor padre que contiene los campos de la ficha
     está dentrro del formulario y no tiene color A PRIORI*/
 }
 
-
+/*De aqui para arriba no se toca*/
 
 #config{
     width: 21vh;
@@ -80,7 +81,7 @@ html, body{
 }
 
 #book{
-    width: 82vh;
+    width: 71vh;
     height: 98vh;
     margin-left: 5px;
     background-color: coral;
@@ -94,8 +95,13 @@ html, body{
     background-color: aquamarine;
 }
 
+/*De aqui abajo no se toca*/
+
 .fields{
-    width: 90%;
+    width: 99%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: none;
 }
 
 
@@ -114,4 +120,16 @@ header{
     background-color: darkgray;
     /*Al footer no se le pone altura para que vaya adaptandola sola y no hayan espacios en blanco
     los divs van ANTES DE LA ETIQUETA FOOTER*/
+}
+
+@font-face {
+    font-family: fuenteDnD;
+    src: url(../fonts/DragonHunter-9Ynxj.otf) format('opentype');
+}
+#tituloCabecera{
+    color: #B83236;
+    font-family: fuenteDnD;
+    font-size: 70px;
+    font-weight: normal;
+    text-shadow: 3px 3px 2px #631924;
 }

@@ -7,6 +7,13 @@ html, body{
     height: 100%;
 }
 
+#parrafoExplicacion{
+    width: 30%;
+    height: max-content;
+    background-color: darkgray;
+}
+
+
 #indexPadre{
     width: 100%;
     min-height: 100vh;
@@ -28,4 +35,21 @@ header{
     background-color: darkgray;
     /*Al footer no se le pone altura para que vaya adaptandola sola y no hayan espacios en blanco
     los divs van ANTES DE LA ETIQUETA FOOTER*/
+}
+
+#parrafoDnD{
+    text-wrap: wrap;
+
+}
+
+@font-face {
+    font-family: fuenteDnD;
+    src: url(../fonts/DragonHunter-9Ynxj.otf) format('opentype');
+}
+#tituloCabecera{
+    color: #B83236;
+    font-family: fuenteDnD;
+    font-size: 70px;
+    font-weight: normal;
+    text-shadow: 3px 3px 2px #631924;
 }
