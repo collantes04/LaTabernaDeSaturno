@@ -25,11 +25,11 @@ header{
     text-align: center;
     width: 100%;
 }
-#pieDePagina{
+
+footer{
     background-color: darkgray;
-    /*Al footer no se le pone altura para que vaya adaptandola sola y no hayan espacios en blanco
-    los divs van ANTES DE LA ETIQUETA FOOTER*/
 }
+
 
 @font-face {
     font-family: fuenteDnD;
