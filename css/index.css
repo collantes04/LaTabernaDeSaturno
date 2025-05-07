@@ -47,6 +47,16 @@ html, body{
     width: 90%;
 }
 
+
+
+#info{
+    background-color: aqua;
+    height: 50%;
+    width: 60%;
+    margin: 40px;
+    padding: 20px;
+}
+
 header{
     font-size: large;
     background-color: darkgrey;
@@ -56,14 +66,6 @@ header{
     background-color: darkslategrey;
     text-align: center;
     width: 100%;
-}
-
-#info{
-    background-color: aqua;
-    height: 50%;
-    width: 60%;
-    margin: 40px;
-    padding: 20px;
 }
 
 #pieDePagina{

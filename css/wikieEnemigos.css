@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+header{
+    font-size: large;
+    background-color: darkgrey;
+}
+
+
+#padreEnemigos{
+    width: 100%;
+    min-height: 100vh;
+    background-color: purple;
+}
+
+
+#cabecera{
+    text-align: center;
+    width: 100%;
+    background-color: darkgray;
+}
+
+#pieDePagina{
+    background-color: darkgray;
+    /*Al footer no se le pone altura para que vaya adaptandola sola y no hayan espacios en blanco
+    los divs van ANTES DE LA ETIQUETA FOOTER*/
+}

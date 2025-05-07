@@ -2,7 +2,7 @@ fetch('./recursos/fotos.json')
         .then(res => res.json())
         .then(data => {
             let select = document.getElementById('inputClassLevel');
-            let resultado = document.getElementById('imagenClase');
+            let resultado = document.getElementById('imagenClase'); /*Cambiar al div que releja la imagen*/
 
             select.addEventListener('change', () => {
             let idSeleccionado = select.options[select.selectedIndex].id;
