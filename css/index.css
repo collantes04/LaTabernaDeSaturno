@@ -83,6 +83,7 @@ footer{
 #contenido{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 #parrafoDados{
@@ -96,10 +97,18 @@ footer{
 
 #expansiones{
     background-color: darkgrey;
-    margin-left: 10px;
     padding: 10px;
     border-radius: 25px;
     width: 54%;
     height: min-content;
+    margin-bottom: 10px;
+}
+
+#parrafoClases{
+    background-color: darkgrey;
+    margin-left: 10px;
+    padding: 10px;
+    width: 97%;
+    border-radius: 25px;
     margin-bottom: 10px;
 }
