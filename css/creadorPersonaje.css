@@ -44,28 +44,28 @@ html, body{
     background-color: white;
 }
 
-#subrace{
+.subrace{
     width: 18vh;
     height: 5vh;
     margin-left: 1.5vh;
     background-color: darkgrey;
 }
 
-#class{
+.class{
     width: 18vh;
     height: 5vh;
     margin-left: 1.5vh;
     background-color: gray;
 }
 
-#background{
+.background{
     width: 18vh;
     height: 5vh;
     margin-left: 1.5vh;
     background-color: darkslategray;
 }
 
-#abilities{
+.abilities{
     width: 18vh;
     height: 5vh;
     margin-left: 1.5vh;
