@@ -9,31 +9,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     botonRace.addEventListener('click', function() {
-        // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
 
         mainscreen.style.backgroundColor = 'orange';
-
-
-
+    
         const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
-        const iconRaces = ["../recursos/iconsClass/barbarian.png","../recursos/iconsClass/bard.png","../recursos/iconsClass/cleric.png","../recursos/iconsClass/druid.png",
-            "../recursos/iconsClass/figther.png","../recursos/iconsClass/monk.png","../recursos/iconsClass/paladin.png","../recursos/iconsClass/ranger.png","../recursos/iconsClass/rogue.png",
-            "../recursos/iconsClass/sorcerer.png","../recursos/iconsClass/warlock.png","../recursos/iconsClass/wizard.png"
+        const iconRaces = [
+            "../recursos/iconsClass/barbarian.png", "../recursos/iconsClass/bard.png", "../recursos/iconsClass/cleric.png", "../recursos/iconsClass/druid.png",
+            "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
+            "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
         ];
-        mainscreen.innerHTML = `<div id="grupoSelectorPersonaje">`
-        const grupoSelectorPersonaje = document.getElementById('grupoSelectorPersonaje');
+        const raceInfo = [
+            "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
+            "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
+            "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
+        ];
+    
+        let html = `<div id="grupoSelectorPersonaje">`;
+    
         for (let i = 0; i < Races.length; i++) {
-            grupoSelectorPersonaje.innerHTML += `
-                <div id="casillaSelectorPersonaje">
-                    <img src="${iconRaces[i]}" alt="${Races[i]}" />
-                    <div class="textoClases">${Races[i]}</div>
+            html += `
+                <div class="casillaSelectorPersonaje">
+                    <button id="botonClases"  type="button" onclick="seleccionarClase(${i})">
+                        <img src="${iconRaces[i]}" alt="${Races[i]}" />
+                        <div class="textoClases">${Races[i]}</div>
+                    </button>
                 </div>
             `;
         }
-        mainscreen.innerHTML += `</div>`
+        html += `</div>`;
+        mainscreen.innerHTML += html; 
+    
+        const infoPersonaje = document.getElementById('infoPersonaje');
+        infoPersonaje.innerHTML = ""
+        function seleccionarClase(index) {
+            const info = raceInfo[index];
+            infoPersonaje.textContent = `Has seleccionado: ${Races[index]}. ${info}`;
 
-        
+        }
 
     });
 
@@ -41,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
 
-        mainscreen.style.backgroundColor = 'yellow';
-
+        mainscreen.style.backgroundColor = 'black';
     });
     
     botonClass.addEventListener('click', function() {
@@ -54,12 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     botonBackground.addEventListener('click', function() {
-        // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
-
-        mainscreen.style.backgroundColor = 'black';
-
+    
+       
     });
+    
 
     botonAbilities.addEventListener('click', function() {
         // Limpiar cualquier contenido anterior de mainscreen

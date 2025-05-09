@@ -117,3 +117,12 @@ footer{
 #listaClases li{
     display: inline-flex;
 }
+
+.classHover{
+    transition: cubic-bezier(1, 0, 0, 1) 0.3s;
+}
+
+.classHover:hover{
+    transform: scale(1.3);
+    transition: ease-in;
+}
