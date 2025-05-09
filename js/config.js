@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
             "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
             "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
         ];
-    
+        
         let html = `<div id="grupoSelectorPersonaje">`;
     
         for (let i = 0; i < Races.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
-                    <button id="botonClases"  type="button" onclick="seleccionarClase(${i})">
+                    <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
                         <img src="${iconRaces[i]}" alt="${Races[i]}" />
                         <div class="textoClases">${Races[i]}</div>
                     </button>
@@ -38,15 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
         html += `</div>`;
-        mainscreen.innerHTML += html; 
-    
-        const infoPersonaje = document.getElementById('infoPersonaje');
-        infoPersonaje.innerHTML = ""
-        function seleccionarClase(index) {
-            const info = raceInfo[index];
-            infoPersonaje.textContent = `Has seleccionado: ${Races[index]}. ${info}`;
+        
+        html += `
+            <div id="infoPersonaje">
+                <p>Selecciona una clase para ver la información.</p>
+            </div>
+        `;
+        
+        mainscreen.innerHTML += html;
 
-        }
+        // Función de selección de clase
+        window.seleccionarClase = function (index) {
+            console.log('Botón seleccionado:', index);  // Verifica que la función se llama correctamente
+            const infoPersonaje = document.getElementById('infoPersonaje');
+            
+            const info = raceInfo[index];
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+            
+            const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
+            allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
+    
+            const selectedButton = document.getElementById(`botonClases${index}`);
+            selectedButton.classList.add('botonSeleccionado');
+
+            if (selectedButton) {
+                selectedButton.classList.add('botonSeleccionado');
+            }
+        };
 
     });
 
