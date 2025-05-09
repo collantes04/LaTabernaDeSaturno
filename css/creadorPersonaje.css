@@ -78,6 +78,37 @@ html, body{
     margin-left: 5px;
     margin-top: 5vh;
     background-color: red;
+
+    /*cambios*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center; 
+}
+
+#grupoSelectorPersonaje{
+    width: 58vh;
+    height: 45vh;
+    margin-left: 5px;
+    margin-top: 1vh;
+
+    /*cambios*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center; 
+}
+
+.casillaSelectorPersonaje {
+    width: 120px;
+    height: 145px;
+    text-align: center;
+}
+
+.textoClases{
+    text-align: center;
 }
 
 #book{
