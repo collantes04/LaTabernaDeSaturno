@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
     let i = 0;
     //Creamos los objetos de clases
-    const barbaro = new Clase("Bárbaro", "Guerrero salvaje que canaliza la furia primitiva para desatar una fuerza brutal en combate.", 
+    const barbaro = new Clase("Barbaro", "Guerrero salvaje que canaliza la furia primitiva para desatar una fuerza brutal en combate.", 
         "recursos/classportraits/barbarian.png");
 
     const bardo = new Clase("Bardo", "Artista versátil que utiliza magia, música y conocimiento para apoyar al grupo y manipular a sus enemigos.",
         "recursos/classportraits/bard.png");
 
-    const clerigo = new Clase("Clérigo", "Devoto canalizador del poder divino, experto en curación, protección y combate contra lo profano."
+    const clerigo = new Clase("Clerigo", "Devoto canalizador del poder divino, experto en curación, protección y combate contra lo profano."
         , "recursos/classportraits/cleric.png");
 
     const druida = new Clase("Druida", "Guardián de la naturaleza con la habilidad de transformarse en animales y conjurar la fuerza del mundo natural.", 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const guerrero = new Clase("Guerrero", "Maestro del combate armado, adaptable a cualquier estilo de lucha gracias a su entrenamiento y disciplina.", 
         "recursos/classportraits/fighter.png");
     
-    const monje = new Clase("Monje", "Luchador espiritual que canaliza su energía interna (ki) para realizar hazañas físicas y místicas.", 
+    const monje = new Clase("Monje", "Luchador espiritual que canaliza su energía interna o ki para realizar hazañas físicas y místicas.", 
         "recursos/classportraits/monje.png");
 
     const paladin = new Clase("Paladin", "Campeón sagrado que combina habilidades marciales con magia divina, guiado por un juramento de justicia.", 
@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function(){
     let controlClase = null;
 
     idBarb.addEventListener("click", function(){
+        /*Si el div está creado lo borra y no retorna nada dando la opcion
+        de automaticamente crear otro, en el segundo if ve que la clase actual es la misma que clickas
+        y borra el div, lo inicializa todo y retorna para que no se cree otro
+        hace lo mismo en todas */
         if(divCreado){
             divCreado.remove();
             divCreado = null;
@@ -72,12 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = barbaro.getDescripcion();
         let imagen = barbaro.getImagen();
         
-        const estructura = document.createElement("div").
-        estructura.style = "width: 100%; background-color: darkgrey;";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = barbaro;
     });
 
@@ -98,20 +97,11 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = bardo.getDescripcion();
         let imagen = bardo.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = bardo;
     });
 
     idCleric.addEventListener('click', function(){
-        /*Si el div está creado lo borra y no retorna nada dando la opcion
-        de automaticamente crear otro, en el segundo if ve que la clase actual es la misma que clickas
-        y borra el div, lo inicializa todo y retorna para que no se cree otro
-        hace lo mismo en todas */
         if(divCreado){
             divCreado.remove();
             divCreado = null;
@@ -128,12 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = clerigo.getDescripcion();
         let imagen = clerigo.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = clerigo;
     });
 
@@ -154,12 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = druida.getDescripcion();
         let imagen = druida.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = druida;
     });
 
@@ -180,12 +160,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = guerrero.getDescripcion();
         let imagen = guerrero.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = guerrero;
     });
     
@@ -206,12 +181,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = monje.getDescripcion();
         let imagen = monje.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = monje;
     });
 
@@ -232,12 +202,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = paladin.getDescripcion();
         let imagen = paladin.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = paladin;
     });
         
@@ -257,13 +222,8 @@ document.addEventListener('DOMContentLoaded', function(){
         let titulo = explorador.getNombre();
         let descripcion = explorador.getDescripcion();
         let imagen = explorador.getImagen();
-        
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
 
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = explorador;
     });
 
@@ -285,12 +245,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = picaro.getDescripcion();
         let imagen = picaro.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = picaro;
     });
 
@@ -312,12 +267,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = hechicero.getDescripcion();
         let imagen = hechicero.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = hechicero;
     });
 
@@ -339,12 +289,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = brujo.getDescripcion();
         let imagen = brujo.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = brujo;
     });
 
@@ -366,21 +311,18 @@ document.addEventListener('DOMContentLoaded', function(){
         let descripcion = mago.getDescripcion();
         let imagen = mago.getImagen();
         
-        const estructura = document.createElement("div")
-        estructura.style = "width: 100%; background-color: darkgrey; ";
-        estructura.innerHTML = setEstructura(titulo, descripcion, imagen);
-
-        idDiv.appendChild(estructura);
-        divCreado = estructura;
+        divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = mago;
     });
 
     function setEstructura(titulo, descripcion, imagen) {
-        return `<h1 style = "text-align: center;" id="estiloTituloClasesJS">${titulo}</h1> 
-        <p>${descripcion}</p> 
+        const estructura = document.createElement("div")
+        estructura.style = "width: min-content; background-color: darkgrey; ";
+        estructura.setAttribute("id", "estructuraEstilo");
+        estructura.innerHTML = `<h1 style = "text-align: center;" id="estiloTituloClasesJS">${titulo}</h1> 
+        <p id="estiloParrafoClasesJS">${descripcion}</p> 
         <img src="${imagen}" style = "width: 350px; height: auto; padding: 10px;">`;
-
+        idDiv.appendChild(estructura);
+        return estructura;
     }
-
-
 });

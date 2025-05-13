@@ -118,6 +118,22 @@ footer{
     display: inline-flex;
 }
 
+#estructuraEstilo{
+    display: flexbox;
+}
+
+#estiloTituloClasesJS{
+    font-family: fuenteDnD;
+    color: #B83236;
+}
+
+#estiloParrafoClasesJS{
+    font-family: fuenteMinusDnD;
+    color: #B83236;
+    font-weight: bold;
+    text-wrap: wrap;
+}
+
 .classHover{
     transition: cubic-bezier(1, 0, 0, 1) 0.3s;
 }
