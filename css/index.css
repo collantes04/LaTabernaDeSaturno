@@ -124,7 +124,7 @@ footer{
 #estructuraEstilo{
     width: min-content; 
     background-color: darkgrey;
-    top: 37%;
+    top: 45%;
     left: 45%;
     right: 50%;
     transform: translate(-50%, -50%);
@@ -151,4 +151,24 @@ footer{
 .classHover:hover{
     transform: scale(1.3);
     transition: ease-in;
+}
+
+
+@media only screen and (max-width: 600px){
+    #parrafoExplicacion{
+        width: 95%;
+        height: max-content;
+        background-color: darkgray;
+    }
+
+    #parrafoDados{
+        background-color: darkgrey;
+        margin-left: 10px;
+        margin-top: 125px;
+        padding: 10px;
+        border-radius: 25px;
+        width: 900%;
+        height: fit-content;
+        margin-bottom: 10px;
+    }
 }
