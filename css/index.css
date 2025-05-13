@@ -79,11 +79,13 @@ footer{
 #delante{
     font-size: 25px;
     width: 33.33%;
+    cursor: pointer;
 }
 
 #atras{
     font-size: 25px;
     width: 33.33%;
+    cursor: pointer;
 }
 
 #contenido{
@@ -159,6 +161,7 @@ footer{
 .classHover:hover{
     transform: scale(1.3);
     transition: ease-in;
+    cursor: pointer;
 }
 
 
