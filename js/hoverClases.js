@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = barbaro;
+        botonDeCerrar();
     });
 
     idBard.addEventListener("click", function(){
@@ -99,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = bardo;
+        botonDeCerrar();
     });
 
     idCleric.addEventListener('click', function(){
@@ -120,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = clerigo;
+        botonDeCerrar();
     });
 
     idDruid.addEventListener("click", function(){
@@ -141,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = druida;
+        botonDeCerrar();
     });
 
     idFighter.addEventListener("click", function(){
@@ -162,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = guerrero;
+        botonDeCerrar();
     });
     
     idMonk.addEventListener("click", function(){
@@ -183,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = monje;
+        botonDeCerrar();
     });
 
     idPal.addEventListener("click", function(){
@@ -204,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = paladin;
+        botonDeCerrar();
     });
         
     idRang.addEventListener("click", function(){
@@ -225,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = explorador;
+        botonDeCerrar();
     });
 
 
@@ -247,6 +255,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = picaro;
+        botonDeCerrar();
     });
 
 
@@ -269,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = hechicero;
+        botonDeCerrar();
     });
 
     
@@ -291,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = brujo;
+        botonDeCerrar();
     });
 
     
@@ -313,16 +324,31 @@ document.addEventListener('DOMContentLoaded', function(){
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = mago;
+        botonDeCerrar();
     });
+
+
+    
 
     function setEstructura(titulo, descripcion, imagen) {
         const estructura = document.createElement("div")
-        estructura.style = "width: min-content; background-color: darkgrey; ";
         estructura.setAttribute("id", "estructuraEstilo");
-        estructura.innerHTML = `<h1 style = "text-align: center;" id="estiloTituloClasesJS">${titulo}</h1> 
+        estructura.innerHTML = `
+        <input type = "button" style: "margin-left:0;"  value = "X" id="botonCerrar">
+        <h1 style = "text-align: center;" id="estiloTituloClasesJS">${titulo}</h1> 
         <p id="estiloParrafoClasesJS">${descripcion}</p> 
         <img src="${imagen}" style = "width: 350px; height: auto; padding: 10px;">`;
         idDiv.appendChild(estructura);
         return estructura;
     }
+
+    function botonDeCerrar(){
+        let botonClase = document.getElementById("botonCerrar");
+        botonClase.addEventListener("click", function(){
+            divCreado.remove();
+            divCreado = null;
+            controlClase = null;
+        });
+    }
+
 });

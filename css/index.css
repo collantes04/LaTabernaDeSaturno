@@ -4,20 +4,23 @@
 }
 
 html, body{
-    height: 100%;
+    height: 100dvh;
 }
 
 header{
     font-size: large;
-    background-color: darkgrey;
+    background-image: url("/recursos/bannerPrincipal.png");
+    box-shadow: 2px 4px ;
+
 }
 
 footer{
-    background-color: darkgray;
+    background-image: url("/recursos/backgroundDnD.png");
+    
 }
 
 #cabecera{
-    background-color: darkslategrey;
+    background-image: url("/recursos/bannerPrincipal.png");
     text-align: center;
     width: 100%;
 }
@@ -48,7 +51,7 @@ footer{
 #indexPadre{
     width: 100%;
     min-height: 100vh;
-    background-color: blueviolet;
+    background-image: url("/recursos/backgroundDnD.png");
 }
 
 #parrafoDnD{
@@ -119,7 +122,14 @@ footer{
 }
 
 #estructuraEstilo{
-    display: flexbox;
+    width: min-content; 
+    background-color: darkgrey;
+    top: 37%;
+    left: 45%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    position: fixed;
 }
 
 #estiloTituloClasesJS{
