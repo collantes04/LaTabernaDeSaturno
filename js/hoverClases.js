@@ -334,7 +334,9 @@ document.addEventListener('DOMContentLoaded', function(){
         const estructura = document.createElement("div")
         estructura.setAttribute("id", "estructuraEstilo");
         estructura.innerHTML = `
-        <input type = "button" style: "margin-left:0;"  value = "X" id="botonCerrar">
+        <div id="flexInput">
+            <input type = "button" style:  value = "X" id="botonCerrar">
+        </div>
         <h1 style = "text-align: center;" id="estiloTituloClasesJS">${titulo}</h1> 
         <p id="estiloParrafoClasesJS">${descripcion}</p> 
         <img src="${imagen}" style = "width: 350px; height: auto; padding: 10px;">`;

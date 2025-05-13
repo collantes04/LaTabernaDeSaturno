@@ -4,14 +4,19 @@
 }
 
 html, body{
-    height: 100%;
+    height: 100dvh;
 }
 
+header{
+    font-size: large;
+    background-image: url("/recursos/bannerPrincipal.png");
+    box-shadow: 2px 4px ;
+}
 
 #padre{
     width: 100%;
     min-height: 100vh;
-    background-color: blueviolet;
+    background-image: url("/recursos/backgroundDnD.png");
 }
 
 #ficha{
@@ -166,13 +171,13 @@ header{
 }
 
 #cabecera{
-    background-color: darkslategrey;
+    background-image: url("/recursos/bannerPrincipal.png");
     text-align: center;
-    width: 100%;
+    width: 100%;   
 }
 
 footer{
-    background-color: darkgray;
+    background-image: url("/recursos/backgroundDnD.png");
 }
 
 

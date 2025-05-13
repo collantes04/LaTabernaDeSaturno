@@ -4,30 +4,31 @@
 }
 
 html, body{
-    height: 100%;
+    height: 100dvh;
 }
 
 header{
     font-size: large;
-    background-color: darkgrey;
+    background-image: url("/recursos/bannerPrincipal.png");
+    box-shadow: 2px 4px ;
 }
 
 
 #padreEnemigos{
     width: 100%;
     min-height: 100vh;
-    background-color: purple;
+    background-image: url("/recursos/backgroundDnD.png");
 }
 
 
 #cabecera{
-    background-color: darkslategrey;
+    background-image: url("/recursos/bannerPrincipal.png");
     text-align: center;
-    width: 100%;
+    width: 100%;    
 }
 
 footer{
-    background-color: darkgray;
+    background-image: url("/recursos/backgroundDnD.png");
 }
 
 
