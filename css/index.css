@@ -10,7 +10,7 @@ html, body{
 header{
     font-size: large;
     background-image: url("/recursos/bannerPrincipal.png");
-    box-shadow: 2px 4px ;
+    box-shadow: 2px 4px 20px;
 
 }
 
@@ -192,7 +192,8 @@ footer{
     }
 
     #parrafoDados{
-        background-color: darkgrey;
+        background: #CCA870;
+        background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
         border-radius: 25px;
         width: 90%;
         height: fit-content;

@@ -10,8 +10,9 @@ html, body{
 header{
     font-size: large;
     background-image: url("/recursos/bannerPrincipal.png");
-    box-shadow: 2px 4px ;
+    box-shadow: 2px 4px 20px;
 }
+
 
 
 #padreEnemigos{
