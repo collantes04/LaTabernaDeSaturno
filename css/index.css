@@ -44,8 +44,9 @@ footer{
 #parrafoExplicacion{
     width: 30%;
     height: max-content;
-    background: #ECD49C;
-    background: linear-gradient(90deg,rgba(236, 212, 156, 0.56) 10%, rgba(211, 179, 122, 1) 58%, rgba(204, 168, 112, 1) 100%);
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
+    
         
 }
 
@@ -92,7 +93,6 @@ footer{
 }
 
 #parrafoDados{
-    background-color: darkgrey;
     margin-left: 10px;
     margin-top: 125px;
     padding: 10px;
@@ -100,23 +100,27 @@ footer{
     width: 40%;
     height: fit-content;
     margin-bottom: 10px;
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
 }
 
 #expansiones{
-    background-color: darkgrey;
     padding: 10px;
     border-radius: 25px;
     width: 54%;
     margin-bottom: 10px;
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
 }
 
 #parrafoClases{
-    background-color: darkgrey;
     margin-left: 10px;
     padding: 10px;
     width: 97%;
     border-radius: 25px;
     margin-bottom: 10px;
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.98) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
 }
 
 #listaClases li{
@@ -125,13 +129,15 @@ footer{
 
 #estructuraEstilo{
     width: min-content; 
-    background-color: darkgrey;
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
     top: 50%;
     left: 45%;
     right: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
     position: fixed;
+    border-radius: 20px;
 }
 
 #estiloTituloClasesJS{
@@ -161,7 +167,8 @@ footer{
         margin-top: 10px;
         width: 95%;
         height: max-content;
-        background-color: darkgray;
+        background: #CCA870;
+        background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
         margin-left: auto;
         margin-right: auto;
     }
@@ -178,23 +185,25 @@ footer{
     }
 
     #expansiones{
-        background-color: darkgrey;
         padding: 10px;
         border-radius: 25px;
         width: 90%;
         margin-bottom: 10px;
         margin-left: auto;
         margin-right: auto;
+        background: #CCA870;
+        background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);    
     }
 
     #parrafoClases{
-        background-color: darkgrey;
         padding: 10px;
         width: 90%;
         border-radius: 25px;
         margin-bottom: 10px;
         margin-left: auto;
         margin-right: auto;
+        background: #CCA870;
+        background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);    
     }
 
     #listaClases li{
