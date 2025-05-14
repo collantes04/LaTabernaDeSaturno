@@ -199,6 +199,6 @@ footer{
     text-shadow: 3px 3px 2px #631924;
 }
 
-@media screen {
+@media only screen and (orientation: portrait){
     
 }
