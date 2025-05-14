@@ -13,8 +13,6 @@ header{
     box-shadow: 2px 4px 20px;
 }
 
-
-
 #padreEnemigos{
     width: 100%;
     min-height: 100vh;
@@ -47,4 +45,13 @@ footer{
     font-size: 70px;
     font-weight: normal;
     text-shadow: 3px 3px 2px #631924;
+}
+
+#contenidoEnemigos{
+    width: 20%;
+    position: relative;
+    left: 100px;
+    top: 100px;
+    background-color: black;
+    display: flex;
 }

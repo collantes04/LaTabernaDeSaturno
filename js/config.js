@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
         mainscreen.innerHTML = '';
 
     
-        const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
+        const Races = ["Human", "Elf", "Drow", "Half-Elf", "Half-Orc", "Halfling", "Dwarf", "Gnome", "Tiefling", "Githyanki", "Dragonborn"];
         const iconRaces = [
-            "../recursos/iconsClass/barbarian.png", "../recursos/iconsClass/bard.png", "../recursos/iconsClass/cleric.png", "../recursos/iconsClass/druid.png",
-            "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
-            "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
+            "../recursos/iconsRace/Race_Human.png", "../recursos/iconsRace/Race_Elf.png", "../recursos/iconsRace/Race_Drow.png", "../recursos/iconsRace/Race_Half-Elf.png",
+            "../recursos/iconsRace/Race_Half-Orc.png", "../recursos/iconsRace/Race_Halfling.png", "../recursos/iconsRace/Race_Dwarf.png", "../recursos/iconsRace/Race_Gnome.png",
+            "../recursos/iconsRace/Race_Tiefling.png", "../recursos/iconsRace/Race_Githyanki.png", "../recursos/iconsRace/Race_Dragonborn.png"
         ];
         const raceInfo = [
             "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Selecciona una clase para ver la información.</p>
             </div>
         `
-        html+=`<div id ="botonConfirmarSeleccionClase"> 
-            <button id="botonConfirmarClase" type="button" onclick="confirnarClase(${i})
-        </div>
+        html+=`<div id="botonConfirmarSeleccionMainscreen"> 
+            <button id="botonConfirmarRaza" type="button" onclick="confirmarRaza()">Siguiente</button>
+            </div>
         `
         ;
         
@@ -105,7 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <div id="infoPersonaje">
                 <p>Selecciona una clase para ver la información.</p>
             </div>
-        `;
+        `
+        html+=`<div id="botonConfirmarSeleccionClase"> 
+            <button id="botonConfirmarClase" type="button" onclick="confirmarClase()">Siguiente</button>
+            </div>
+        `
+        ;
+        ;
     
         mainscreen.innerHTML += html;
     
