@@ -47,11 +47,16 @@ footer{
     text-shadow: 3px 3px 2px #631924;
 }
 
+#estiloLista{
+    position: relative;
+    
+}
+
 #contenidoEnemigos{
     width: 20%;
     position: relative;
     left: 100px;
     top: 100px;
-    background-color: black;
+    background-color: white;
     display: flex;
 }

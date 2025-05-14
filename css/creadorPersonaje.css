@@ -95,6 +95,7 @@ header{
     padding: 10px;
     justify-content: center; 
 }
+
 #infoPersonaje{
     color: white;
 }
@@ -104,6 +105,17 @@ header{
     right: 20px;
     padding: 0;
     border: 1px;
+    background-color: transparent;
+
+}
+#botonConfirmarSubraza{
+    background-color: transparent;
+
+}
+#botonConfirmarRaza{
+    background-color: transparent;
+}
+#botonConfirmarClase{
     background-color: transparent;
 
 }
@@ -225,26 +237,50 @@ footer{
         padding-top: 1%;
         margin-left: auto;
         margin-right: auto;
-        gap: 1;
+        gap: 1%;
     }
 
     .race{
         margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1%;
     }
     
     .subrace{
-
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .class{
-
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .background{
-
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .abilities{
+        margin-left: auto;
+        margin-right: auto;
+    }
 
+    #mainscreen{
+        width: 95%;
+        height: 90vh;
+        margin-left: auto;
+        margin-top: 1%;
+    
+        position: relative;
+    
+        background: RGBA(11,8,9,255);
+        background: linear-gradient(145deg,rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);  
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        justify-content: center; 
     }
 }

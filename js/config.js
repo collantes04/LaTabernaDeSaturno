@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Selecciona una clase para ver la información.</p>
             </div>
         `
-        html+=`<div id="botonConfirmarSeleccionClase"> 
-            <button id="botonConfirmarClase" type="button" onclick="confirmarClase()">Siguiente</button>
+        html+=`<div id="botonConfirmarSeleccionMainscreen"> 
+            <button id="botonConfirmarSubraza" type="button" onclick="botonConfirmarSubraza()">Siguiente</button>
             </div>
         `
         ;
@@ -165,7 +165,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <div id="infoPersonaje">
                 <p>Selecciona una clase para ver la información.</p>
             </div>
-        `;
+        `
+        html+=`<div id="botonConfirmarSeleccionMainscreen"> 
+        <button id="botonConfirmarClase" type="button" onclick="botonConfirmarClase()">Siguiente</button>
+        </div>
+        `
+        ;
+        ;
     
         mainscreen.innerHTML += html;
     
