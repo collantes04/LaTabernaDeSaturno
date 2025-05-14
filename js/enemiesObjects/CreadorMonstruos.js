@@ -4,7 +4,7 @@ function createOwlbear(){
         pelo y plumas, con coloraciones que iban del marrón amarillento al negro parduzco. 
         El pelaje predominaba en el cuerpo, mientras que las plumas eran más comunes en la cabeza, y tenían pieles gruesas. 
         Sus cabezas eran aviares, como las de los búhos, con ojos grandes y redondos con pupilas límpidas y bordeadas de rojo.`,
-        "recursos/enemiesImg/owlbear.png"
+        "/recursos/enemiesImg/owlbear.png"
     );
 }
 
@@ -19,7 +19,7 @@ function createOrco(){
         Algunos tenían orejas de lobo que terminaban en punta, 
         similares a los elfos. Los orcos eran de estatura similar
         a los humanos, aunque eran más robustos.`,
-        "recursos/enemiesImg/orco.png"
+        "/recursos/enemiesImg/orco.png"
     );
 }
 
@@ -31,7 +31,7 @@ function createSlime(){
         lo que a menudo quedan dentro del cubo hasta que este los excreta, dejando mientras tanto una impresión fantasmal de la criatura que los portaba. 
         El contacto con su exterior podría provocar una descarga eléctrica paralizante, después 
         de lo cual los cubos proceden a digerir lentamente a su presa aturdida e indefensa.`,
-        "recursos/enemiesImg/slime.png",
+        "/recursos/enemiesImg/slime.png",
     );
 
 }

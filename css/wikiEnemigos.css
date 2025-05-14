@@ -73,14 +73,15 @@ footer{
     text-shadow: 3px 3px 2px #631924;
 }
 
-#estiloLista{
+.estiloLista{
     position: relative;
     list-style-position: inside;
     padding-left: 10px;
     list-style: none;
 }
 
-#contenidoEnemigos{
+
+.contenidoEnemigos{
     width: 10%;
     height: 300px;
     position: relative;
@@ -102,4 +103,45 @@ footer{
 
 .estiloBotonLista:hover{
     cursor: pointer;
+}
+
+#listas{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+#cajaContenido{
+    width: 30%;
+    background: #CCA870;
+    background: linear-gradient(0deg,rgba(204, 168, 112, 56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
+    float: right;
+    right: 40px;
+    bottom: 250px;
+    right: 25%;
+    position: relative;
+}
+
+#estiloDivExpl{
+    display: flex;
+    flex-flow: row;
+}
+
+#divImgMons{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#imgJS{
+    width: 250px;
+}
+
+#tituloJS{
+    text-align: center;
+}
+
+#parrafoJS{
+    text-wrap: wrap;
+    padding: 10px;
+    position: relative;
 }

@@ -22,61 +22,49 @@
             </nav>
         </header>
 
-        <div id="contenidoEnemigos">
-            <div id="listaEnemigos">
-                <ul id="estiloLista">
-                    <h4 style="text-align: center;">Enemigos Comunes</h4>
-                    <li>
-                        <input type="button" value="Owlbear" class="estiloBotonLista" id="0" onclick="getId(this)">
-                    </li>
-
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista" id="1" onclick="getId(this)">
-                    </li>
-
-                    <li>
-                        <input type="button" value="Slime" class="estiloBotonLista" id="2" onclick="getId(this)">
-                    </li>
-
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>             
-
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>                    
-                    
-                    <li>
-                        <input type="button" value="Orco" class="estiloBotonLista">
-                    </li>
-                </ul>
+        <div id="listas">
+            <div class="contenidoEnemigos">
+                <div id="listaEnemigos">
+                    <ul class="estiloLista">
+                        <h4 style="text-align: center;">Enemigos Comunes</h4>
+                        <li>
+                            <input type="button" value="Owlbear" class="estiloBotonLista" id="0" onclick="getId(this)">
+                        </li>
+    
+                        <li>
+                            <input type="button" value="Orco" class="estiloBotonLista" id="1" onclick="getId(this)">
+                        </li>
+    
+                        <li>
+                            <input type="button" value="Slime" class="estiloBotonLista" id="2" onclick="getId(this)">
+    
+                    </ul>
+                </div>
+    
             </div>
+
+            <div class="contenidoEnemigos">
+                <div id="listaJefes">
+                    <ul class="estiloLista">
+                        <h4 style="text-align: center;">Jefes</h4>
+                        <li>
+                            <input type="button" value="Vecna" class="estiloBotonLista" id="j0" onclick="getId(this)">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          
         </div>
 
+
+
+
+
+
+        <div id="cajaContenido">
+                
+
+        </div>
 
     </div>
     <footer>
@@ -85,4 +73,5 @@
 <script src="../js/wikiEnemigos.js"></script>
 <script src="../js/enemiesObjects/Monstruo.js"></script>
 <script src="../js/enemiesObjects/CreadorMonstruos.js"></script>
+<script src="../js/enemiesObjects/Jefe.js"></script>
 </html>
