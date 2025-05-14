@@ -82,7 +82,7 @@ footer{
 
 
 .contenidoEnemigos{
-    width: 10%;
+    width: 12%;
     height: 300px;
     position: relative;
     left: 100px;
@@ -112,17 +112,18 @@ footer{
 }
 
 #cajaContenido{
-    width: 30%;
+    width: 50%;
+    height: 50%;
     background: #CCA870;
     background: linear-gradient(0deg,rgba(204, 168, 112, 56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
-    float: right;
-    right: 40px;
-    bottom: 250px;
-    right: 25%;
-    position: relative;
+    margin-left: 110px;
+    margin-top: 40px;
+    border-radius: 20px;
 }
 
 #estiloDivExpl{
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-flow: row;
 }

@@ -24,11 +24,3 @@ class Jefe{
         return this.id;
     }
 }
-
-function createVecna(){
-    return new Jefe("Vecna",
-        `Prueba Jefes`,
-        "/recursos/enemiesImg/vecna.png",
-    );
-
-}
