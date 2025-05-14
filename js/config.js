@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonBackground.addEventListener('click', function() {
         mainscreen.innerHTML = '';
-        mainscreen.style.backgroundColor = 'orange'; // puedes cambiar esto luego a otro color
     
         const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
         const iconRaces = [
@@ -233,7 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
 
-        mainscreen.style.backgroundColor = 'white';
 
     });
 });

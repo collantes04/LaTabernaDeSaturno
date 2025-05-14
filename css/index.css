@@ -233,7 +233,6 @@ footer{
 
     #estructuraEstilo{
         width: min-content;
-        height: min-content;
         background: linear-gradient(0deg, rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
         position: fixed;
         top: 20px; 
@@ -241,6 +240,15 @@ footer{
         transform: translateX(-50%);
         z-index: 9999;
         border-radius: 20px;    
+    }
+
+
+    #estiloParrafoClasesJS{
+        font-family: fuenteMinusDnD;
+        color: #B83236;
+        font-weight: bold;
+        text-wrap: wrap;
+        font-size: smaller;
     }
     
 }
