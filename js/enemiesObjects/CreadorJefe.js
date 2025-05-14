@@ -19,3 +19,10 @@ function createDemogorgon(){
         "/recursos/enemiesImg/demogorgon.png"
     );
 }
+
+function createTam(){
+    return new Jefe("Szass Tam",
+        `Szass Tam es un poderoso liche y miembro de un grupo de ocho Zulkirs que gobiernan el país de Thay. Los Zulkir son archimagos que representan cada una de las ocho escuelas de magia que dirigen a los Magos Rojos de Thay. Tam es el Zulkir de la Nigromancia y comanda la Legión de Hueso, una enorme legión de soldados no muertos, liderada por sus generales vampiros y liches. Szass Tam es el gobernante de Thaymount.`,
+        "/recursos/enemiesImg/szass.png"
+    );
+}

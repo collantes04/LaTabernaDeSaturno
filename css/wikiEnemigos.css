@@ -92,6 +92,7 @@ footer{
     flex-direction: column;
     overflow: scroll;
     overflow-x: hidden;
+    border-radius: 20px;
 }
 
 .estiloBotonLista{

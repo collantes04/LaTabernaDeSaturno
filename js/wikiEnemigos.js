@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const vectorMonstruos = [createOwlbear(), createOrco(),
         createSlime()];
 
-    const vectorJefe = [createVecna(), createTiamat(), createDemogorgon()];
+    const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam()];
     let divCreado = null;
     let idActual = -1;
     botones.forEach(function(boton){
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 let idJefe = id.replace(/^j/, '');
                 console.log(idJefe)
                 const objetoActual = vectorJefe[idJefe];
-                console.log("Objeto obtenido: " + objetoActual.getNombre());
+                console.log("Apuntando al objeto: " + objetoActual.getNombre());
 
                 if(divCreado){
                     divCreado.remove();
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 if(!esJefe(id)){
                     const objetoActual = vectorMonstruos[id];
-                    console.log("Objeto obtenido: " + objetoActual.getNombre());
+                    console.log("Apuntando al objeto: " + objetoActual.getNombre());
         
                     if(divCreado){
                         divCreado.remove();
@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function(){
                     divCreado = idCajaContenido.appendChild(divExplicativo);
                     idActual = id;   
                 }
-                     
             }
             
             
