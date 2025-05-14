@@ -221,35 +221,44 @@ footer{
         width: 18vh;
         height: 5vh;
         margin-top: 1vh;
-        margin-left: 1.5vh;
+        margin-left: auto;
+        margin-right: auto;
         background-color: white;
     }
     
     .subrace{
         width: 18vh;
         height: 5vh;
-        margin-left: 1.5vh;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
         background-color: rgb(255, 193, 79);
     }
     
     .class{
         width: 18vh;
         height: 5vh;
-        margin-left: 1.5vh;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
         background-color: gray;
     }
     
     .background{
         width: 18vh;
         height: 5vh;
-        margin-left: 1.5vh;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
         background-color: darkslategray;
     }
     
     .abilities{
         width: 18vh;
         height: 5vh;
-        margin-left: 1.5vh;
+        margin-top: 1vh;
+        margin-left: auto;
+        margin-right: auto;
         background-color: black;
     }
 }
