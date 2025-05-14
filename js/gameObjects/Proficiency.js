@@ -1,4 +1,4 @@
-class Talento {
+class Proficiency {
     constructor(nombreWeapon, nomArmor, nomSvthrow) {
         this.weapon = new Weapon(nombreWeapon);
         this.armor = new Armor(nomArmor);

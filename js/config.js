@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonRace.addEventListener('click', function() {
         mainscreen.innerHTML = '';
-
+        let razaSeleccionadaIndex = null;
     
         const Races = ["Human", "Elf", "Drow", "Half-Elf", "Half-Orc", "Halfling", "Dwarf", "Gnome", "Tiefling", "Githyanki", "Dragonborn"];
         const iconRaces = [
@@ -19,10 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
             "../recursos/iconsRace/Race_Tiefling.png", "../recursos/iconsRace/Race_Githyanki.png", "../recursos/iconsRace/Race_Dragonborn.png"
         ];
         const raceInfo = [
-            "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
-            "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
-            "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
+            "Versátiles y adaptables, los humanos no tienen rasgos raciales específicos, pero ganan una bonificación adicional a sus habilidades.",
+            "Ágiles y longevos, los elfos tienen ventaja en percepción, inmunidad al sueño mágico y visión en la oscuridad.",
+            "Elfos oscuros del inframundo con afinidad por la magia, tienen resistencia a hechizos y visión superior en la oscuridad.",
+            "Híbridos versátiles, heredan lo mejor de humanos y elfos, incluyendo visión en la oscuridad y bonificaciones sociales.",
+            "Fuertes y temidos, los semi-orcos tienen furia salvaje, visión en la oscuridad y pueden resistir un golpe mortal una vez.",
+            "Pequeños y ágiles, los medianos tienen suerte (repetir tiradas de 1), y se escabullen con facilidad entre enemigos grandes.",
+            "Resistentes y robustos, los enanos tienen ventaja contra venenos, gran constitución y conocimientos sobre piedra.",
+            "Pequeños genios, los gnomos poseen una gran inteligencia natural, resistencia a la magia y afinidad con ilusiones.",
+            "Descendientes de demonios, los tieflings tienen resistencia al fuego y dominan hechizos oscuros innatos.",
+            "Guerreros psiónicos del Plano Astral, expertos en combate y manipulación mental con acceso a magia única.",
+            "Descendientes de dragones, los dracónidos poseen aliento elemental y resistencia al tipo de daño de su linaje dracónico."
         ];
+        
         
         let html = `<div id="grupoSelectorPersonaje">`;
     
@@ -53,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Función de selección de clase
         window.seleccionarClase = function (index) {
+            razaSeleccionadaIndex = index;
             console.log('Botón seleccionado:', index);  // Verifica que la función se llama correctamente
             const infoPersonaje = document.getElementById('infoPersonaje');
             
@@ -69,6 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
         };
+        window.confirmarRaza = function () {
+            if (razaSeleccionadaIndex === null) {
+                alert("Por favor, selecciona una raza antes de continuar.");
+                return;
+            }
+        
+            const raza = Races[razaSeleccionadaIndex];
+            const descripcion = raceInfo[razaSeleccionadaIndex];
+        
+            const charsheet = document.getElementById('charsheet');
+            if (charsheet) {
+                charsheet.innerHTML = `
+                    <h2>Raza Seleccionada</h2>
+                    <p><strong>${raza}</strong>: ${descripcion}</p>
+                `;
+            }
+        };
+
+        
+        
 
     });
 
@@ -194,11 +224,10 @@ document.addEventListener('DOMContentLoaded', function() {
     botonBackground.addEventListener('click', function() {
         mainscreen.innerHTML = '';
     
-        const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
+        const Races = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Haunted One", "Noble", "Outlander", "Sage", "Soldier", "Urchin"];
         const iconRaces = [
-            "../recursos/iconsClass/barbarian.png", "../recursos/iconsClass/bard.png", "../recursos/iconsClass/cleric.png", "../recursos/iconsClass/druid.png",
-            "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
-            "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
+            "../recursos/iconsBackground/Background_Acolyte_Icon.png", "../recursos/iconsBackground/Background_Charlatan_Icon.png", "../recursos/iconsBackground/Background_Criminal_Icon.png", "../recursos/iconsBackground/Background_Entertainer_Icon.png", "../recursos/iconsBackground/Background_Folk_Hero_Icon.png", "../recursos/iconsBackground/Background_Guild_Artisan_Icon.png", "../recursos/iconsBackground/Background_Haunted_One_Icon.png", "../recursos/iconsBackground/Background_Noble_Icon.png",
+            "../recursos/iconsBackground/Background_Outlander_Icon.png", "../recursos/iconsBackground/Background_Sage_Icon.png", "../recursos/iconsBackground/Background_Soldier_Icon.png", "../recursos/iconsBackground/Background_Urchin_Icon.png"
         ];
         const raceInfo = [
             "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
