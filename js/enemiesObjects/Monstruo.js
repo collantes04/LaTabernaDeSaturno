@@ -1,43 +1,16 @@
-function createOwlbear(){
-    return new Monstruo("Owlbear", 
-        `Los búhos eran bestias monstruosas con cuerpos de oso cubiertos de gruesos pelajes erizados de 
-        pelo y plumas, con coloraciones que iban del marrón amarillento al negro parduzco. 
-        El pelaje predominaba en el cuerpo, mientras que las plumas eran más comunes en la cabeza, y tenían pieles gruesas. 
-        Sus cabezas eran aviares, como las de los búhos, con ojos grandes y redondos con pupilas límpidas y bordeadas de rojo.`,
-        "recursos/enemiesImg/owlbear.png",
-        "owlb"
-    );
-}
-
-function createOrco(){
-    return new Monstruo("Orco",
-        `Los orcos variaban en apariencia basados en 
-        región y sub-raza, pero todos compartían ciertas 
-        características. La mayoría tenía piel grisacea, 
-        cabello grueso, espaldas encorvadas, frentes bajas, 
-        cuerpos musculosos y rostros porcinos con colmillos 
-        similares a los de un jabalí. 
-        Algunos tenían orejas de lobo que terminaban en punta, 
-        similares a los elfos. Los orcos eran de estatura similar
-        a los humanos, aunque eran más robustos.`,
-        "recursos/enemiesImg/orco.png",
-        "orc"
-    )
-}
-
-
 class Monstruo{
-    constructor(nombre, desc, img, id){
+    static id = 0;
+    
+    constructor(nombre, desc, img){
         this.nombre = nombre;
         this.descripcion = desc;
         this.imagen = img;
-        this.id = id;
+        this.id = Monstruo.id++;
     }
 
     getNombre(){
         return this.nombre;
     }
-
 
     getImg(){
         return this.imagen;

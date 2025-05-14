@@ -23,10 +23,10 @@ nav {
 
 #enlacePrincipal, #enlaceWiki, #enlaceCreador{
     color: #B83236;
-    font-family: fuenteDnD;
-    font-size: 20px;
+    font-family: fuentesEnlace;
+    font-size: 30px;
     font-weight: normal;
-    text-shadow: 3px 2px 3px #631924;
+    text-shadow: 1px 1px #631924;
     text-decoration: none;
 }
 
@@ -60,7 +60,7 @@ nav {
     margin-top: 5vh;
     /*background-color: aqua; */
     background: #0a0a00;
-background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1) 50%, rgba(71, 58, 30, 0.2) 100%);
+    background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1) 50%, rgba(71, 58, 30, 0.2) 100%);
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
@@ -73,6 +73,7 @@ background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1
     margin-left: 1.5vh;
     background-color: rgb(170, 168, 137);
 }
+
 
 .subrace{
     width: 18vh;
@@ -117,6 +118,19 @@ background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1
     gap: 10px;
     padding: 10px;
     justify-content: center; 
+}
+.feature-button {
+    width: 70px;
+    height: 70px;
+    background-color: #4b4b4b;
+    border: 1px solid #999;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feature-button:hover {
+    background-color: #ffd987;
 }
 
 #infoPersonaje{
@@ -243,6 +257,12 @@ footer{
     font-family: fuenteMinusDnD;
     src: url();
 }
+
+@font-face {
+    font-family: fuentesEnlace;
+    src: url(../fonts/Draconis-JRw6B.ttf) format('opentype');
+}
+
 #tituloCabecera{
     color: #B83236;
     font-family: fuenteDnD;

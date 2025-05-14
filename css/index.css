@@ -33,6 +33,11 @@ footer{
     font-family: fuenteMinusDnD;
     src: url(../fonts/MiddleEarthPersonalUseRegular-axlP5.otf);
 }
+@font-face {
+    font-family: fuentesEnlace;
+    src: url(../fonts/Draconis-JRw6B.ttf) format('opentype');
+}
+
 #tituloCabecera{
     color: #B83236;
     font-family: fuenteDnD;
@@ -50,10 +55,10 @@ nav {
 
 #enlacePrincipal, #enlaceWiki, #enlaceCreador{
     color: #B83236;
-    font-family: fuenteDnD;
-    font-size: 20px;
+    font-family: fuentesEnlace;
+    font-size: 30px;
     font-weight: normal;
-    text-shadow: 3px 2px 3px #631924;
+    text-shadow: 1px 1px #631924;
     text-decoration: none;
 }
 

@@ -31,6 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
             "Guerreros psiónicos del Plano Astral, expertos en combate y manipulación mental con acceso a magia única.",
             "Descendientes de dragones, los dracónidos poseen aliento elemental y resistencia al tipo de daño de su linaje dracónico."
         ];
+        const raceFeatures = {
+            "Human": [
+                { nombre: "Versatilidad", descripcion: "Los humanos ganan +1 a todas sus puntuaciones de habilidad." },
+                { nombre: "Idioma extra", descripcion: "Pueden hablar, leer y escribir un idioma adicional." }
+            ],
+            "Elf": [
+                { nombre: "Visión en la oscuridad", descripcion: "Puedes ver en la oscuridad hasta 60 pies." },
+                { nombre: "Sentidos agudos", descripcion: "Proficiente en la habilidad de Percepción." },
+                { nombre: "Trance", descripcion: "Los elfos no duermen, solo meditan durante 4 horas." }
+            ],
+            "Half-Orc": [
+                { nombre: "Furia salvaje", descripcion: "Al hacer un golpe crítico, lanzas un dado adicional." },
+                { nombre: "Resistencia imparable", descripcion: "Cuando tus PV bajan a 0, puedes quedarte con 1 una vez por descanso largo." }
+            ]
+            // Puedes seguir agregando otras razas aquí
+        };
         
         
         let html = `<div id="grupoSelectorPersonaje">`;
@@ -52,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Selecciona una clase para ver la información.</p>
             </div>
         `
+        html += `
+            <div id="featureContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div>
+        `;
+    
         html+=`<div id="botonConfirmarSeleccionMainscreen"> 
             <button id="botonConfirmarRaza" type="button" onclick="confirmarRaza()">Siguiente</button>
             </div>
@@ -63,22 +83,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Función de selección de clase
         window.seleccionarClase = function (index) {
             razaSeleccionadaIndex = index;
-            console.log('Botón seleccionado:', index);  // Verifica que la función se llama correctamente
+        
             const infoPersonaje = document.getElementById('infoPersonaje');
-            
             const info = raceInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
-            
+        
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
-    
+        
             const selectedButton = document.getElementById(`botonClases${index}`);
-            selectedButton.classList.add('botonSeleccionado');
-
             if (selectedButton) {
                 selectedButton.classList.add('botonSeleccionado');
             }
+        
+            mostrarFeaturesDeRaza(Races[index]);
+
         };
+        
         window.confirmarRaza = function () {
             if (razaSeleccionadaIndex === null) {
                 alert("Por favor, selecciona una raza antes de continuar.");
@@ -95,7 +116,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>${raza}</strong>: ${descripcion}</p>
                 `;
             }
+            if (typeof botonSubrace !== 'undefined') {
+                botonSubrace.click(); 
+            }
         };
+        function mostrarFeaturesDeRaza(raza) {
+            const features = raceFeatures[raza];
+            const container = document.getElementById('featureContainer');
+            container.innerHTML = ''; 
+        
+            features.forEach((feature, index) => {
+                const boton = document.createElement('button');
+                boton.className = 'feature-button';
+                boton.innerText = feature.nombre;
+        
+                // Evento hover
+                boton.addEventListener('mouseenter', () => {
+                    const book = document.getElementById('book');
+                    book.innerText = feature.descripcion;
+                    book.style.display = 'block';
+                });
+        
+                boton.addEventListener('mouseleave', () => {
+                    const book = document.getElementById('book');
+                    book.innerText = '';
+                });
+                container.appendChild(boton);
+            });
+        }
 
         
         
