@@ -202,5 +202,13 @@ footer{
 }
 
 @media only screen and (orientation: portrait){
-    
+    #config{
+        width: vh;
+        height: 70vh;
+        margin-top: 5vh;
+        background-color: aqua;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
 }
