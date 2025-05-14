@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonSubrace.addEventListener('click', function () {
         mainscreen.innerHTML = '';
+        mainscreen.style.backgroundColor = 'orange'; // puedes cambiar esto luego a otro color
     
         const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
         const iconRaces = [
