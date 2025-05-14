@@ -232,15 +232,14 @@ footer{
     }
 
     #estructuraEstilo{
-        width: min-content; 
-        background: #CCA870;
-        background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
-        top: 50%;
+        width: min-content;
+        background: linear-gradient(0deg, rgba(204, 168, 112, 0.56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
+        position: fixed;
+        top: 20px; 
         left: 50%;
         transform: translateX(-50%);
         z-index: 9999;
-        position: fixed;
-        border-radius: 20px;
+        border-radius: 20px;    
     }
     
 }

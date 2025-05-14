@@ -43,39 +43,29 @@ header{
     row-gap: 10px;
 }
 
-.race{
+.configButton{
     width: 18vh;
     height: 5vh;
-    margin-top: 1vh;
     margin-left: 1.5vh;
-    background-color: white;
+}
+
+.race{
+    
 }
 
 .subrace{
-    width: 18vh;
-    height: 5vh;
-    margin-left: 1.5vh;
     background-color: rgb(255, 193, 79);
 }
 
 .class{
-    width: 18vh;
-    height: 5vh;
-    margin-left: 1.5vh;
     background-color: gray;
 }
 
 .background{
-    width: 18vh;
-    height: 5vh;
-    margin-left: 1.5vh;
     background-color: darkslategray;
 }
 
 .abilities{
-    width: 18vh;
-    height: 5vh;
-    margin-left: 1.5vh;
     background-color: black;
 }
 
@@ -95,6 +85,7 @@ header{
     padding: 10px;
     justify-content: center; 
 }
+
 
 #grupoSelectorPersonaje{
     width: 58vh;
@@ -131,6 +122,7 @@ header{
 }
 
 
+
 .botonSeleccionado {
     border: 2px solid #030100; 
 }
@@ -142,7 +134,7 @@ header{
 
 .textoClases{
     text-align: center;
-    text-decoration-color: white;
+    color: white;
 
 }
 
