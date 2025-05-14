@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonSubrace.addEventListener('click', function () {
         mainscreen.innerHTML = '';
-        
     
         const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
         const iconRaces = [
