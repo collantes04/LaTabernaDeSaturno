@@ -14,6 +14,27 @@ header{
 
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+#enlacePrincipal, #enlaceWiki, #enlaceCreador{
+    color: #B83236;
+    font-family: fuenteDnD;
+    font-size: 20px;
+    font-weight: normal;
+    text-shadow: 3px 2px 3px #631924;
+    text-decoration: none;
+}
+
+#enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover{
+    transform: scale(1.1);
+    color: #ffffff;
+    text-shadow: 3px 2px 3px #631924;
+}
 
 #padre{
     width: 100%;
@@ -78,7 +99,7 @@ background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1
     width: 18vh;
     height: 5vh;
     margin-left: 1.5vh;
-    background-color: black;
+    background-color: rgb(102, 9, 9);
 }
 
 #mainscreen{
@@ -277,7 +298,7 @@ footer{
         margin-left: auto;
         margin-right: auto;
         margin-top: 1%;
-        margin-left: 3%;
+        
     
         position: relative;
     
@@ -294,10 +315,26 @@ footer{
         height: 0;
     }
     #charsheet{
-        width: 50%;
+        width: 75%;
         height: 90vh;
-        margin-left: 22%;
-        margin-right: 25%;
+        margin-left: 12%;
+        margin-right: 16%;
+    }
+    #grupoSelectorPersonaje{
+        width: 95%;
     }
     
+    nav{
+        gap: 1em;
+    }
+
+    #enlacePrincipal, #enlaceWiki, #enlaceCreador {
+        font-size: 18px;
+        padding: 10px 15px;
+        border-radius: 6px;
+    }
+
+    #enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover {
+        transform: scale(1.05);
+    }
 }
