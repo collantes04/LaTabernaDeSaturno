@@ -87,7 +87,7 @@ header{
 
 
 
-    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgb(207, 150, 51) 53%, rgba(221, 184, 125, 1) 100%);
+    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(11,8,9,255), rgba(221, 184, 125, 1) 100%);
     /*cambios*/
     display: flex;
     flex-wrap: wrap;
