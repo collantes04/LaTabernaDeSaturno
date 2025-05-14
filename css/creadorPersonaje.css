@@ -203,8 +203,8 @@ footer{
 
 @media only screen and (orientation: portrait){
     #config{
-        width: 9vh;
-        height: 70vh;
+        width: 90%;
+        height: 10vh;
         margin-top: 5vh;
         background-color: aqua;
         display: flex;
