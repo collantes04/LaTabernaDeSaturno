@@ -43,29 +43,39 @@ header{
     row-gap: 10px;
 }
 
-.configButton{
+.race{
     width: 18vh;
     height: 5vh;
+    margin-top: 1vh;
     margin-left: 1.5vh;
-}
-
-.race{
-    
+    background-color: white;
 }
 
 .subrace{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
     background-color: rgb(255, 193, 79);
 }
 
 .class{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
     background-color: gray;
 }
 
 .background{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
     background-color: darkslategray;
 }
 
 .abilities{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
     background-color: black;
 }
 
@@ -85,8 +95,9 @@ header{
     padding: 10px;
     justify-content: center; 
 }
-
-
+#infoPersonaje{
+    color: white;
+}
 #grupoSelectorPersonaje{
     width: 58vh;
     height: 45vh;
@@ -120,7 +131,6 @@ header{
 #grupoSelectorPersonaje button.botonSeleccionado {
     border: 2px solid rgb(255, 216, 157); /* Borde negro cuando es seleccionado */
 }
-
 
 
 .botonSeleccionado {
