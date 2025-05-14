@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     botonRace.addEventListener('click', function() {
         mainscreen.innerHTML = '';
 
-        mainscreen.style.backgroundColor = 'orange';
     
         const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
         const iconRaces = [
