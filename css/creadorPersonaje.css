@@ -87,8 +87,8 @@ header{
 
 
 
-    background: linear-gradient(0deg,rgba(204, 168, 112, 0.56) 0%, rgba(11,8,9,255), rgba(221, 184, 125, 1) 100%);
-    /*cambios*/
+    background: RGBA(11,8,9,255);
+    background: linear-gradient(145deg,rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);    /*cambios*/
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -203,7 +203,7 @@ footer{
 
 @media only screen and (orientation: portrait){
     #config{
-        width: vh;
+        width: 9vh;
         height: 70vh;
         margin-top: 5vh;
         background-color: aqua;
