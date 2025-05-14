@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div id="infoPersonaje">
                 <p>Selecciona una clase para ver la información.</p>
             </div>
-        `;
+        `
+        html+='<div id ="botonConfirmarSeleccionClase'
+        ;
         
         mainscreen.innerHTML += html;
 
