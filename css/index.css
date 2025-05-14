@@ -249,6 +249,8 @@ footer{
         font-weight: bold;
         text-wrap: wrap;
         font-size: smaller;
+        display: flex;
+        padding: 50%;
     }
     
 }
