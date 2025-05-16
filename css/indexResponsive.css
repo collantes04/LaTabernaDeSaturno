@@ -21,6 +21,18 @@
         margin-right: auto;
     }
 
+
+    #enlacePrincipal, #enlaceWiki, #enlaceCreador {
+        font-size: 18px;
+        padding: 10px 15px;
+        border-radius: 6px;
+    }
+
+    #enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover {
+        transform: scale(1.05);
+    }
+
+
     #expansiones{
         padding: 10px;
         border-radius: 25px;
