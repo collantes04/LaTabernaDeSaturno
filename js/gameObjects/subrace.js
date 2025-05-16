@@ -1,5 +1,6 @@
 function createElfSubclass(params) {
     let HighElf = new Subrace("HighElf",
+                               30,
                                  
     )
 }
