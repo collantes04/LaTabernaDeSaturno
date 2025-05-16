@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Botón seleccionado:', index);
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = claseInfo[index];
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Clase[index]}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -328,14 +328,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
         
-            const clase = Races[razaSeleccionadaIndex];
-            const descripcion = raceInfo[razaSeleccionadaIndex];
+            const clase = Clase[razaSeleccionadaIndex];
+            const descripcion = claseInfo[razaSeleccionadaIndex];
         
             const charsheet = document.getElementById('charsheet');
             if (charsheet) {
                 charsheet.innerHTML = `
-                    <h2>Raza Seleccionada</h2>
-                    <p><strong>${raza}</strong>: ${descripcion}</p>
+                    <h2>Clase Seleccionada</h2>
+                    <p><strong>${clase}</strong>: ${descripcion}</p>
                 `;
             }
             if (typeof botonSubrace !== 'undefined') {
