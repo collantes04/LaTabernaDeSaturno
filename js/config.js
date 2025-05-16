@@ -357,8 +357,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        function mostrarFeaturesDeRaza(raza) {
-            const features = claseFeatures[raza];
+        function mostrarFeaturesDeClase(clase) {
+            const features = claseFeatures[clase];
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
