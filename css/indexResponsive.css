@@ -21,8 +21,11 @@
         margin-right: auto;
     }
 
-    nav{
-        gap: 1em;
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30%;
     }
     
     #enlacePrincipal, #enlaceWiki, #enlaceCreador {

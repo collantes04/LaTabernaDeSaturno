@@ -224,6 +224,56 @@ document.addEventListener('DOMContentLoaded', function() {
             "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
             "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
         ];
+        const classFeatures = {
+            "Bárbaro": [
+                { nombre: "Rage (Furia)", descripcion: "Ganas ventaja en tiradas de daño cuerpo a cuerpo y resistes el daño de la mitad de tipo físico." },
+                { nombre: "Desgarrador", descripcion: "Cuando estás furioso, infliges daño adicional con tus ataques cuerpo a cuerpo." }
+            ],
+            "Bardo": [
+                { nombre: "Inspiración bardica", descripcion: "Puedes dar un dado adicional a una criatura aliada para que lo use en tiradas de ataque, habilidad o salvación." },
+                { nombre: "Hechizos de encantamiento", descripcion: "Accedes a hechizos que afectan las mentes de los demás y controlas a tus enemigos." }
+            ],
+            "Clérigo": [
+                { nombre: "Canalizar Divinidad", descripcion: "Usas tu poder divino para realizar un efecto especial, como curar o hacer daño a tus enemigos." },
+                { nombre: "Dominio divino", descripcion: "Obtienes beneficios adicionales según el dominio de tu deidad (como la protección, sanación o guerra)." }
+            ],
+            "Druida": [
+                { nombre: "Forma salvaje", descripcion: "Te transformas en una criatura, como un oso o lobo, para obtener habilidades mejoradas en combate." },
+                { nombre: "Conjuros de la naturaleza", descripcion: "Usas magia basada en la naturaleza para sanar, controlar el terreno o invocar animales." }
+            ],
+            "Guerrero": [
+                { nombre: "Estilo de lucha", descripcion: "Puedes elegir un estilo de lucha para obtener ventajas como mayor defensa o daño con ciertos tipos de armas." },
+                { nombre: "Acción adicional", descripcion: "Puedes realizar una acción adicional en tu turno para atacar o moverte rápidamente." }
+            ],
+            "Monje": [
+                { nombre: "Puño abierto", descripcion: "Tus ataques cuerpo a cuerpo pueden realizar un golpe extra, aturdir o derribar a tus enemigos." },
+                { nombre: "Trance", descripcion: "Meditar te permite recuperar puntos de golpe, restaurar energía o mejorar tu destreza." }
+            ],
+            "Paladín": [
+                { nombre: "Imposición de manos", descripcion: "Sanar a los demás o a ti mismo mediante la energía divina." },
+                { nombre: "Aura de protección", descripcion: "Tus aliados cercanos obtienen un bono en sus tiradas de salvación." }
+            ],
+            "Explorador": [
+                { nombre: "Explorador natural", descripcion: "Obtienes habilidades para moverte a través de terrenos difíciles, rastrear enemigos y moverte sigilosamente." },
+                { nombre: "Compañero animal", descripcion: "Invocas a un animal aliado que te ayuda en combate o exploración." }
+            ],
+            "Pícaro": [
+                { nombre: "Ataque furtivo", descripcion: "Puedes infligir daño adicional si atacas a un enemigo que no te ve." },
+                { nombre: "Desaparecer", descripcion: "Usas tu agilidad para esconderte rápidamente y aparecer de nuevo." }
+            ],
+            "Hechicero": [
+                { nombre: "Magia de sangre", descripcion: "Puedes usar tus puntos de hechicería para aumentar el poder de tus hechizos o modificar sus efectos." },
+                { nombre: "Conjuros espontáneos", descripcion: "Puedes lanzar conjuros sin prepararlos con anticipación, usando tu poder innato." }
+            ],
+            "Brujo": [
+                { nombre: "Invocación", descripcion: "Accedes a un poder oscuro o arcano que te da habilidades especiales según tu pacto." },
+                { nombre: "Descarga de Eldritch", descripcion: "Lanzas un ataque a distancia que inflige daño psíquico o arcano." }
+            ],
+            "Mago": [
+                { nombre: "Preparación de hechizos", descripcion: "Preparas tus hechizos antes de cada descanso largo y eliges el que usarás en combate." },
+                { nombre: "Conjuros arcanos", descripcion: "Accedes a una variedad de hechizos poderosos para controlar la magia, el daño y las ilusiones." }
+            ]
+        };
     
         let html = `<div id="grupoSelectorPersonaje">`;
     
@@ -267,7 +317,58 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
         };
+
+
+
+
+
+        window.confirmarRaza = function () {
+            if (razaSeleccionadaIndex === null) {
+                alert("Por favor, selecciona una raza antes de continuar.");
+                return;
+            }
         
+            const raza = Races[razaSeleccionadaIndex];
+            const descripcion = raceInfo[razaSeleccionadaIndex];
+        
+            const charsheet = document.getElementById('charsheet');
+            if (charsheet) {
+                charsheet.innerHTML = `
+                    <h2>Raza Seleccionada</h2>
+                    <p><strong>${raza}</strong>: ${descripcion}</p>
+                `;
+            }
+            if (typeof botonSubrace !== 'undefined') {
+                botonSubrace.click(); 
+            }
+        };
+        function mostrarFeaturesDeRaza(raza) {
+            const features = raceFeatures[raza];
+            const container = document.getElementById('featureContainer');
+            container.innerHTML = ''; 
+        
+            features.forEach((feature, index) => {
+                const boton = document.createElement('button');
+                boton.className = 'feature-button';
+                boton.innerText = feature.nombre;
+        
+                // Evento hover
+                boton.addEventListener('mouseenter', () => {
+                    const book = document.getElementById('book');
+                    book.innerText = feature.descripcion;
+                    book.style.display = 'block';
+                });
+        
+                boton.addEventListener('mouseleave', () => {
+                    const book = document.getElementById('book');
+                    book.innerText = '';
+                });
+                container.appendChild(boton);
+            });
+        }
+
+
+
 
 
 
