@@ -21,7 +21,10 @@
         margin-right: auto;
     }
 
-
+    nav{
+        gap: 1em;
+    }
+    
     #enlacePrincipal, #enlaceWiki, #enlaceCreador {
         font-size: 18px;
         padding: 10px 15px;

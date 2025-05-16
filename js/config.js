@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < Races.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
-                    <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
+                    <button id="botonClases${i}" type="button" onclick="seleccionarRace(${i})">
                         <img src="${iconRaces[i]}" alt="${Races[i]}" />
                         <div class="textoClases">${Races[i]}</div>
                     </button>
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mainscreen.innerHTML += html;
 
         // Función de selección de clase
-        window.seleccionarClase = function (index) {
+        window.seleccionarRace = function (index) {
             razaSeleccionadaIndex = index;
         
             const infoPersonaje = document.getElementById('infoPersonaje');
