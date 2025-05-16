@@ -294,46 +294,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Selecciona una clase para ver la información.</p>
             </div>
         `
-        html+=`<div id="botonConfirmarSeleccionMainscreen"> 
-        <button id="botonConfirmarClase" type="button" onclick="botonConfirmarClase()">Siguiente</button>
-        </div>
-        `
-        ;
-        ;
-    
+        html += `<div id="featureContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div>`;
+        html += `<div id="botonConfirmarSeleccionMainscreen"> 
+                    <button id="botonConfirmarClase" type="button" onclick="botonConfirmarClase()">Siguiente</button>
+                </div>`;
         mainscreen.innerHTML += html;
-    
+
+
+
+
+
+
+
+
+
         window.seleccionarClase = function (index) {
-            console.log('Botón seleccionado:', index);
+            claseSeleccionadaIndex = index;
+        
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = claseInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Clase[index]}</strong>. ${info}</p>`;
-    
-            const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
-            allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
-    
-            const selectedButton = document.getElementById(`botonClases${index}`);
-            if (selectedButton) {
-                selectedButton.classList.add('botonSeleccionado');
-            }
-        };
-
-
-
-
-
-
-
-
-
-
-
-        window.seleccionarRace = function (index) {
-            razaSeleccionadaIndex = index;
-        
-            const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = raceInfo[index];
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
         
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -343,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
         
-            mostrarFeaturesDeRaza(Races[index]);
+            mostrarFeaturesDeRaza(Clase[index]);
 
         };
 
@@ -362,8 +342,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
         
-            const clase = Clase[razaSeleccionadaIndex];
-            const descripcion = claseInfo[razaSeleccionadaIndex];
+            const clase = Clase[claseSeleccionadaIndex];
+            const descripcion = claseInfo[claseSeleccionadaIndex];
         
             const charsheet = document.getElementById('charsheet');
             if (charsheet) {
@@ -376,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 botonBackground.click(); 
             }
         };
+
         function mostrarFeaturesDeRaza(raza) {
             const features = claseFeatures[raza];
             const container = document.getElementById('featureContainer');

@@ -23,13 +23,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4em;
-    }
     
     #enlacePrincipal, #enlaceWiki, #enlaceCreador {
         font-size: 18px;
@@ -93,4 +86,5 @@
         padding: 5%;
     }
     
+    #
 }
