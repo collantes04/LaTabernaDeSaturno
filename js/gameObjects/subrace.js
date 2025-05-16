@@ -1,7 +1,8 @@
 function createElfSubclass(params) {
     let HighElf = new Subrace("HighElf",
                                30,
-                                 
+                              "Heirs of the mystical Feywild, high elves value magic in all its forms, and even those who do not study spellcraft can manipulate the Weave.",
+                                
     )
 }
 

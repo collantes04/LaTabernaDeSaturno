@@ -267,6 +267,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
         };
+        
+
+
+
     });
 
     botonBackground.addEventListener('click', function() {
