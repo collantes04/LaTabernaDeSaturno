@@ -1,11 +1,12 @@
 class Jefe{
     static id = 0;
     
-    constructor(nombre, desc, img){
+    constructor(nombre, desc, img, Stats){
         this.nombre = nombre;
         this.descripcion = desc;
         this.imagen = img;
         this.id = "j"+Jefe.id++;
+        this.stats = Stats;
     }
 
     getNombre(){
@@ -22,5 +23,14 @@ class Jefe{
 
     getId(){
         return this.id;
+    }
+
+    getStats(){
+        return this.stats.fuerza + "<br><br>" +
+        this.stats.destreza + "<br><br>" +
+        this.stats.constitucion + "<br> <br>" +
+        this.stats.inteligencia + "<br> <br>" +
+        this.stats.sabiduria + "<br> <br>" +
+        this.stats.carisma;
     }
 }

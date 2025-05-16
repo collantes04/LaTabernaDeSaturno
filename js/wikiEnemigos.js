@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const idCajaContenido = document.getElementById("cajaContenido");
     const botones = document.querySelectorAll('input[type="button"]');
     const vectorMonstruos = [createOwlbear(), createOrco(),
-        createSlime()];
+        createCGelatinoso(), createGoblin(), createZombie()];
 
     const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam()];
     let divCreado = null;
@@ -40,13 +40,20 @@ document.addEventListener('DOMContentLoaded', function(){
                 const divExplicativo = document.createElement('div')
                 divExplicativo.setAttribute("id", "estiloDivExpl");
                 divExplicativo.innerHTML = `
-                <div id="divImgMons">
-                    <h1 id="tituloJS"> ${objetoActual.getNombre()}</h1>
-                    <img src="${objetoActual.getImg()}" id="imgJS">  
-                </div>
-                    <p id="parrafoJS">
-                        ${objetoActual.getDesc()}
-                    </p>`;
+                    <div id="divImgMons">
+                        <h1 id="tituloJS"> ${objetoActual.getNombre()}</h1>
+                        <img src="${objetoActual.getImg()}" id="imgJS">  
+                    </div>
+                        <p id="parrafoJS">
+                            ${objetoActual.getDesc()}
+                            <br>
+                            <br>
+                            
+                            <span style="display: block; text-align: center;">
+                                ${objetoActual.getStats()}
+                            </span>
+                        </p>
+                    <br>`;
                 divCreado = idCajaContenido.appendChild(divExplicativo);
                 idActual = id;
 
@@ -81,8 +88,17 @@ document.addEventListener('DOMContentLoaded', function(){
                     </div>
                         <p id="parrafoJS">
                             ${objetoActual.getDesc()}
-                        </p>`;
+                            <br>
+                            <br>
+                            
+                            <span style="display: block; text-align: center;">
+                                ${objetoActual.getStats()}
+                            </span>
+                        </p>
+                        <br>`;
+
                     divCreado = idCajaContenido.appendChild(divExplicativo);
+                    
                     idActual = id;   
                 }
             }

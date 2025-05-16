@@ -119,6 +119,32 @@ nav {
     padding: 10px;
     justify-content: center; 
 }
+
+#book{
+    width: 30%;
+    height: 50vh;
+    margin-left: 5px;
+    margin-top: 16vh     ;
+    background: RGBA(11,8,9,255);
+    background: linear-gradient(145deg,rgb(0, 0, 0) 0%, rgb(39, 37, 33) 50%, rgba(70, 59, 49, 0.68) 100%);  
+    color: #9be6f3;
+
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.5em;  
+    line-height: 1.6; 
+    padding: 20px; 
+    border-radius: 5px;  
+    text-align: justify;
+}
+
+
+#charsheet{
+    width: 36vh;
+    height: 90vh;
+    margin-left: 5px;
+    margin-top: 5vh;
+    background-color: aquamarine
+}
 .feature-button {
     width: 70px;
     height: 70px;
@@ -208,20 +234,7 @@ nav {
 
 }
 
-#book{
-    width: 34%;
-    height: 98vh;
-    margin-left: 5px;
-    background-color: coral;
-}
 
-#charsheet{
-    width: 36vh;
-    height: 90vh;
-    margin-left: 5px;
-    margin-top: 5vh;
-    background-color: aquamarine;
-}
 
 /*De aqui abajo no se toca*/
 

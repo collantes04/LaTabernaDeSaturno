@@ -5,12 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonBackground = document.getElementById('mostrarBackground');
     const botonAbilities = document.getElementById('mostrarAbilities');
     const mainscreen = document.getElementById('mainscreen');
-    const botonRaceBarbaro = document.getElementById('')
+    const charsheet = document.getElementById('charsheet')
+    const botonRaceBarbaro = document.getElementById('');
+    botonSubrace.style.display = 'none';
+    let razaSeleccionada = null;
+    let claseSeleccionada = null;
+    let razaGuardar = null;
     
 
     botonRace.addEventListener('click', function() {
         mainscreen.innerHTML = '';
         let razaSeleccionadaIndex = null;
+        let razaSeleccionada = '';  
+
     
         const Races = ["Human", "Elf", "Drow", "Half-Elf", "Half-Orc", "Halfling", "Dwarf", "Gnome", "Tiefling", "Githyanki", "Dragonborn"];
         const iconRaces = [
@@ -82,8 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Función de selección de clase
         window.seleccionarRace = function (index) {
-            razaSeleccionadaIndex = index;
-        
+            razaSeleccionada = Races[index];
+            razaGuardar = razaSeleccionada;  // Guardar la raza seleccionada
+
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = raceInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
@@ -101,23 +109,23 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         window.confirmarRaza = function () {
-            if (razaSeleccionadaIndex === null) {
+            if (!razaSeleccionada) {
                 alert("Por favor, selecciona una raza antes de continuar.");
                 return;
             }
+            const raza = razaSeleccionada; 
+            razaGuardar = razaSeleccionada;
         
-            const raza = Races[razaSeleccionadaIndex];
             const descripcion = raceInfo[razaSeleccionadaIndex];
         
-            const charsheet = document.getElementById('charsheet');
-            if (charsheet) {
-                charsheet.innerHTML = `
-                    <h2>Raza Seleccionada</h2>
-                    <p><strong>${raza}</strong>: ${descripcion}</p>
-                `;
-            }
-            if (typeof botonSubrace !== 'undefined') {
+           
+
+            if (typeof botonSubrace !== 'undefined' &&raza === Races[0] ) {
+                botonSubrace.style.display= '';
+
                 botonSubrace.click(); 
+            }else{
+                botonClass.click();
             }
         };
         function mostrarFeaturesDeRaza(raza) {
@@ -150,29 +158,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+
+
     botonSubrace.addEventListener('click', function () {
         mainscreen.innerHTML = '';
-    
-        const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
-        const iconRaces = [
-            "../recursos/iconsClass/barbarian.png", "../recursos/iconsClass/bard.png", "../recursos/iconsClass/cleric.png", "../recursos/iconsClass/druid.png",
-            "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
-            "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
+        
+        const subrazasHumanas = [
+            { nombre: "Humano de la Costa del Viento", descripcion: "Son conocidos por su resistencia y capacidad para adaptarse rápidamente a nuevos entornos. Tienen una gran capacidad para hacer amigos rápidamente, pero también pueden ser muy calculadores cuando es necesario." },
+            { nombre: "Humano de la Ciudad", descripcion: "Estos humanos están adaptados a la vida urbana y su cultura se enfoca en la política, el comercio y la tecnología. Son muy hábiles en negociaciones y pueden ser diplomáticos o manipuladores." },
+            { nombre: "Humano del Desierto", descripcion: "Originarios de vastas extensiones áridas, estos humanos tienen una resistencia excepcional al calor y la sequía. Son expertos en la supervivencia en condiciones extremas y son conocidos por su habilidad para navegar por los desiertos." },
+            { nombre: "Humano de la Isla", descripcion: "Viven en entornos isleños y costeros. Son conocidos por su habilidad para navegar y su resistencia al mar. Tienen un vínculo natural con las criaturas acuáticas y son grandes pescadores." },
+            { nombre: "Humano de las Llanuras", descripcion: "Los humanos de las llanuras son conocidos por su resistencia física y su habilidad para moverse por vastos terrenos. Son expertos en la caza y la recolección, y a menudo sirven como exploradores o guías." },
+            { nombre: "Humano de la Montaña", descripcion: "Viven en zonas de altas montañas, donde la dureza del terreno y las condiciones extremas han forjado su fuerza física. Son fuertes, resilientes y muy adecuados para la vida en entornos difíciles." }
         ];
-        const raceInfo = [
-            "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
-            "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
-            "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
-        ];
-    
+        
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < Races.length; i++) {
+        for (let i = 0; i < subrazasHumanas.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
-                    <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
-                        <img src="${iconRaces[i]}" alt="${Races[i]}" />
-                        <div class="textoClases">${Races[i]}</div>
+                    <button id="botonSubraza${i}" type="button" onclick="seleccionarSubraza(${i})">
+                        <div class="textoClases">${subrazasHumanas[i].nombre}</div>
                     </button>
                 </div>
             `;
@@ -181,30 +187,47 @@ document.addEventListener('DOMContentLoaded', function() {
         html += `</div>`;
         html += `
             <div id="infoPersonaje">
-                <p>Selecciona una clase para ver la información.</p>
+                <p>Selecciona una subraza para ver la información.</p>
             </div>
-        `
-        html+=`<div id="botonConfirmarSeleccionMainscreen"> 
-            <button id="botonConfirmarSubraza" type="button" onclick="botonConfirmarSubraza()">Siguiente</button>
-            </div>
-        `
-        ;
-        ;
-    
+        `;
+        html += `<div id="botonConfirmarSeleccionMainscreen">
+                    <button id="botonConfirmarSubraza" type="button" onclick="confirmarSubraza()">Siguiente</button>
+                </div>
+        `;
+        
         mainscreen.innerHTML += html;
     
-        window.seleccionarClase = function (index) {
-            console.log('Botón seleccionado:', index);
+        window.seleccionarSubraza = function(index) {
             const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = raceInfo[index];
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+            const info = subrazasHumanas[index].descripcion;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subrazasHumanas[index].nombre}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
     
-            const selectedButton = document.getElementById(`botonClases${index}`);
+            const selectedButton = document.getElementById(`botonSubraza${index}`);
             if (selectedButton) {
                 selectedButton.classList.add('botonSeleccionado');
+            }
+        };
+    
+        window.confirmarSubraza = function() {
+            const selectedButton = document.querySelector('.botonSeleccionado');
+            if (!selectedButton) {
+                alert("Por favor, selecciona una subraza antes de continuar.");
+                return;
+            }
+    
+            const subrazaIndex = selectedButton.id.replace('botonSubraza', '');
+            const subraza = subrazasHumanas[subrazaIndex];
+            
+            let charsheet1 = document.getElementById('charsheet');
+            if (charsheet1) {
+                
+            }
+    
+            if (typeof botonBackground !== 'undefined') {
+                botonClass.click();
             }
         };
     });
@@ -293,10 +316,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <div id="infoPersonaje">
                 <p>Selecciona una clase para ver la información.</p>
             </div>
-        `
+        `;
         html += `<div id="featureContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div>`;
         html += `<div id="botonConfirmarSeleccionMainscreen"> 
-                    <button id="botonConfirmarClase" type="button" onclick="botonConfirmarClase()">Siguiente</button>
+                    <button id="botonConfirmarClase" type="button" onclick="confirmarClase()">Siguiente</button>
                 </div>`;
         mainscreen.innerHTML += html;
 
@@ -306,57 +329,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-        window.seleccionarClase = function (index) {
-            claseSeleccionadaIndex = index;
-        
+        window.seleccionarClase = function(index) {
+            claseSeleccionada = Clase[index];
+    
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = claseInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Clase[index]}</strong>. ${info}</p>`;
-        
+    
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
-        
+    
             const selectedButton = document.getElementById(`botonClases${index}`);
             if (selectedButton) {
                 selectedButton.classList.add('botonSeleccionado');
             }
-        
-            mostrarFeaturesDeRaza(Clase[index]);
-
+    
+            mostrarFeaturesDeClase(Clase[index]);
         };
-
-
-
-
-
-
-
-
-
-
-        window.confirmarClase = function () {
-            if (claseSeleccionadaIndex === null) {
+    
+        window.confirmarClase = function() {
+            if (!claseSeleccionada) {
                 alert("Por favor, selecciona una clase antes de continuar.");
                 return;
             }
-        
             const clase = Clase[claseSeleccionadaIndex];
             const descripcion = claseInfo[claseSeleccionadaIndex];
-        
             const charsheet = document.getElementById('charsheet');
+
             if (charsheet) {
-                charsheet.innerHTML = `
-                    <h2>Clase Seleccionada</h2>
-                    <p><strong>${clase}</strong>: ${descripcion}</p>
+                charsheet.innerHTML += `
+                    <img src="${iconClase[claseSeleccionadaIndex]}" alt="${Clase[claseSeleccionadaIndex]}">
+                    <p><strong> ${razaGuardar}</strong></p>
+                    <p><strong>${clase}</strong>: Level 1</p>
                 `;
             }
             if (typeof botonBackground !== 'undefined') {
                 botonBackground.click(); 
             }
         };
-
         function mostrarFeaturesDeClase(clase) {
             const features = claseFeatures[clase];
             const container = document.getElementById('featureContainer');
@@ -383,21 +393,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-
-
-
-
     });
 
     botonBackground.addEventListener('click', function() {
         mainscreen.innerHTML = '';
     
-        const Races = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Haunted One", "Noble", "Outlander", "Sage", "Soldier", "Urchin"];
-        const iconRaces = [
+        const Background = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Haunted One", "Noble", "Outlander", "Sage", "Soldier", "Urchin"];
+        const iconBackground = [
             "../recursos/iconsBackground/Background_Acolyte_Icon.png", "../recursos/iconsBackground/Background_Charlatan_Icon.png", "../recursos/iconsBackground/Background_Criminal_Icon.png", "../recursos/iconsBackground/Background_Entertainer_Icon.png", "../recursos/iconsBackground/Background_Folk_Hero_Icon.png", "../recursos/iconsBackground/Background_Guild_Artisan_Icon.png", "../recursos/iconsBackground/Background_Haunted_One_Icon.png", "../recursos/iconsBackground/Background_Noble_Icon.png",
             "../recursos/iconsBackground/Background_Outlander_Icon.png", "../recursos/iconsBackground/Background_Sage_Icon.png", "../recursos/iconsBackground/Background_Soldier_Icon.png", "../recursos/iconsBackground/Background_Urchin_Icon.png"
         ];
-        const raceInfo = [
+        const backgroundInfo = [
             "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
             "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
             "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
@@ -405,12 +411,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < Races.length; i++) {
+        for (let i = 0; i < Background.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
-                    <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
-                        <img src="${iconRaces[i]}" alt="${Races[i]}" />
-                        <div class="textoClases">${Races[i]}</div>
+                    <button id="botonBackground${i}" type="button" onclick="seleccionarBackground(${i})">
+                        <img src="${iconBackground[i]}" alt="${Background[i]}" />
+                        <div class="textoBackground">${Background[i]}</div>
                     </button>
                 </div>
             `;
@@ -418,28 +424,54 @@ document.addEventListener('DOMContentLoaded', function() {
     
         html += `</div>`;
         html += `
-            <div id="infoPersonaje">
-                <p>Selecciona una clase para ver la información.</p>
+            <div id="infoBackground">
+                <p>Selecciona un background para ver la información.</p>
             </div>
         `;
-    
+        html += `<div id="botonConfirmarSeleccionMainscreen"> 
+                <button id="botonConfirmarBackground" type="button" onclick="confirmarBackground()">Siguiente</button>
+            </div>`;
         mainscreen.innerHTML += html;
+
     
-        window.seleccionarClase = function (index) {
-            console.log('Botón seleccionado:', index);
-            const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = raceInfo[index];
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+    
+        window.seleccionarBackground = function(index) {
+            backgroundSeleccionadoIndex = index;
+
+            const infoBackground = document.getElementById('infoBackground');
+            const info = backgroundInfo[index];
+            infoBackground.innerHTML = `<p>Has seleccionado: <strong>${Background[index]}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
     
-            const selectedButton = document.getElementById(`botonClases${index}`);
+            const selectedButton = document.getElementById(`botonBackground${index}`);
             if (selectedButton) {
                 selectedButton.classList.add('botonSeleccionado');
             }
         };
+        window.confirmarBackground = function() {
+            if (backgroundSeleccionadoIndex === null) {
+                alert("Por favor, selecciona un background antes de continuar.");
+                return;
+            }
+        
+            const background = Background[backgroundSeleccionadoIndex];
+            const descripcion = backgroundInfo[backgroundSeleccionadoIndex];
+        
+            const charsheet = document.getElementById('charsheet');
+            if (charsheet) {
+                charsheet.innerHTML += `
+                    <h2>Background Seleccionado</h2>
+                    <p><strong>${background}</strong>: ${descripcion}</p>
+                `;
+            }
+            if (typeof botonAbilities !== 'undefined') {
+                botonAbilities.click(); 
+            }
+        };
     });
+   
     
 
     botonAbilities.addEventListener('click', function() {
