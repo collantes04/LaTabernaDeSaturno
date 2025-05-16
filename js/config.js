@@ -322,6 +322,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+        window.seleccionarRace = function (index) {
+            razaSeleccionadaIndex = index;
+        
+            const infoPersonaje = document.getElementById('infoPersonaje');
+            const info = raceInfo[index];
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+        
+            const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
+            allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
+        
+            const selectedButton = document.getElementById(`botonClases${index}`);
+            if (selectedButton) {
+                selectedButton.classList.add('botonSeleccionado');
+            }
+        
+            mostrarFeaturesDeRaza(Races[index]);
+
+        };
+
+
+
+
+
+
+
+
+
+
         window.confirmarClase = function () {
             if (claseSeleccionadaIndex === null) {
                 alert("Por favor, selecciona una clase antes de continuar.");
