@@ -338,12 +338,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>${clase}</strong>: ${descripcion}</p>
                 `;
             }
-            if (typeof botonSubrace !== 'undefined') {
-                botonSubrace.click(); 
+            if (typeof botonBackground !== 'undefined') {
+                botonBackground.click(); 
             }
         };
         function mostrarFeaturesDeRaza(raza) {
-            const features = raceFeatures[raza];
+            const features = claseFeatures[raza];
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
