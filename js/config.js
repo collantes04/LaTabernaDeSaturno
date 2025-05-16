@@ -213,8 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
     botonClass.addEventListener('click', function() {
         mainscreen.innerHTML = '';
     
-        const Races = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
-        const iconRaces = [
+        const Clase = ["Bárbaro", "Bardo", "Clérigo", "Druida", "Guerrero", "Monje", "Paladín", "Explorador", "Pícaro", "Hechicero", "Brujo", "Mago"];
+        const iconClase = [
             "../recursos/iconsClass/barbarian.png", "../recursos/iconsClass/bard.png", "../recursos/iconsClass/cleric.png", "../recursos/iconsClass/druid.png",
             "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
             "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
@@ -322,13 +322,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-        window.confirmarRaza = function () {
-            if (razaSeleccionadaIndex === null) {
-                alert("Por favor, selecciona una raza antes de continuar.");
+        window.confirmarClase = function () {
+            if (claseSeleccionadaIndex === null) {
+                alert("Por favor, selecciona una clase antes de continuar.");
                 return;
             }
         
-            const raza = Races[razaSeleccionadaIndex];
+            const clase = Races[razaSeleccionadaIndex];
             const descripcion = raceInfo[razaSeleccionadaIndex];
         
             const charsheet = document.getElementById('charsheet');

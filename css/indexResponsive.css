@@ -1,3 +1,25 @@
+#cabecera{
+    background-image: url("/recursos/bannerPrincipal.png");
+    text-align: center;
+    width: 100%;
+}
+
+html, body{
+    height: 100dvh;
+}
+
+header{
+    font-size: large;
+    background-image: url("/recursos/bannerPrincipal.png");
+    box-shadow: 2px 4px 20px;
+
+}
+
+footer{
+    background-image: url("/recursos/backgroundDnD.png");
+
+}
+
 @media only screen and (orientation: portrait){
     #parrafoExplicacion{
         margin-top: 10px;
@@ -25,7 +47,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30%;
+        gap: 4em;
     }
     
     #enlacePrincipal, #enlaceWiki, #enlaceCreador {
