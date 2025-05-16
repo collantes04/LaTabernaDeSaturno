@@ -219,12 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
             "../recursos/iconsClass/figther.png", "../recursos/iconsClass/monk.png", "../recursos/iconsClass/paladin.png", "../recursos/iconsClass/ranger.png",
             "../recursos/iconsClass/rogue.png", "../recursos/iconsClass/sorcerer.png", "../recursos/iconsClass/warlock.png", "../recursos/iconsClass/wizard.png"
         ];
-        const raceInfo = [
+        const claseInfo = [
             "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
             "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
             "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
         ];
-        const classFeatures = {
+        const claseFeatures = {
             "Bárbaro": [
                 { nombre: "Rage (Furia)", descripcion: "Ganas ventaja en tiradas de daño cuerpo a cuerpo y resistes el daño de la mitad de tipo físico." },
                 { nombre: "Desgarrador", descripcion: "Cuando estás furioso, infliges daño adicional con tus ataques cuerpo a cuerpo." }
@@ -277,12 +277,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < Races.length; i++) {
+        for (let i = 0; i < Clase.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
-                        <img src="${iconRaces[i]}" alt="${Races[i]}" />
-                        <div class="textoClases">${Races[i]}</div>
+                        <img src="${iconClase[i]}" alt="${Clase[i]}" />
+                        <div class="textoClases">${Clase[i]}</div>
                     </button>
                 </div>
             `;
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.seleccionarClase = function (index) {
             console.log('Botón seleccionado:', index);
             const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = raceInfo[index];
+            const info = claseInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
