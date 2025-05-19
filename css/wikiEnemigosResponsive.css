@@ -19,4 +19,23 @@
         margin-top: 20px;
     }
 
+    @font-face {
+    font-family: fuenteDnD;
+    src: url(../fonts/DragonHunter-9Ynxj.otf) format('opentype');
+}
+    @font-face {
+        font-family: fuenteMinusDnD;
+        src: url(../fonts/MiddleEarthPersonalUseRegular-axlP5.otf);
+    }
+    @font-face {
+        font-family: fuentesEnlace;
+        src: url(../fonts/Draconis-JRw6B.ttf) format('opentype');
+    }
+
+    @font-face {
+        font-family: fuenteWikiEnemigos;
+        src: url(../fonts/Vecna-oppx.ttf);
+    }
+
+
 }
