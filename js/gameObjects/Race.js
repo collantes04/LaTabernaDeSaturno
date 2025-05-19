@@ -8,7 +8,8 @@ function createHuman() {
                                       new Weapon("Alabarda"),
                                       new Weapon("Guja"),
                                       new Armor("Light Armour"),
-                                      new Armor("Shields")]
+                                      new Armor("Shields")],
+                                "../recursos/iconsRace/Race_Human.png"
     );
     return human;
 }
@@ -22,7 +23,8 @@ function createElf() {
                                     new Weapon("Espada Larga"),
                                     new Weapon("Arco Recurvo"),
                                     new Weapon("Longbow"),
-                                    new SvThrow("Percepción")]
+                                    new SvThrow("Percepción")],
+                    "../recursos/iconsRace/Race_Elf.png"
     );
     return elf;
 }
@@ -35,7 +37,8 @@ function createDrow() {
     /*Proficiencies*/    [new Weapon("Estoque"),
                                     new Weapon("Espada Corta"),
                                     new Weapon("Ballesta de Mano"),
-                                    new SvThrow("Percepción")]
+                                    new SvThrow("Percepción")],
+                    "../recursos/iconsRace/Race_Drow.png"
     );
     return drow;
 }
@@ -50,7 +53,8 @@ function createHalfElf() {
                                         new Weapon("Alabarda"),
                                         new Weapon("Guja"),
                                         new Armor("Light Armour"),
-                                        new Armor("Shields")]
+                                        new Armor("Shields")],
+                                  "../recursos/iconsRace/Race_Half-Elf.png"
     );
     return halfElf;
 }
@@ -60,7 +64,8 @@ function createHalfOrc() {
     /*Desc*/               "Creatures of intense emotion, half-orcs are more inclined to act than contemplate - whether the rage burning their bodies compels them to fight, or the love filling their hearts inspires acts of incredible kindness.",
     /*Velocidad*/           30, 
     /*Subrazas*/            null, 
-    /*Proficiencies*/       [new SvThrow("Intimidación")]
+    /*Proficiencies*/       [new SvThrow("Intimidación")],
+                            "../recursos/iconsRace/Race_Half-Orc.png"
     );
     return halfOrc;
 }
@@ -70,7 +75,8 @@ function createHalfling() {
     /*Desc*/                "Small yet capable, halflings prefer the comforts of home and hearth - but their natural luck and dexterity makes them fine adventurers.",
     /*Velocidad*/            25, 
     /*Subrazas*/             createHalflingSubrace(25),
-    /*Proficiencies*/        null
+    /*Proficiencies*/        null,
+                            "../recursos/iconsRace/Race_Halfling.png"
     );
     return halfling;
 }
@@ -83,7 +89,8 @@ function createDwarf() {
     /*Proficiencies*/     [new Weapon("Hacha de Guerra"),
                                     new Weapon("Hacha de Mano"),
                                     new Weapon("Martillo ligero"),
-                                    new Weapon("Martillo de guerra")]
+                                    new Weapon("Martillo de guerra")],
+                          "../recursos/iconsRace/Race_Dwarf.png"
     );
     return dwarf;
 }
@@ -93,7 +100,9 @@ function createGnome() {
     /*Desc*/             "As durable and unyielding as their homes of stone, dwarves are some of the finest warriors, miners, and smiths of Faerûn.",
     /*Velocidad*/         0, 
     /*Subrazas*/        createGnomeSubrace(25),
-    /*Proficiencies*/   null);
+    /*Proficiencies*/   null,
+                        "../recursos/iconsRace/Race_Gnome.png"
+    )
     return gnome;
 }
 
@@ -102,16 +111,24 @@ function createTiefling() {
     /*Desc*/                "Descended from devils of the Nine Hells, tieflings face constant suspicion in Faerûn. Thankfully, their arcane abilities make them natural survivors.",
     /*Velocidad*/            30, 
     /*Subrazas*/             createTieflingSubrace(30),
-    /*Proficiencies*/        null);
+    /*Proficiencies*/        null,
+                              "../recursos/iconsRace/Race_Tiefling.png"
+    );
     return tiefling;
 }
 
 function createGithyanki() {
-    let githyanki = new Race("Githyanki", 
+    let githyanki = new Race("Githyanki",
     /*Desc*/                 "With a ruthlessness borne from mind flayer enslavement, githyanki ride the Astral Sea atop red dragons, bringing their silver swords and psionic might to bear against any trace of the illithid menace.",
-    /*Velocidad*/             0, 
-    /*Subrazas*/              null, 
-    /*Proficiencies*/         null);
+    /*Velocidad*/             0,
+    /*Subrazas*/              null,
+    /*Proficiencies*/         [new Weapon("Espada Corta"),
+                                          new Weapon("Espada Larga"),
+                                          new Weapon("Mandoble"),
+                                          new Armor("Armadura ligera"),
+                                          new Armor("Armadura Media")],
+                               "../recursos/iconsRace/Race_Githyanki.png"
+    );
     return githyanki;
 }
 
@@ -120,7 +137,9 @@ function createDragonborn() {
     /*Desc*/                  "A proud race that values clan and skills above all else. Once enslaved by dragons, they strive to be self-sufficient, not wanting to be beholden to anyone, not even the gods.",
     /*Velocidad*/              30, 
     /*Subrazas*/               createDragonbornSubrace(30),
-    /*Proficiencies*/          null);
+    /*Proficiencies*/          null,
+                                "../recursos/iconsRace/Race_Dragonborn.png"
+    );
     return dragonborn;
 }
 
@@ -136,14 +155,41 @@ function createRaza() {
     let tiefling = createTiefling();
     let githyanki = createGithyanki();
     let dragonborn = createDragonborn();
+    return [human, elf, drow, halfElf, halfOrc, halfling, dwarf, gnome, tiefling, githyanki, dragonborn];
 }
 
 class Race {
-    constructor(name, desc, speed, subraces, proficiencies) {
-        this.name = name;
-        this.desc = desc;
-        this.speed = speed;
-        this.subrace = subraces;
-        this.proficiencies = Proficiency;
+    constructor(name, desc, speed, subraces, proficiencies, image) {
+        this._name = name;
+        this._desc = desc;
+        this._speed = speed;
+        this._subraces = subraces;
+        this._proficiencies = proficiencies;
+        this._image = image;
+    }
+
+
+    get raceName() {
+        return this._name;
+    }
+
+    get raceDesc() {
+        return this._desc;
+    }
+
+    get raceSpeed() {
+        return this._speed;
+    }
+
+    get raceSubraces() {
+        return this._subraces;
+    }
+
+    get raceProficiencies() {
+        return this._proficiencies;
+    }
+
+    get raceImage() {
+        return this._image;
     }
 }
