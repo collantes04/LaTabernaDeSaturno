@@ -70,12 +70,20 @@
         border-color: #CCA870;
         border-width: 5px;
         text-wrap: wrap;
+        height: min-content;
     }
 
     
 
     #imgJS{
         width: 150px;
+    }
+
+    #tituloJS{
+
+        text-align: center;
+        font-family: fuenteDnD;
+        font-size: 25px;
     }
 
 
