@@ -460,14 +460,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Por favor, selecciona un background antes de continuar.");
                 return;
             }
-        
             const background = Background[backgroundSeleccionadoIndex];
             const descripcion = backgroundInfo[backgroundSeleccionadoIndex];
         
             const charsheet = document.getElementById('charsheet');
+            const informacionBackgroundSeleccionada = document.getElementById('informacionBackgroundSeleccionada');
             if (charsheet) {
-                charsheet.innerHTML += `
-                    <h2>Background Seleccionado</h2>
+                informacionBackgroundSeleccionada.innerHTML = `
                     <p><strong>${background}</strong>: ${descripcion}</p>
                 `;
             }
