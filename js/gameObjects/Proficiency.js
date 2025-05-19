@@ -1,25 +1,23 @@
 class Proficiency {
-    constructor(nombreWeapon, nomArmor, nomSvthrow) {
-        this.weapon = new Weapon(nombreWeapon);
-        this.armor = new Armor(nomArmor);
-        this.svthrow = new SvThrow(nomSvthrow)
+    constructor(name) {
+        this.name = name;
     }
 }
 
-class Weapon {
-    constructor(nombre) {
-     this.nombre = nombre;   
+class Weapon extends Proficiency{
+    constructor(name) {
+     super(name);
     }
 }
 
-class Armor {
-    constructor(nombre) {
-        this.nombre = nombre;
+class Armor extends Proficiency{
+    constructor(name) {
+        super(name);
     }
 }
 
-class SvThrow {
+class SvThrow extends Proficiency{
     constructor(nombre) {
-        this.nombre = nombre;
+        super(name);
     }
 }

@@ -12,6 +12,8 @@ function createElfSubclass() {
                                                 null,
                                                 null
     )
+
+    return [HighElf, WoodElf];
 }
 
 function createDrowSubclass(drowSpeed) {
@@ -28,6 +30,8 @@ function createDrowSubclass(drowSpeed) {
                                                     null,
                                                     null
         )
+
+    return [lolthSwornDrow, seldarineDrow];
 }
 
 function createHalfElfSubclass(){
@@ -51,6 +55,8 @@ function createHalfElfSubclass(){
                                             null,
                                             null
     )
+
+    return [highHalfElf, woodHalfElf, drowHalfElf];
 }
 
 function createHalflingSubrace(halflingSpeed) {
@@ -67,6 +73,8 @@ function createHalflingSubrace(halflingSpeed) {
                                                     null,
                                                     null
     )
+
+    return [lightfootHalfling, strongheartHalfling];
 }
 
 function createDwarfSubrace(dwarfSpeed) {
@@ -90,6 +98,8 @@ function createDwarfSubrace(dwarfSpeed) {
         null,
         null
     )
+
+    return [goldDwarf, shieldDwarf, duergar];
 }
 
 function createGnomeSubrace(gnomeSpeed) {
@@ -113,6 +123,8 @@ function createGnomeSubrace(gnomeSpeed) {
         null,
         null
     )
+
+    return [rockGnome, forestGnome, deepGnome];
 }
 
 function createTieflingSubrace(tieflingSpeed){
@@ -136,6 +148,8 @@ function createTieflingSubrace(tieflingSpeed){
         null,
         null
     )
+
+    return [asmodeusTiefling, mephistophelesTiefling, zarielTiefling];
 }
 
 function createDragonbornSubrace(dragonbornSpeed) {
@@ -167,40 +181,49 @@ function createDragonbornSubrace(dragonbornSpeed) {
         null
     )
 
+    let copperDragonborn = new Subrace("Copper Dragonborn",
+        dragonbornSpeed,
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the pink-gold colouration and corrosive breath of copper dragons.",
+        null,
+        null
+    )
+
     let goldDragonborn = new Subrace("Gold Dragonborn",
         dragonbornSpeed,
-        "Despite no ancestral links to the mighty creatures, these dragonborn share the charcoal colouration and fizzling, acrid breath of black dragons.",
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the resplendent shine and roiling, blazing breath of gold dragons.",
         null,
         null
     )
 
-    let greenDragonborn = new Subrace("Black Dragonborn",
+    let greenDragonborn = new Subrace("Green Dragonborn",
         dragonbornSpeed,
-        "Despite no ancestral links to the mighty creatures, these dragonborn share the charcoal colouration and fizzling, acrid breath of black dragons.",
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the brilliant emerald aspect and stinking, putrid breath of green dragons.",
         null,
         null
     )
 
-    let redDragonborn = new Subrace("Black Dragonborn",
+    let redDragonborn = new Subrace("Red Dragonborn",
         dragonbornSpeed,
-        "Despite no ancestral links to the mighty creatures, these dragonborn share the charcoal colouration and fizzling, acrid breath of black dragons.",
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the bright scarlet likeness and roiling, burning breath of red dragons.",
         null,
         null
     )
 
-    let silverDragonborn = new Subrace("Black Dragonborn",
+    let silverDragonborn = new Subrace("Silver Dragonborn",
         dragonbornSpeed,
-        "Despite no ancestral links to the mighty creatures, these dragonborn share the charcoal colouration and fizzling, acrid breath of black dragons.",
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the glinting shine and scorching cold breath of silver dragons.",
         null,
         null
     )
 
-    let whiteDragonborn = new Subrace("Black Dragonborn",
+    let whiteDragonborn = new Subrace("White Dragonborn",
         dragonbornSpeed,
-        "Despite no ancestral links to the mighty creatures, these dragonborn share the charcoal colouration and fizzling, acrid breath of black dragons.",
+        "Despite no ancestral links to the mighty creatures, these dragonborn share the snowy aspect and frosty breath of white dragons.",
         null,
         null
     )
+
+    return [blackDragonborn, blueDragonborn, brassDragonborn, bronzeDragonborn, copperDragonborn, goldDragonborn, greenDragonborn, redDragonborn, silverDragonborn, whiteDragonborn];
 }
 
 class Subrace{
