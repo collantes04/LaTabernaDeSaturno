@@ -86,7 +86,7 @@ function createDragonborn() {
     /*Proficiencies*/          null);
 }
 
-function createRaza{
+function createRaza() {
     createHuman();
     createElf();
 }
