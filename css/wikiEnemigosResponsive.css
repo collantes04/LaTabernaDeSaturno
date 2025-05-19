@@ -1,4 +1,39 @@
 @media only screen and (orientation: portrait) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body{
+        height: 100%;
+    }
+    header{
+    font-size: large;
+    background-image: url("/recursos/bannerPrincipal.png");
+    box-shadow: 2px 4px 20px;
+    }
+
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    }
+
+    #enlacePrincipal, #enlaceWiki, #enlaceCreador{
+        color: #B83236;
+        font-family: fuentesEnlace;
+        font-size: 20px;
+        font-weight: normal;
+        text-shadow: 1px 1px #631924;
+        text-decoration: none;
+    }
+
+    #enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover{
+        transform: scale(1.1);
+        color: #ffffff;
+        text-shadow: 3px 2px 3px #631924;
+    }
     
     #listas {
         flex-direction: column;
