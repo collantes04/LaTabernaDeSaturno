@@ -60,5 +60,23 @@
         src: url(../fonts/Vecna-oppx.ttf);
     }
 
+    
+    #estiloDivExpl{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-flow: row;
+        border-style: ridge;
+        border-color: #CCA870;
+        border-width: 5px;
+        text-wrap: wrap;
+    }
+
+    
+
+    #imgJS{
+        width: 150px;
+    }
+
 
 }
