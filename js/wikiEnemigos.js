@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     createManticora(), createQuimera()];
 
     const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam(),
-        createAcererak()
-    ];
+        createAcererak(), createKyuss(), createArtemis()];
     let divCreado = null;
     let idActual = -1;
     botones.forEach(function(boton){

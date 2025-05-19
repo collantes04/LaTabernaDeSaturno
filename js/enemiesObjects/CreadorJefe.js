@@ -5,7 +5,7 @@ function createVecna(){
         new Stats(14+"(+2)", 16+"(+3)", 18+"(+4)", 22+"(+6)", 24+"(+7)", 16+"(+3)")
     );
 
-}
+};
 
 function createTiamat(){
     return new Jefe("Tiamat",
@@ -13,7 +13,7 @@ function createTiamat(){
         "/recursos/enemiesImg/tiamat.png",
         new Stats(30+"(+10)", 10+"(+0)", 30+"(+10)", 26+"(+8)", 26+"(+8)", 28+"(+9)")
     );
-}
+};
 
 function createDemogorgon(){
     return new Jefe("Demogorgon",
@@ -21,7 +21,7 @@ function createDemogorgon(){
         "/recursos/enemiesImg/demogorgon.png",
         new Stats(29+"(+9)", 14+"(+2)", 26+"(+8)", 20+"(+5)", 17+"(+3)", 25+"(+7)")
     );
-}
+};
 
 function createTam(){
     return new Jefe("Szass Tam",
@@ -29,7 +29,7 @@ function createTam(){
         "/recursos/enemiesImg/szass.png",
         new Stats(11+"(+0)", 18+"(+4)", 20+"(+5)", 22+"(+6)", 20+"(+5)", 20+"(+5)")
     );
-}
+};
 
 function createAcererak(){
     return new Jefe("Acererak",
@@ -39,4 +39,21 @@ function createAcererak(){
         "/recursos/enemiesImg/acerak.png",
         new Stats(13+"(+1)", 16+"(+3)", 20+"(+5)", 27+"(+8)", 21+"(+5)", 20+"(+5)")
     );
-}
+};
+
+function createKyuss(){
+    return new Jefe("Kyuss",
+        `La verdadera historia del ser conocido como el Gusano que Camina era un misterio para los eruditos, aunque algunos afirmaban que alguna vez fue sumo sacerdote de Orcus. El único hecho conocido en el que todos coincidían era que el Gusano que Camina era originalmente un semidiós llamado Kyuss, que vivió en el pasado antiguo como nigromante mortal y creó muchas criaturas no muertas aberrantes, como los engendros de Kyuss que plagaban la Infraoscuridad.
+        Con el tiempo, la maldad de Kyuss llevó a sus contemporáneos a exiliarlo a los márgenes de la sociedad. En lugar de languidecer como un paria, se convirtió en el profeta de una secta perversa que creía en la temida Era de los Gusanos. Durante esta época, Kyuss descubrió las ruinas de una civilización extinta en una isla cerca de Maztica, conocida como la Isla del Gusano Reptante por los elfos de Siempre Unidos, y reclamó el lugar como suyo, donde gobernó como un rey-dios. En las ruinas, sus seguidores descubrieron antiguas placas de metal que contenían terribles secretos, pero que también confirmaban todas las profecías que había pronunciado.`,
+        "/recursos/enemiesImg/kyuss.png",
+        new Stats(24+"(+7)", 20+"(+5)", 28+"(+9)", 30+"(+10)", 26+"(+8)", 20+"(+5)")
+    );
+};
+
+function createArtemis(){
+    return new Jefe("Artemis Entreri",
+        `Artemis es el modelo de asesino, frío y brutalmente eficiente. Durante años, la vida de Entreri se ha centrado en su rivalidad con el héroe drow, Drizzt Do'Urden, alimentada por el contraste entre la naturaleza vacía de Entreri y la estrecha colección de amigos del drow. En última instancia, cayó en una sociedad con Jarlaxle Baenre, el líder de Bregan D'aerthe. Bajo la manipulación de Jarlaxle, Entreri creyó que finalmente había matado a Drizzt. En los últimos años, Artemis pasó a hacerse pasar por un aventurero honorable en Damara, donde durante un breve período Entreri fue coronado rey a regañadientes. Ese último acto atrajo la atención no deseada del rey Gareth Dragonsbane y una poderosa hermandad de asesinos. En las consecuencias de esos eventos, Artemis rompió su asociación con Jarlaxle, dándose cuenta de la medida en que el drow lo había manipulado durante años, y finalmente pudo haber llegado a un acuerdo con la persona en la que se ha convertido.`,
+        "/recursos/enemiesImg/artemis.png",
+        new Stats(14+"(+2)", 22+"(+6)", 15+"(+2)", 18+"(+4)", 18+"(+4)", 14+"(+2)")
+    );
+};

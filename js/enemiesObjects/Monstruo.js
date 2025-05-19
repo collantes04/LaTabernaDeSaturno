@@ -31,5 +31,7 @@ class Monstruo{
         this.stats.inteligencia + "<br> <br>" +
         this.stats.sabiduria + "<br> <br>" +
         this.stats.carisma;
+
+        
     }
 }
