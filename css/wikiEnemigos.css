@@ -95,6 +95,11 @@ footer{
     left: 100px;
     top: 100px;
     background-color: antiquewhite;
+    background: linear-gradient(
+        0deg,
+    rgba(204, 168, 112, 0.5) 0%,
+    rgba(221, 185, 124, 0.85) 53%,
+    rgba(221, 184, 125, 0.9) 100%);
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -124,8 +129,8 @@ footer{
 }
 
 #cajaContenido{
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: max-content;
     background: #CCA870;
     background: linear-gradient(0deg,rgba(204, 168, 112, 56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
     margin-left: 110px;
@@ -162,7 +167,7 @@ footer{
     padding: 10px;
     position: relative;
     font-family: fuenteWikiEnemigos;
-    font-size: 19px;
+    font-size: medium;
     border-style: groove;
     border-color: #CCA870;
     border-width: 5px;
