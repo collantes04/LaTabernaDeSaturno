@@ -117,7 +117,7 @@ footer{
 }
 
 .contenidoEnemigos::-webkit-scrollbar-thumb{
-    background-color: #CDBE81;
+    background-color: #E8D8B0;
 }
 
 
@@ -143,8 +143,8 @@ footer{
 }
 
 #cajaContenido{
-    width: 60%;
-    height: max-content;
+    width: 90%;
+    height: min-content;
     background: #CCA870;
     background: linear-gradient(0deg,rgba(204, 168, 112, 56) 0%, rgba(221, 185, 124, 1) 53%, rgba(221, 184, 125, 1) 100%);
     margin-left: 110px;
