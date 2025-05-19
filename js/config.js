@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         window.seleccionarClase = function(index) {
             claseSeleccionada = Clase[index];
-    
+            claseSeleccionadaIndex = index;
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = claseInfo[index];
             infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Clase[index]}</strong>. ${info}</p>`;
@@ -355,10 +355,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const clase = Clase[claseSeleccionadaIndex];
             const descripcion = claseInfo[claseSeleccionadaIndex];
             const charsheet = document.getElementById('charsheet');
+            const ImagenClaseSeleccionada = document.getElementById('ImagenClaseSeleccionada');
+            const informacionRazaSeleccionada = document.getElementById('informacionRazaSeleccionada');
 
             if (charsheet) {
-                charsheet.innerHTML += `
-                    <img src="${iconClase[claseSeleccionadaIndex]}" alt="${Clase[claseSeleccionadaIndex]}">
+                if(ImagenClaseSeleccionada){
+                    ImagenClaseSeleccionada.innerHTML = `
+                    <img src="${iconClase[claseSeleccionadaIndex]}" alt="${Clase[claseSeleccionadaIndex]}"> `;
+                }
+                informacionRazaSeleccionada.innerHTML = `
                     <p><strong> ${razaGuardar}</strong></p>
                     <p><strong>${clase}</strong>: Level 1</p>
                 `;
