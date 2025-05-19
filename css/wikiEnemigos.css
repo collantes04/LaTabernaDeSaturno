@@ -105,7 +105,21 @@ footer{
     overflow: scroll;
     overflow-x: hidden;
     border-radius: 20px;
+    box-shadow: 10px 9px 20px;
 }
+
+.contenidoEnemigos::-webkit-scrollbar{
+    width: auto;
+}
+
+.contenidoEnemigos::-webkit-scrollbar-track{
+    background:#A68B4D;
+}
+
+.contenidoEnemigos::-webkit-scrollbar-thumb{
+    background-color: #CDBE81;
+}
+
 
 .estiloBotonLista{
     background-color: transparent;
