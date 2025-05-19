@@ -84,11 +84,12 @@ footer{
     list-style-position: inside;
     padding-left: 10px;
     list-style: none;
+    font-family: fuenteWikiEnemigos; /*Este es el estilo del título de la lista*/
 }
 
 
 .contenidoEnemigos{
-    width: 17%;
+    width: 30%;
     height: 300px;
     position: relative;
     left: 100px;
@@ -106,9 +107,13 @@ footer{
     border-color: transparent;
     font-size: 20px;
     padding-top: 10px;
+    font-family: fuenteMinusDnD;
 }
 
 .estiloBotonLista:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: ease-in;
     cursor: pointer;
 }
 
@@ -167,4 +172,8 @@ footer{
 #spanEnemigos{
     display: block; 
     text-align: center;     
+}
+
+.classHover{
+    transition: cubic-bezier(1, 0, 0, 1) 0.3s;
 }
