@@ -86,5 +86,16 @@
         font-size: 25px;
     }
 
+        #parrafoJS{
+        text-wrap: wrap;
+        padding: 5px;
+        position: relative;
+        font-family: fuenteWikiEnemigos;
+        font-size: 9px;
+        border-style: groove;
+        border-color: #CCA870;
+        border-width: 5px;
+        border-bottom: none;
+    }
 
 }
