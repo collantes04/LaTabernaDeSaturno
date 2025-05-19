@@ -1,0 +1,22 @@
+@media only screen and (orientation: portrait) {
+    
+    #listas {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .contenidoEnemigos {
+        left: 0;
+        top: 100px;
+        margin-bottom: 20px;
+        width: 80%; 
+        height: auto; 
+    }
+
+    #cajaContenido {
+        margin-left: 0;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+}
