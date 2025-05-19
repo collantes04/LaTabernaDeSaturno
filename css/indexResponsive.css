@@ -92,19 +92,13 @@
     }
 
     nav{
-        gap: 0;
-    }
-    
-    #enlacePrincipal, #enlaceWiki, #enlaceCreador{
-        color: #B83236;
-        font-family: fuentesEnlace;
-        font-size: 30px;
-        font-weight: normal;
-        text-shadow: 1px 1px #631924;
-        text-decoration: none;
-        margin-left: auto;
-        margin-right: auto;
+        gap: 1em;
     }
 
+    #enlacePrincipal, #enlaceWiki, #enlaceCreador {
+        font-size: 18px;
+        padding: 10px 15px;
+        border-radius: 6px;
+    }
     
 }
