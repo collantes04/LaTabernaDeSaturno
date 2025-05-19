@@ -8,9 +8,9 @@
         height: 100%;
     }
     header{
-    font-size: large;
-    background-image: url("/recursos/bannerPrincipal.png");
-    box-shadow: 2px 4px 20px;
+        font-size: large;
+        background-image: url("/recursos/bannerPrincipal.png");
+        box-shadow: 1px 2px 10px;
     }
 
     nav {
