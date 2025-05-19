@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainscreen = document.getElementById('mainscreen');
     const charsheet = document.getElementById('charsheet')
     const botonRaceBarbaro = document.getElementById('');
+    const races = createRaza();
     botonSubrace.style.display = 'none';
     let razaSeleccionada = null;
     let claseSeleccionada = null;
@@ -16,28 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
     botonRace.addEventListener('click', function() {
         mainscreen.innerHTML = '';
         let razaSeleccionadaIndex = null;
-        let razaSeleccionada = '';  
+        let razaSeleccionada = '';
 
-    
-        const Races = ["Human", "Elf", "Drow", "Half-Elf", "Half-Orc", "Halfling", "Dwarf", "Gnome", "Tiefling", "Githyanki", "Dragonborn"];
-        const iconRaces = [
-            "../recursos/iconsRace/Race_Human.png", "../recursos/iconsRace/Race_Elf.png", "../recursos/iconsRace/Race_Drow.png", "../recursos/iconsRace/Race_Half-Elf.png",
-            "../recursos/iconsRace/Race_Half-Orc.png", "../recursos/iconsRace/Race_Halfling.png", "../recursos/iconsRace/Race_Dwarf.png", "../recursos/iconsRace/Race_Gnome.png",
-            "../recursos/iconsRace/Race_Tiefling.png", "../recursos/iconsRace/Race_Githyanki.png", "../recursos/iconsRace/Race_Dragonborn.png"
-        ];
-        const raceInfo = [
-            "Versátiles y adaptables, los humanos no tienen rasgos raciales específicos, pero ganan una bonificación adicional a sus habilidades.",
-            "Ágiles y longevos, los elfos tienen ventaja en percepción, inmunidad al sueño mágico y visión en la oscuridad.",
-            "Elfos oscuros del inframundo con afinidad por la magia, tienen resistencia a hechizos y visión superior en la oscuridad.",
-            "Híbridos versátiles, heredan lo mejor de humanos y elfos, incluyendo visión en la oscuridad y bonificaciones sociales.",
-            "Fuertes y temidos, los semi-orcos tienen furia salvaje, visión en la oscuridad y pueden resistir un golpe mortal una vez.",
-            "Pequeños y ágiles, los medianos tienen suerte (repetir tiradas de 1), y se escabullen con facilidad entre enemigos grandes.",
-            "Resistentes y robustos, los enanos tienen ventaja contra venenos, gran constitución y conocimientos sobre piedra.",
-            "Pequeños genios, los gnomos poseen una gran inteligencia natural, resistencia a la magia y afinidad con ilusiones.",
-            "Descendientes de demonios, los tieflings tienen resistencia al fuego y dominan hechizos oscuros innatos.",
-            "Guerreros psiónicos del Plano Astral, expertos en combate y manipulación mental con acceso a magia única.",
-            "Descendientes de dragones, los dracónidos poseen aliento elemental y resistencia al tipo de daño de su linaje dracónico."
-        ];
+
+        //const Races = [races[0].raceName, races[1].raceName, races[2].raceName, races[3].raceName, races[4].raceName, races[5].raceName, races[6].raceName, races[7].raceName, races[8].raceName, races[9].raceName, races[10].raceName];
+        //const iconRaces = [
+        //    races[0].raceImage, races[1].raceImage, races[2].raceImage, races[3].raceImage,
+        //    races[4].raceImage, races[5].raceImage, races[6].raceImage, races[7].raceImage,
+        //    races[8].raceImage, races[9].raceImage, races[10].raceImage
+        //];
+        //const raceInfo = [
+        //    races[0].raceDesc(), races[1].raceDesc, races[2].raceDesc, races[3].raceDesc, races[4].raceDesc, races[5].raceDesc, races[6].raceDesc, races[7].raceDesc, races[8].raceDesc, races[9].raceDesc, races[10].raceDesc
+        //];
         const raceFeatures = {
             "Human": [
                 { nombre: "Versatilidad", descripcion: "Los humanos ganan +1 a todas sus puntuaciones de habilidad." },
@@ -58,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < Races.length; i++) {
+        for (let i = 0; i < races.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonClases${i}" type="button" onclick="seleccionarRace(${i})">
-                        <img src="${iconRaces[i]}" alt="${Races[i]}" />
-                        <div class="textoClases">${Races[i]}</div>
+                        <img src="${races[i].raceImage}" alt="${races[i].raceName}" />
+                        <div class="textoClases">${races[i].raceName}</div>
                     </button>
                 </div>
             `;
@@ -89,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Función de selección de clase
         window.seleccionarRace = function (index) {
-            razaSeleccionada = Races[index];
+            razaSeleccionada = races[index];
             razaGuardar = razaSeleccionada;  // Guardar la raza seleccionada
 
             const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = raceInfo[index];
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${Races[index]}</strong>. ${info}</p>`;
+            const info = races[index].raceDesc;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${races[index].raceName}</strong>. ${info}</p>`;
         
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -104,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
         
-            mostrarFeaturesDeRaza(Races[index]);
+            mostrarFeaturesDeRaza(raceFeatures[index]);
 
         };
         
@@ -116,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const raza = razaSeleccionada; 
             razaGuardar = razaSeleccionada;
         
-            const descripcion = raceInfo[razaSeleccionadaIndex];
+            const descripcion = race[razaSeleccionadaIndex].raceDesc;
         
            
 
-            if (typeof botonSubrace !== 'undefined' &&raza === Races[0] ) {
+            if (typeof botonSubrace !== 'undefined' && raza === races[0].getName() ) {
                 botonSubrace.style.display= '';
 
                 botonSubrace.click(); 
