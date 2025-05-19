@@ -13,26 +13,20 @@
         box-shadow: 1px 2px 10px;
     }
 
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1em;
-    }
 
+    nav{
+        gap: 0;
+    }
+    
     #enlacePrincipal, #enlaceWiki, #enlaceCreador{
         color: #B83236;
         font-family: fuentesEnlace;
-        font-size: 20px;
+        font-size: 30px;
         font-weight: normal;
         text-shadow: 1px 1px #631924;
         text-decoration: none;
-    }
-
-    #enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover{
-        transform: scale(1.1);
-        color: #ffffff;
-        text-shadow: 3px 2px 3px #631924;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     #listas {
