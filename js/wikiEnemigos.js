@@ -6,10 +6,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const idCajaContenido = document.getElementById("cajaContenido");
     const botones = document.querySelectorAll('input[type="button"]');
+    
     const vectorMonstruos = [createOwlbear(), createOrco(),
-        createCGelatinoso(), createGoblin(), createZombie()];
+        createCGelatinoso(), createGoblin(), createZombie(), createAzotamentes(),
+    createManticora(), createQuimera()];
 
-    const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam()];
+    const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam(),
+        createAcererak()
+    ];
     let divCreado = null;
     let idActual = -1;
     botones.forEach(function(boton){
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
                             <br>
                             <br>
                             
-                            <span style="display: block; text-align: center;">
+                            <span id="spanEnemigos">
                                 ${objetoActual.getStats()}
                             </span>
                         </p>
@@ -91,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function(){
                             <br>
                             <br>
                             
-                            <span style="display: block; text-align: center;">
+                            <span id="spanEnemigos">
                                 ${objetoActual.getStats()}
                             </span>
                         </p>

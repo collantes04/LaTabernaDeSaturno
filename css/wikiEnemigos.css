@@ -65,6 +65,11 @@ footer{
     font-family: fuentesEnlace;
     src: url(../fonts/Draconis-JRw6B.ttf) format('opentype');
 }
+
+@font-face {
+    font-family: fuenteWikiEnemigos;
+    src: url(../fonts/Vecna-oppx.ttf);
+}
 #tituloCabecera{
     color: #B83236;
     font-family: fuenteDnD;
@@ -87,7 +92,7 @@ footer{
     position: relative;
     left: 100px;
     top: 100px;
-    background-color: white;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -127,6 +132,9 @@ footer{
     justify-content: center;
     display: flex;
     flex-flow: row;
+    border-style: ridge;
+    border-color: #CCA870;
+    border-width: 10px;
 }
 
 #divImgMons{
@@ -140,10 +148,22 @@ footer{
 
 #tituloJS{
     text-align: center;
+    font-family: fuenteDnD;
 }
 
 #parrafoJS{
     text-wrap: wrap;
     padding: 10px;
     position: relative;
+    font-family: fuenteWikiEnemigos;
+    font-size: 19px;
+    border-style: groove;
+    border-color: #CCA870;
+    border-width: 5px;
+    border-bottom: none;
+}
+
+#spanEnemigos{
+    display: block; 
+    text-align: center;     
 }
