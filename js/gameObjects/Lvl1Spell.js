@@ -35,6 +35,26 @@ function createHechizosLvl1(){
     const dueloObligado = new Spell("Duelo obligado", "Este hechizo permite a los lanzadores de conjuros obligar a un enemigo a ignorar a otros objetivos y atacar solo al lanzador de conjuros.", 
         "recursos/iconsSpell/380px-Compelled_Duel.webp.png", null, level);
 
-    const cDAgua = new Spell();
+    const cDAgua = new Spell("Crear o destruir agua", "Este hechizo permite a los lanzadores de conjuros conjurar o destruir un área de agua (o superficies similares al agua). Elige invocar la lluvia o destruir una superficie a base de agua.", 
+        "recursos/iconsSpell/380px-Create_Water.webp.png", null, level);
+    
+    const curarHeridas = new Spell("Curar heridas", "Cura a una criatura que puedas tocar.",
+        "recursos/iconsSpell/380px-Cure_Wounds.webp.png", "1d8 Cicatrización", level);
+    
+    const disfrazarse = new Spell("Disfrazarse", "Cambia mágicamente todos los aspectos de tu apariencia.",
+        "recursos/iconsSpell/380px-Disguise_Self.webp.png", null, level);
+
+    const susurrosDisonantes = new Spell("Susurros disonantes", "Este hechizo permite a los lanzadores de conjuros infundir terror en un objetivo e infligir daño psíquico a ellos.",
+        "recursos/iconsSpell/380px-Dissonant_Whispers.webp.png", "3d6 Psíquico", level);
+
+    const favorDivino = new Spell("Favor divino", "Tu oración te otorga un resplandor divino. Tus armas infligen 1d4 adicional de daño radiante.", 
+        "recursos/iconsSpell/380px-Divine_Favour.webp.png", null, level);
+
+    const mejoraSalto = new Spell("Mejorar el salto", "Triplica la distancia de salto.", 
+        "recursos/iconsSpell/380px-Enhance_Leap.webp.png", null, level);
+    
+    const golpeAtrapamiento = new Spell("Golpe de atrapamiento", "Tu ataque invoca enredaderas espinosas que pueden atrapar a tu objetivo. Las criaturas atrapadas no pueden moverse y reciben 1d6 de daño penetrante al comienzo de cada uno de sus turnos. Un aliado puede usar la acción de ayuda para intentar arrancar las enredaderas.", 
+        "recursos/iconsSpell/380px-Ensnaring_Strike_Ranged.webp.png", "+1d6 Perforación", level);
+
 
 }
