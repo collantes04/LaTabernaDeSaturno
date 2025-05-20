@@ -5,16 +5,26 @@ function getId(elemento){
 document.addEventListener('DOMContentLoaded', function(){
 
     const idCajaContenido = document.getElementById("cajaContenido");
+    
+    //Selección de todos los botones del documento en un querySelectorAll
     const botones = document.querySelectorAll('input[type="button"]');
     
+    //Carga de datos en los arrays, cada método retorna un objeto de tipo Monstruo o Jefe
     const vectorMonstruos = [createOwlbear(), createOrco(),
         createCGelatinoso(), createGoblin(), createZombie(), createAzotamentes(),
     createManticora(), createQuimera()];
 
     const vectorJefe = [createVecna(), createTiamat(), createDemogorgon(), createTam(),
         createAcererak(), createKyuss(), createArtemis()];
+
     let divCreado = null;
     let idActual = -1;
+
+    /*El foreach recorre todos los botones del querySelector, que es una estructura de datos con los botones vaya.
+    sacamos los id's de los botones con un método getId que retorna el atributo id, permitiendo así al clicar
+    un botó sacar su id de forma dinámica, cosa que no hice en el hoverClases.js, aunque esa clase es
+    un caso excepcional.*/
+
     botones.forEach(function(boton){
         boton.addEventListener('click', function(){
             let id = getId(boton);
@@ -28,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 if(divCreado){
                     divCreado.remove();
-                    divCreado = null;    
+                    divCreado = null;
                 }
 
                 if(idActual == id){
@@ -111,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     function esJefe(id){
-
+        //Nos aseguramos que sea un jefe, si su id empieza por j, lo es
         let idVer = id;
 
         if(idVer.startsWith("j")){

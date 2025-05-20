@@ -1,6 +1,7 @@
 const level = "0";
 let arrayCantrips = [];
 
+//La funcion crea y carga todos los objetos de los cantrips y los devuelve para el volcado de datos
 function createCantrips(){
     const salpicaduraAcido = new Spell("Salpicadura de ácido", "Lanza una burbuja de ácido que daña a cada criatura que golpea.",
     "recursos/iconsSpell/300px-Acid_Splash.webp.png", "1d6 Ácido", level);
