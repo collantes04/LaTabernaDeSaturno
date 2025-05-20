@@ -55,5 +55,23 @@ function createHechizo(){
     const llamaSagrada = new Spell("Llama sagrada", "Envuelve a un objetivo en un resplandor similar a una llama.", "recursos/iconsSpell/300px-Sacred_Flame.webp.png", 
         "1d8 Radiante", level);
 
-     
+    const cachiporra = new Spell("Cachiporra", "Tu personal o club se vuelve mágico: se ocupa de... 1d8 + modificador de lanzamiento de conjuro Daño contundente y usa tu modificador de Lanzamiento de hechizos para tiradas de ataque",
+        "recursos/iconsSpell/380px-Shillelagh.webp.png" ,null, level);
+    
+    const agarreImpactante = new Spell("Agarre impactante", "Realiza un ataque cuerpo a cuerpo que inflige daño de rayo y evita que el objetivo realice reacciones. Este hechizo tiene ventaja sobre criaturas con armadura de metal.", 
+        "recursos/iconsSpell/380px-Shocking_Grasp.webp.png", "1d8 Iluminación", level);
+    
+    const taumaturgia = new Spell("Taumaturgia", "Ganas ventaja en intimidación y controles de rendimiento.", 
+        "recursos/iconsSpell/380px-Thaumaturgy.webp.png", null, level);
+    
+    const latigoEspinas = new Spell("Látigo de espinas", "Inflige daño al objetivo y lo atrae hacia el lanzador. Tira de la criatura 3 m / 10 pies más cerca de ti.",
+        "recursos/iconsSpell/380px-Thorn_Whip.webp.png", "1d6 Perforación", level);
+    
+    const cuentaMuertos = new Spell("Cuenta de los muertos", "Toca la campana de la fatalidad inminente. Si el objetivo tiene la salud al máximo, infliges 1d8 de daño necrótico en su lugar.", 
+        "recursos/iconsSpell/380px-Toll_the_Dead.webp.png", "1d12 Necrótico(1d8 Necrótico si el objetivo tiene la salud completa)", level);
+    
+    const golpeVerdadero = new Spell("Golpe verdadero", "El lanzador obtiene ventaja en su siguiente tirada de ataque contra el objetivo.  Ganar ventaja en tu próxima tirada de ataque. Este hechizo se puede lanzar mientras estás silenciado.", 
+        "recursos/iconsSpell/380px-True_Strike.webp.png", null, level);
+
+    
 }
