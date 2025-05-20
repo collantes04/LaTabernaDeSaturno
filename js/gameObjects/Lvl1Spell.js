@@ -40,5 +40,20 @@ function createHechizo(){
     const ilusionMenor = new Spell("Ilusión menor", "Crea una ilusión que obligue a las criaturas cercanas a investigar. Puedes permanecer oculto mientras lanzas este hechizo. Este hechizo puede lanzarse mientras estás silenciado.", 
         "recursos/iconsSpell/300px-Minor_Illusion.webp.png", null, level);
 
-    const sprayVenenoso = new Spell("Spray venenoso", "Proyecta una bocanada de gas nocivo que inflige 1d12 Veneno a un objetivo.", "", "1d12 Veneno")
+    const sprayVenenoso = new Spell("Spray venenoso", "Proyecta una bocanada de gas nocivo que inflige 1d12 Veneno a un objetivo.", "recursos/iconsSpell/300px-Poison_Spray.webp.png", 
+        "1d12 Veneno", level);
+
+    const producirLlama = new Spell("Producir llama", "Una llama en tu mano arroja una luz en un radio de 9 m / 30 pies y causa 1d8 daño por fuego al ser arrojado.", 
+        "recursos/iconsSpell/300px-Produce_Flame.webp.png", "1d8 Fuego", level);
+    
+    const rayoEscarcha = new Spell("Rayo de escarcha", "Reduce la velocidad de movimiento del objetivo en 3m / 10 pies.", 
+        "recursos/iconsSpell/300px-Ray_of_Frost.webp.png", "1d8 Frío", level);
+
+    const resistencia = new Spell("Resistencia", "Hace que un objetivo sea más resistente a los efectos y condiciones de hechizos: recibe un +1d4 de bonificación a tiradas de salvación", 
+        "recursos/iconsSpell/300px-Resistance.webp.png", null, level);
+    
+    const llamaSagrada = new Spell("Llama sagrada", "Envuelve a un objetivo en un resplandor similar a una llama.", "recursos/iconsSpell/300px-Sacred_Flame.webp.png", 
+        "1d8 Radiante", level);
+
+     
 }

@@ -23,7 +23,23 @@ function createHalfOrcFeat() {
 }
 
 function createHalflingFeat() {
-    return [new RaceFeature("Suerte de Mediano", "Tira los dados en un fallo crítico en ataque, abilidad o saving throw"),]
+    return [new RaceFeature("Suerte de Mediano", "Tira los dados en un fallo crítico en ataque, abilidad o saving throw", "../recursos/features/HalflingLuck.png"), new RaceFeature("Valiente", "Ventaja contra ser aterrorizado", "../recursos/features/Brave.png")]
+}
+
+function createDwarfFeat() {
+    return [new RaceFeature("Resistencia de Enano", "Ventaja contra ser envenenado y resistencia a daño de veneno", "../recursos/features/DwarvenResilience.png"), darkVision]
+}
+
+function createGnomeFeat() {
+    return [new RaceFeature("Gnomo Astuto", "Ventaja en tiradas de inteligencia, sabiduría y carisma", "../recursos/features/GnomeCunning.png"), darkVision];
+}
+
+function createTieflingFeat() {
+    return [new RaceFeature("Resistencia Infernal", "Resistencia a daño de fuego", "../recursos/features/HellishResistance.png"), darkVision]
+}
+
+function createGithyankiFeat() {
+    return [new RaceFeature("Conocimiento Astral", "Gana proficiencia en todas las habilidades de un tipo despues de un descanso largo", "../recursos/features/AstralKnowledge.png"), new RaceFeature("Psiónicos Githyanki", "Mano magica, Salto aumentado y paso rápido", null)];
 }
 
 class RaceFeature{

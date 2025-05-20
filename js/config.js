@@ -106,12 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const raza = razaSeleccionada; 
             razaGuardar = razaSeleccionada;
-        
-            const descripcion = race[razaSeleccionadaIndex].raceDesc;
-        
-           
-
-            if (typeof botonSubrace !== 'undefined' && raza === races[0].getName() ) {
+            if (typeof botonSubrace !== 'undefined'  ) {
                 botonSubrace.style.display= '';
 
                 botonSubrace.click(); 
@@ -120,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         function mostrarFeaturesDeRaza(raza) {
-            const features = raceFeatures[raza];
+            const features = raza.feature;
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
@@ -139,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 boton.addEventListener('mouseleave', () => {
                     const book = document.getElementById('book');
                     book.innerText = '';
+                });
+                boton.addEventListener('click',() =>{
+
                 });
                 container.appendChild(boton);
             });
@@ -470,9 +468,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     botonAbilities.addEventListener('click', function() {
+        let habilidades = [0, 0]; // Valores iniciales de las habilidades (puedes cambiarlos)
+        
         // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
-        mainscreen.innerHTML = '<p>Hola<p>';
 
+        // Crear y mostrar las habilidades
+        for (let i = 0; i < 2; i++) {
+            const habilidadDiv = document.createElement('div');
+            habilidadDiv.style.marginBottom = '10px';
+    
+            const label = document.createElement('span');
+            label.textContent = `Habilidad ${i + 1}: `;
+    
+            const valor = document.createElement('span');
+            valor.textContent = habilidades[i];
+            valor.id = `valorHabilidad${i}`;
+    
+            const botonMas = document.createElement('button');
+            botonMas.textContent = '+';
+            botonMas.addEventListener('click', function (event) {
+                event.preventDefault(); // Esto previene cualquier acción predeterminada, como recargar la página
+                habilidades[i]++;
+                valor.textContent = habilidades[i];
+            });
+    
+            const botonMenos = document.createElement('button');
+            botonMenos.textContent = '−';
+            botonMenos.addEventListener('click', function (event) {
+                event.preventDefault(); // Previene cualquier acción predeterminada
+                if (habilidades[i] > 0) {
+                    habilidades[i]--;
+                    valor.textContent = habilidades[i];
+                }
+            });
+    
+            habilidadDiv.appendChild(label);
+            habilidadDiv.appendChild(botonMenos);
+            habilidadDiv.appendChild(valor);
+            habilidadDiv.appendChild(botonMas);
+    
+            mainscreen.appendChild(habilidadDiv);
+        }
+    
+        // Botón de Aceptar
+        /*const botonAceptar = document.createElement('button');
+        botonAceptar.textContent = 'Aceptar';
+        botonAceptar.addEventListener('click', function () {
+            console.log('Habilidades guardadas:', habilidades);
+            // Aquí puedes usar el array como necesites
+        });*/
+    
+        mainscreen.appendChild(botonAceptar);
+
+        
     });
 });

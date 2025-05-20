@@ -9,7 +9,8 @@ function createHuman() {
                                       new Weapon("Guja"),
                                       new Armor("Light Armour"),
                                       new Armor("Shields")],
-                                "../recursos/iconsRace/Race_Human.png"
+                                "../recursos/iconsRace/Race_Human.png",
+                            createHumanFeat
     );
     return human;
 }
@@ -24,7 +25,8 @@ function createElf() {
                                     new Weapon("Arco Recurvo"),
                                     new Weapon("Longbow"),
                                     new SvThrow("Percepción")],
-                    "../recursos/iconsRace/Race_Elf.png"
+                    "../recursos/iconsRace/Race_Elf.png",
+                    createElfFeat
     );
     return elf;
 }
@@ -38,7 +40,8 @@ function createDrow() {
                                     new Weapon("Espada Corta"),
                                     new Weapon("Ballesta de Mano"),
                                     new SvThrow("Percepción")],
-                    "../recursos/iconsRace/Race_Drow.png"
+                    "../recursos/iconsRace/Race_Drow.png",
+                    createDrowFeat
     );
     return drow;
 }
@@ -54,7 +57,8 @@ function createHalfElf() {
                                         new Weapon("Guja"),
                                         new Armor("Light Armour"),
                                         new Armor("Shields")],
-                                  "../recursos/iconsRace/Race_Half-Elf.png"
+                                  "../recursos/iconsRace/Race_Half-Elf.png",
+                                  createHalfElfFeat
     );
     return halfElf;
 }
@@ -65,7 +69,8 @@ function createHalfOrc() {
     /*Velocidad*/           30, 
     /*Subrazas*/            null, 
     /*Proficiencies*/       [new SvThrow("Intimidación")],
-                            "../recursos/iconsRace/Race_Half-Orc.png"
+                            "../recursos/iconsRace/Race_Half-Orc.png",
+                            createHalfOrcFeat
     );
     return halfOrc;
 }
@@ -76,7 +81,8 @@ function createHalfling() {
     /*Velocidad*/            25, 
     /*Subrazas*/             createHalflingSubrace(25),
     /*Proficiencies*/        null,
-                            "../recursos/iconsRace/Race_Halfling.png"
+                            "../recursos/iconsRace/Race_Halfling.png",
+                            createHalflingFeat
     );
     return halfling;
 }
@@ -90,7 +96,8 @@ function createDwarf() {
                                     new Weapon("Hacha de Mano"),
                                     new Weapon("Martillo ligero"),
                                     new Weapon("Martillo de guerra")],
-                          "../recursos/iconsRace/Race_Dwarf.png"
+                          "../recursos/iconsRace/Race_Dwarf.png",
+                          createDwarfFeat
     );
     return dwarf;
 }
@@ -101,7 +108,8 @@ function createGnome() {
     /*Velocidad*/         0, 
     /*Subrazas*/        createGnomeSubrace(25),
     /*Proficiencies*/   null,
-                        "../recursos/iconsRace/Race_Gnome.png"
+                        "../recursos/iconsRace/Race_Gnome.png",
+                        createGnomeFeat
     )
     return gnome;
 }
@@ -112,7 +120,8 @@ function createTiefling() {
     /*Velocidad*/            30, 
     /*Subrazas*/             createTieflingSubrace(30),
     /*Proficiencies*/        null,
-                              "../recursos/iconsRace/Race_Tiefling.png"
+                              "../recursos/iconsRace/Race_Tiefling.png",
+                              createTieflingFeat
     );
     return tiefling;
 }
@@ -127,7 +136,8 @@ function createGithyanki() {
                                           new Weapon("Mandoble"),
                                           new Armor("Armadura ligera"),
                                           new Armor("Armadura Media")],
-                               "../recursos/iconsRace/Race_Githyanki.png"
+                               "../recursos/iconsRace/Race_Githyanki.png",
+                               createGithyankiFeat
     );
     return githyanki;
 }
@@ -138,7 +148,8 @@ function createDragonborn() {
     /*Velocidad*/              30, 
     /*Subrazas*/               createDragonbornSubrace(30),
     /*Proficiencies*/          null,
-                                "../recursos/iconsRace/Race_Dragonborn.png"
+                                "../recursos/iconsRace/Race_Dragonborn.png",
+                                null
     );
     return dragonborn;
 }
@@ -166,6 +177,7 @@ class Race {
         this._subraces = subraces;
         this._proficiencies = proficiencies;
         this._image = image;
+        this.raceFeat = raceFeat;
     }
 
 
