@@ -78,7 +78,6 @@ function createCantrips(){
     const burlaViciosa = new Spell("Burla Viciosa", "Inflige daño psíquico a los enemigos y les aplica desventaja en sus tiradas de ataque. Insultar a una criatura: tiene desventaja en su siguiente tirada de ataque.", 
         "recursos/iconsCantrip/380px-Vicious_Mockery.webp.png", "1d4 Psíquico", level);
 
-
     return arrayCantrips = [
         salpicaduraAcido,
         guardianEspada,
