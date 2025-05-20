@@ -17,7 +17,7 @@ class Armor extends Proficiency{
 }
 
 class SvThrow extends Proficiency{
-    constructor(nombre) {
+    constructor(name) {
         super(name);
     }
 }
