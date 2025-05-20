@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function() {
     botonAbilities.addEventListener('click', function() {
         // Limpiar cualquier contenido anterior de mainscreen
         mainscreen.innerHTML = '';
-
+        mainscreen.innerHTML = '<p>Hola<p>';
 
     });
 });

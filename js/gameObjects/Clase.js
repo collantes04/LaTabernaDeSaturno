@@ -1,3 +1,8 @@
+function bardo(){
+    return new Clase("Bardo", "", "", )
+}
+
+
 class Clase{
 
     constructor(nombre, desc, imagen) {

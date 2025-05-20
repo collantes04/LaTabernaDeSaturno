@@ -159,7 +159,7 @@ function createRaza() {
 }
 
 class Race {
-    constructor(name, desc, speed, subraces, proficiencies, image) {
+    constructor(name, desc, speed, subraces, proficiencies, image, raceFeat) {
         this._name = name;
         this._desc = desc;
         this._speed = speed;
