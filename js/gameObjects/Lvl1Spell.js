@@ -56,5 +56,4 @@ function createHechizosLvl1(){
     const golpeAtrapamiento = new Spell("Golpe de atrapamiento", "Tu ataque invoca enredaderas espinosas que pueden atrapar a tu objetivo. Las criaturas atrapadas no pueden moverse y reciben 1d6 de daño penetrante al comienzo de cada uno de sus turnos. Un aliado puede usar la acción de ayuda para intentar arrancar las enredaderas.", 
         "recursos/iconsSpell/380px-Ensnaring_Strike_Ranged.webp.png", "+1d6 Perforación", level);
 
-
 }
