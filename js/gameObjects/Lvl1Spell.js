@@ -1,8 +1,9 @@
 const level = "1";
+let arrayHechizos = [];
 
 function createHechizo(){
     const salpicaduraAcido = new Spell("Salpicadura de ácido", "Lanza una burbuja de ácido que daña a cada criatura que golpea.",
-      "recursos/iconsSpell/300px-Acid_Splash.webp.png", "1d6 Ácido", level);
+    "recursos/iconsSpell/300px-Acid_Splash.webp.png", "1d6 Ácido", level);
 
     const guardianEspada = new Spell("Guardián de la espada", "Recibe solo la mitad del daño de los ataques contundente, perforantes y cortantes.",
         "recursos/iconsSpell/300px-Blade_Ward.webp.png", null, level);
@@ -73,5 +74,34 @@ function createHechizo(){
     const golpeVerdadero = new Spell("Golpe verdadero", "El lanzador obtiene ventaja en su siguiente tirada de ataque contra el objetivo.  Ganar ventaja en tu próxima tirada de ataque. Este hechizo se puede lanzar mientras estás silenciado.", 
         "recursos/iconsSpell/380px-True_Strike.webp.png", null, level);
 
-    
+    const burlaViciosa = new Spell("Burla Viciosa", "Inflige daño psíquico a los enemigos y les aplica desventaja en sus tiradas de ataque. Insultar a una criatura: tiene desventaja en su siguiente tirada de ataque.", 
+        "recursos/iconsSpell/380px-Vicious_Mockery.webp.png", "1d4 Psíquico", level);
+
+
+    return arrayHechizos = [
+        salpicaduraAcido,
+        guardianEspada,
+        escalofrioHuesos,
+        hojaAuge,
+        tendonReventado,
+        lucesDanzantes,
+        explosionSobrenatural,
+        pernoFuego,
+        amigos,
+        guia,
+        luz,
+        manoMago,
+        ilusionMenor,
+        sprayVenenoso,
+        producirLlama,
+        rayoEscarcha,
+        resistencia,
+        llamaSagrada,
+        cachiporra,
+        agarreImpactante,
+        taumaturgia,
+        latigoEspinas,
+        cuentaMuertos,
+        golpeVerdadero,
+        burlaViciosa];
 }
