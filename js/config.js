@@ -515,7 +515,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const label = document.createElement('span');
             label.textContent = `${ability.getabilityNames(i)}`;
-             label.textContent += '<br>'
             label.style.color = 'white';
     
             const valor = document.createElement('span');
@@ -542,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 //    valor.textContent = habilidades[i];
                 //}
                 ability.subabilityPoint(i);
-                valor.textContent = ability.getabilityPoint(i);
+                valor.textContent = ability.getabilityPoints(i);
             });
     
             habilidadDiv.appendChild(label);
