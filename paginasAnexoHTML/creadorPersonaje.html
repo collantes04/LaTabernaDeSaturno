@@ -15,13 +15,57 @@
     <script src="../js/gameObjects/Cantrip.js"></script>
     <script src="../js/gameObjects/Feature.js"></script>
     <script src="../js/gameObjects/Clase.js"></script>
+    <script src="../js/gameObjects/Background.js"></script>
     <script src="../js/gameObjects/abilities.js"></script>
 
+    <!-- APIS de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
 </head>
 
 
 <body>
+    <script>
+        async function generarPDF(){
+        let {jsPDF} = window.jspdf;
+
+        let contenido = document.getElementById("charsheet");
+        let imagen = document.getElementById("ImagenClaseSeleccionada");
+        let raza = document.getElementById("informacionRazaSeleccionada");
+        let background = document.getElementById("informacionBackgroundSeleccionada");
+
+        //Aquí verificamos que los divs que están dentro de están rellenos o no
+        let contenidoVacio =
+        imagen.innerHTML.trim() === "" &&
+        raza.innerHTML.trim() === "" &&
+        background.innerHTML.trim() === "";
+
+        if (contenidoVacio) {
+        alert("No puedes crear una ficha vacía.");
+        return;
+        }
+
+        const datos = await html2canvas(contenido, { scale: 2 });
+        const imgData = datos.toDataURL("image/png");
+
+      
+
+        const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "mm",
+            format: "a4"
+        });
+
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save("FichaDePersonaje.pdf");
+    
+    }
+    </script>
     <div id="padre">
         <header>
             <div id="cabecera">
@@ -77,12 +121,12 @@
                             <div id="ImagenClaseSeleccionada"></div>
                             <div id="informacionRazaSeleccionada"></div>
                             <div id="informacionBackgroundSeleccionada"></div>
-                        </div>                   
+                            <button type="button" id="confirmar" onclick="generarPDF()">Crear personaje</button>
+                        </div>
                     </div>
 
                 </form>
 
-            <button type="submit" id="confirmar">Crear personaje</button>
         </fieldset>
 
 

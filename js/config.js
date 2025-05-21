@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonRaceBarbaro = document.getElementById('mostrarSubclase');
     const races = createRaza();
     const clases = createClase();
+    const backgrounds = createBackgrounds();
     const ability = createability();
+    const bility = createability();
     botonSubrace.style.display = 'none';
     botonSubclass.style.display = 'none';
     let razaSeleccionada = null;
@@ -109,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
             features.forEach((feature) => {
                 const boton = document.createElement('button');
+                boton.disabled = true;
                 boton.className = 'feature-button';
                 let img = document.createElement('img');
                 img.src = feature.FeatImg;
@@ -154,11 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonSubraza${i}" type="button" onclick="seleccionarSubraza(${i})">
-
+                        <img src="${subrace[i].SubraceImg}" alt="${subrace[i].SubraceName}"/>
                         <div class="textoClases">${subrace[i].SubraceName}</div>
                     </button>
-                </div>
-            `;
+                </div>`;
         }
     
         html += `</div>`;
@@ -226,8 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
 
-
-     
         html += `</div>`;
         html += `
             <div id="infoPersonaje">
@@ -255,12 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
-    
+            
             const selectedButton = document.getElementById(`botonClases${index}`);
             if (selectedButton) {
                 selectedButton.classList.add('botonSeleccionado');
             }
-    
+            
             mostrarHechizosClases(claseSeleccionada);
         };
     
@@ -295,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
             if ( claseSeleccionada.subclase !== null) {
+              botonSubclass.style.display= '';
                 botonSubclass.click(); 
             }else{
                 botonBackground.click(); 
@@ -312,47 +313,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const container = document.getElementById('featureContainer');
             container.innerHTML = '';
+            const boton = document.createElement("button");
+            boton.className = "feature-button";
+            console.log(arrayHechizos);
+
+            for (let i = 0; i < arrayHechizos.length; i++) {
         
-                console.log(arrayHechizos);
 
-                for (let i = 0; i < arrayHechizos.length; i++) {
-                    /*Se crea un botón nuevo por cada iteración, 
-                    cada botón tiene dentro nombre y descripción del hechizo
-                    y cada botón tiene la imagen adaptada de cada hechizo*/
+                const boton = document.createElement('button');
+                const img = document.createElement('img');
 
-                    const boton = document.createElement('button');
-                    const img = document.createElement('img');
+                boton.setAttribute("class", "feature-button");
+                boton.setAttribute('type', 'button');
+                boton.setAttribute('disabled', true);
+                boton.className = 'feature-button';
+                
+                boton.appendChild(img);
 
-                    boton.setAttribute("class", "feature-button");
-                    boton.setAttribute('type', 'button');
-                    boton.setAttribute('disabled', true);
-                    boton.className = 'feature-button';
-                    
-                    boton.appendChild(img);
-                    
-                    img.setAttribute('src', arrayHechizos[i].img);
-                    img.setAttribute('class', 'feature-button');
+                
+                img.setAttribute('src', arrayHechizos[i].img);
+                img.setAttribute('class', 'feature-button');
+                
 
-                    boton.addEventListener('mouseenter', () => {
-                        const book = document.getElementById('book');
+                boton.addEventListener('mouseenter', () => {
+                    const book = document.getElementById('book');
+                    if(arrayHechizos[i].dado != null){
+                        dado = arrayHechizos[i].dado;
+                        tituloDado = "Dado: ";
+                        book.innerHTML = `
+                        <h3 style= "text-align: center;">${arrayHechizos[i].name}</h3>
+                        <p>${arrayHechizos[i].desc}</p>
+                        <br>
+                        <br>
+                        <div id="cajaDado">
+                            <p>Dado:</p>
+                            <p>
+                                ${arrayHechizos[i].dado}
+                            </p>
+                        </div>`;
+
+                    } else {
                         book.innerHTML = `
                         <h3 style= "text-align: center;">${arrayHechizos[i].name}</h3>
                         <p>${arrayHechizos[i].desc}</p>`;
-                        book.style.display = 'block';
-                    });
+                    }
+                    
+                });
 
-                    boton.addEventListener('mouseleave', () => {
-                        const book = document.getElementById('book');
-                        book.innerText = '';
-                    });
+                boton.addEventListener('mouseleave', () => {
+                    const book = document.getElementById('book');
+                    book.innerText = '';
+                });
 
-                    container.appendChild(boton);
-                }
+                container.appendChild(boton);
+                
+            }
 
         }
-
-
-        
 
 
     });
@@ -372,6 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonSubclase${i}" type="button" onclick="seleccionarSubclase(${i})">
+                        <img src="${subclasse[i].img}" alt="${subclasse[i].name}" />
                         <div class="textoClases">${subclasse[i].name}</div>
                     </button>
                 </div>
@@ -426,26 +444,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonBackground.addEventListener('click', function() {
         mainscreen.innerHTML = '';
-    
-        const Background = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Haunted One", "Noble", "Outlander", "Sage", "Soldier", "Urchin"];
-        const iconBackground = [
-            "../recursos/iconsBackground/Background_Acolyte_Icon.png", "../recursos/iconsBackground/Background_Charlatan_Icon.png", "../recursos/iconsBackground/Background_Criminal_Icon.png", "../recursos/iconsBackground/Background_Entertainer_Icon.png", "../recursos/iconsBackground/Background_Folk_Hero_Icon.png", "../recursos/iconsBackground/Background_Guild_Artisan_Icon.png", "../recursos/iconsBackground/Background_Haunted_One_Icon.png", "../recursos/iconsBackground/Background_Noble_Icon.png",
-            "../recursos/iconsBackground/Background_Outlander_Icon.png", "../recursos/iconsBackground/Background_Sage_Icon.png", "../recursos/iconsBackground/Background_Soldier_Icon.png", "../recursos/iconsBackground/Background_Urchin_Icon.png"
-        ];
-        const backgroundInfo = [
-            "Fuerte y salvaje", "Músico encantador", "Sanador y guía", "Controla la naturaleza", "Luchador valiente",
-            "Maestro del cuerpo", "Guerrero sagrado", "Cazador experto", "Sigiloso y ágil",
-            "Dominador de magia interna", "Mago oscuro", "Erudito de la magia"
-        ];
-    
         let html = `<div id="grupoSelectorPersonaje">`;
+
     
-        for (let i = 0; i < Background.length; i++) {
+        for (let i = 0; i < backgrounds.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonBackground${i}" type="button" onclick="seleccionarBackground(${i})">
-                        <img src="${iconBackground[i]}" alt="${Background[i]}" />
-                        <div class="textoBackground">${Background[i]}</div>
+                        <img src="${backgrounds[i].imagen}" alt="${backgrounds[i].name}" />
+                        <div class="textoBackground">${backgrounds[i].name}</div>
                     </button>
                 </div>
             `;
@@ -468,8 +475,8 @@ document.addEventListener('DOMContentLoaded', function() {
             backgroundSeleccionadoIndex = index;
 
             const infoBackground = document.getElementById('infoBackground');
-            const info = backgroundInfo[index];
-            infoBackground.innerHTML = `<p>Has seleccionado: <strong>${Background[index]}</strong>. ${info}</p>`;
+            const info = backgrounds[index].desc;
+            infoBackground.innerHTML = `<p>Has seleccionado: <strong>${backgrounds[index].name}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -484,14 +491,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Por favor, selecciona un background antes de continuar.");
                 return;
             }
-            const background = Background[backgroundSeleccionadoIndex];
-            const descripcion = backgroundInfo[backgroundSeleccionadoIndex];
+            const background = backgrounds[backgroundSeleccionadoIndex].name;
+            const description = backgrounds[backgroundSeleccionadoIndex].descripcion;
         
             const charsheet = document.getElementById('charsheet');
             const informacionBackgroundSeleccionada = document.getElementById('informacionBackgroundSeleccionada');
             if (charsheet) {
                 informacionBackgroundSeleccionada.innerHTML = `
-                    <p><strong>${background}</strong>: ${descripcion}</p>
+                    <p style="color: white;"><strong>${background}</strong>: ${description}</p>
                 `;
             }
             if (typeof botonAbilities !== 'undefined') {
@@ -502,66 +509,139 @@ document.addEventListener('DOMContentLoaded', function() {
    
     
 
-    botonAbilities.addEventListener('click', function() {
-        let habilidades = [0, 0]; // Valores iniciales de las habilidades (puedes cambiarlos)
-        
-        // Limpiar cualquier contenido anterior de mainscreen
-        mainscreen.innerHTML = '';
+   botonAbilities.addEventListener('click', function () {
+    mainscreen.innerHTML = '';
 
-        // Crear y mostrar las habilidades
-        for (let i = 0; i < 6; i++) {
-            const habilidadDiv = document.createElement('div');
-            habilidadDiv.style.marginBottom = '10px';
-    
-            const label = document.createElement('span');
-            label.textContent = `${ability.getabilityNames(i)}`;
-            label.style.color = 'white';
-    
-            const valor = document.createElement('span');
-            valor.textContent = ability.getabilityPoints(i);
-            valor.id = `valorHabilidad${i}`;
-            valor.style.color = 'white';
+    for (let i = 0; i < 6; i++) {
+        bility.setabilityPoints(i, 8); // Inicializa con 8
 
-            const botonMas = document.createElement('button');
-            botonMas.textContent = '+';
-            botonMas.addEventListener('click', function (event) {
-                event.preventDefault(); // Esto previene cualquier acción predeterminada, como recargar la página
-                //habilidades[i]++;
-                //valor.textContent = habilidades[i];
-                ability.sumabilityPoint(i);
-                valor.textContent = ability.getabilityPoints(i);
-            });
-    
-            const botonMenos = document.createElement('button');
-            botonMenos.textContent = '−';
-            botonMenos.addEventListener('click', function (event) {
-                event.preventDefault(); // Previene cualquier acción predeterminada
-                //if (habilidades[i] > 0) {
-                //    habilidades[i]--;
-                //    valor.textContent = habilidades[i];
-                //}
-                ability.subabilityPoint(i);
-                valor.textContent = ability.getabilityPoints(i);
-            });
-    
-            habilidadDiv.appendChild(label);
-            habilidadDiv.appendChild(botonMenos);
-            habilidadDiv.appendChild(valor);
-            habilidadDiv.appendChild(botonMas);
-    
-            mainscreen.appendChild(habilidadDiv);
+        const habilidadDiv = document.createElement('div');
+        habilidadDiv.style.display = 'flex';
+        habilidadDiv.style.flexDirection = 'column';
+        habilidadDiv.style.alignItems = 'center';
+        habilidadDiv.style.padding = '10px';
+        habilidadDiv.style.backgroundColor = 'rgba(34, 34, 34, 0.5)';
+        habilidadDiv.style.borderRadius = '8px';
+        habilidadDiv.style.color = 'white';
+        habilidadDiv.style.width = '120px';
+        habilidadDiv.classList.add('habilidad-columna');
+        habilidadDiv.style.opacity = '0.6';
+
+        const label = document.createElement('span');
+        label.textContent = `${bility.getabilityNames(i)}`;
+        label.style.color = 'white';
+        label.style.fontSize = '18px';
+        label.style.fontWeight = 'bold';
+        label.style.marginBottom = '4px';
+        label.style.marginTop = '4px';
+
+        const modValue = bility.calculateabilityModifs(i);
+        const modificador = document.createElement('span');
+        modificador.textContent = ` ${modValue >= 0 ? '+' : ''}${modValue}`;
+        modificador.style.color = 'white';
+        modificador.style.fontSize = '18px';
+        modificador.style.fontWeight = 'bold';
+        modificador.style.marginBottom = '4px';
+        modificador.style.marginTop = '4px';
+
+        const valor = document.createElement('span');
+        valor.textContent = bility.getabilityPoints(i);
+        valor.id = `valorHabilidad${i}`;
+        valor.style.color = 'white';
+        valor.style.fontSize = '18px';
+        valor.style.margin = '8px 0';
+
+        const botonMas = document.createElement('button');
+        botonMas.textContent = '+';
+        botonMas.style.width = '30px';
+        botonMas.style.height = '30px';
+        botonMas.style.fontSize = '20px';
+        botonMas.style.margin = '4px';
+        botonMas.addEventListener('click', function (event) {
+            event.preventDefault();
+            bility.sumabilityPoint(i);
+            valor.textContent = bility.getabilityPoints(i);
+            const newMod = bility.calculateabilityModifs(i);
+            modificador.textContent = ` ${newMod >= 0 ? '+' : ''}${newMod}`;
+        });
+
+        const botonMenos = document.createElement('button');
+        botonMenos.textContent = '−';
+        botonMenos.style.width = '30px';
+        botonMenos.style.height = '30px';
+        botonMenos.style.fontSize = '20px';
+        botonMenos.style.margin = '4px';
+        botonMenos.addEventListener('click', function (event) {
+            event.preventDefault();
+            bility.subabilityPoint(i);
+            valor.textContent = bility.getabilityPoints(i);
+            const newMod = bility.calculateabilityModifs(i);
+            modificador.textContent = ` ${newMod >= 0 ? '+' : ''}${newMod}`;
+        });
+
+        habilidadDiv.appendChild(label);
+        habilidadDiv.appendChild(botonMas);
+        habilidadDiv.appendChild(valor);
+        habilidadDiv.appendChild(botonMenos);
+        habilidadDiv.appendChild(modificador);
+
+        mainscreen.appendChild(habilidadDiv);
+    }
+
+
+
+
+
+
+    const botonGuardar = document.createElement('button');
+    botonGuardar.textContent = 'Guardar Stats en CharSheet';
+    botonGuardar.style.marginTop = '20px';
+    botonGuardar.style.padding = '10px 20px';
+    botonGuardar.style.fontSize = '16px';
+    botonGuardar.style.cursor = 'pointer';
+    botonGuardar.setAttribute("type", "button");
+
+    botonGuardar.addEventListener('click', function () {
+        const charsheet = document.getElementById('charsheet');
+        if (!charsheet) {
+            alert('No se encontró el div charsheet');
+            return;
         }
-    
-        // Botón de Aceptar
-        /*const botonAceptar = document.createElement('button');
-        botonAceptar.textContent = 'Aceptar';
-        botonAceptar.addEventListener('click', function () {
-            console.log('Habilidades guardadas:', habilidades);
-            // Aquí puedes usar el array como necesites
-        });*/
-    
-        mainscreen.appendChild(botonAceptar);
 
-        
-    });
+        // Buscar si ya hay un contenedor para las stats
+        let statsContainer = document.getElementById('stats-container');
+
+        if (!statsContainer) {
+            // Si no existe, crear uno nuevo y agregarlo al charsheet
+            statsContainer = document.createElement('div');
+            statsContainer.id = 'stats-container';
+            charsheet.appendChild(statsContainer);
+        } else {
+            // Si ya existe, limpiar su contenido para no duplicar
+            statsContainer.innerHTML = '';
+        }
+
+        // Ahora agregar las stats dentro del contenedor limpio
+        for (let i = 0; i < 6; i++) {
+            const nombre = bility.getabilityNames(i);
+            const puntos = bility.getabilityPoints(i);
+            const mod = bility.calculateabilityModifs(i);
+
+            const statDiv = document.createElement('div');
+            statDiv.style.color = 'white';
+            statDiv.style.marginBottom = '8px';
+            statDiv.textContent = `${nombre}: ${puntos} (${mod >= 0 ? '+' : ''}${mod})`;
+
+            statsContainer.appendChild(statDiv);
+        }
+
+            });
+
+            mainscreen.appendChild(botonGuardar);
+
+
+
+
+        });
+
 });

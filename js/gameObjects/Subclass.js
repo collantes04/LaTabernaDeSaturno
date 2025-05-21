@@ -63,7 +63,7 @@ class Subclass {
     constructor(name, desc, image, proficiencies, spells, features) {
         this._name = name;
         this._desc = desc;
-        this.image = image;
+        this._image = image;
         this.proficiencies = proficiencies;
         this.spells = spells;
         this.features = features;
@@ -73,5 +73,8 @@ class Subclass {
     }
     get desc(){
         return this._desc;
+    }
+    get img(){
+        return this._image;
     }
 }

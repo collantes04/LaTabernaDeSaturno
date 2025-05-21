@@ -74,7 +74,13 @@ nav {
     background-color: rgb(170, 168, 137);
 }
 
-
+.habilidad-columna {
+     display: flex;
+    flex-wrap: wrap;              /* Permite que pasen a la siguiente fila */
+    justify-content: center;      /* Centra horizontalmente */
+    gap: 50px 30px;               /* 50px vertical entre filas, 30px horizontal entre columnas */
+    max-width: 100%;
+}
 .subrace{
     width: 18vh;
     height: 5vh;
@@ -143,7 +149,12 @@ nav {
     text-align: justify;
 }
 
-
+#infoBackground{
+    color: white;
+}
+.textoBackground{
+    color: white;
+}
 #charsheet{
     width: 18%;
     height: 70vh;
@@ -158,8 +169,15 @@ nav {
     display: flex;
     flex-direction: column;       /* Para apilar contenido verticalmente */
 
-    text-align: center;      
+    text-align: center;  
+    position: relative;    
 
+}
+
+#confirmar{
+    position: absolute;
+    bottom: 10px;
+    left: auto;
 }
 .feature-button {
     width: 70px;
@@ -284,7 +302,7 @@ footer{
 }
 @font-face {
     font-family: fuenteMinusDnD;
-    src: url();
+    src: url(../fonts/MiddleEarthPersonalUseRegular-axlP5.otf);
 }
 
 @font-face {
@@ -299,7 +317,9 @@ footer{
     font-weight: normal;
     text-shadow: 3px 3px 2px #631924;
 }
-
+#cajaDado{
+    text-align: center;
+}
 @media only screen and (orientation: portrait){
     #config{
         display: flex;
@@ -386,4 +406,6 @@ footer{
     #enlacePrincipal:hover, #enlaceWiki:hover, #enlaceCreador:hover {
         transform: scale(1.05);
     }
+
+
 }

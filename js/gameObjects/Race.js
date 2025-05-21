@@ -1,23 +1,23 @@
 function createHuman() {
-    let human = new Race("Human", 
-    /*Desc*/             "The most common face in Faerûn, humans are known for their tenacity, creativity, and endless capacity for growth.",
+    const human = new Race("Human", 
+    /*Desc*/             "La cara más común en Faerûn, los humanos son conocidos por su tenacidad, creatividad y capacidad interminable de crecimiento.",
     /*Velocidad*/         30, 
     /*Subrazas*/          null, 
     /*Proficiencies*/     [new Weapon("Lanzas"),
-                                      new Weapon("Picas"),
-                                      new Weapon("Alabarda"),
-                                      new Weapon("Guja"),
-                                      new Armor("Light Armour"),
-                                      new Armor("Shields")],
-                                "../recursos/iconsRace/Race_Human.png",
-                            createHumanFeat()
+                            new Weapon("Picas"),
+                            new Weapon("Alabarda"),
+                            new Weapon("Guja"),
+                            new Armor("Light Armour"),
+                            new Armor("Shields")],
+    /*Imagen*/             "../recursos/iconsRace/Race_Human.png",
+    /*Features*/           createHumanFeat()
     );
     return human;
 }
 
 function createElf() {
-    let elf = new Race("Elf", 
-    /*Desc*/           "With ethereal countenances and long lifespans, elves are at home with nature's power, flourishing in light and dark alike.",
+    const elf = new Race("Elf", 
+    /*Desc*/           "Con las cargos etéreas y la larga vida útil, los elfos están en casa con el poder de la naturaleza, floreciendo en luz y oscuro por igual.",
     /*Velocidad*/       0, 
     /*Subrazas*/        createElfSubclass(),
     /*Proficiencies*/   [new Weapon("Espada Corta"),
@@ -25,30 +25,30 @@ function createElf() {
                                     new Weapon("Arco Recurvo"),
                                     new Weapon("Longbow"),
                                     new SvThrow("Percepción")],
-                    "../recursos/iconsRace/Race_Elf.png",
-                    createElfFeat()
+    /*Imagen*/         "../recursos/iconsRace/Race_Elf.png",
+    /*Features*/       createElfFeat()
     );
     return elf;
 }
 
 function createDrow() {
-    let drow = new Race("Drow", 
-    /*Desc*/            "Driven to the Underdark, most drow have adopted a ruthless pragmatism. While the Lolth-sworn delight in the goddess' evil tenets, the Seldarine reject Her attempt to overthrow the leader of the elven pantheon.",
+    const drow = new Race("Drow", 
+    /*Desc*/            "Impulsado al Underdark, la mayoría de los drow han adoptado un despiadado pragmatismo.Mientras que el deleite de Lolth en los principios malvados de la Diosa, los Seldarine rechazan su intento de derrocar al líder del Panteón Elven.",
     /*Velocidad*/        30, 
     /*Subrazas*/         createDrowSubclass(30),
     /*Proficiencies*/    [new Weapon("Estoque"),
                                     new Weapon("Espada Corta"),
                                     new Weapon("Ballesta de Mano"),
                                     new SvThrow("Percepción")],
-                    "../recursos/iconsRace/Race_Drow.png",
-                    createDrowFeat()
+    /*Imagen*/          "../recursos/iconsRace/Race_Drow.png",
+    /*Features*/        createDrowFeat()
     );
     return drow;
 }
 
 function createHalfElf() {
-    let halfElf = new Race("Half-Elf", 
-    /*Desc*/               "Curious, ambitious, and versatile, half-elves are welcome everywhere, but struggle without a community to call their own.",
+    const halfElf = new Race("Half-Elf", 
+    /*Desc*/               "Curiosos, ambiciosos y versátiles, medios, son bienvenidos en todas partes, pero luchan sin una comunidad para llamar a la suya.",
     /*Velocidad*/           0, 
     /*Subrazas*/            createHalfElfSubclass(),
     /*Proficiencies*/       [new Weapon("Lanzas"),
@@ -57,78 +57,78 @@ function createHalfElf() {
                                         new Weapon("Guja"),
                                         new Armor("Light Armour"),
                                         new Armor("Shields")],
-                                  "../recursos/iconsRace/Race_Half-Elf.png",
-                                  createHalfElfFeat()
+    /*Imagen*/              "../recursos/iconsRace/Race_Half-Elf.png",
+    /*Features*/            createHalfElfFeat()
     );
     return halfElf;
 }
 
 function createHalfOrc() {
-    let halfOrc = new Race("Half-Orc", 
-    /*Desc*/               "Creatures of intense emotion, half-orcs are more inclined to act than contemplate - whether the rage burning their bodies compels them to fight, or the love filling their hearts inspires acts of incredible kindness.",
+    const halfOrc = new Race("Half-Orc", 
+    /*Desc*/               "Las criaturas de emociones intensas, las medias órgidas están más inclinadas a actuar que contemplar, ya sea que la ira quema sus cuerpos los obliga a luchar, o el amor que llena sus corazones inspira actos de increíble amabilidad.",
     /*Velocidad*/           30, 
     /*Subrazas*/            null, 
     /*Proficiencies*/       [new SvThrow("Intimidación")],
-                            "../recursos/iconsRace/Race_Half-Orc.png",
-                            createHalfOrcFeat()
+    /*Imagen*/              "../recursos/iconsRace/Race_Half-Orc.png",
+    /*Features*/            createHalfOrcFeat()
     );
     return halfOrc;
 }
 
 function createHalfling() {
-    let halfling = new Race("Halfling", 
-    /*Desc*/                "Small yet capable, halflings prefer the comforts of home and hearth - but their natural luck and dexterity makes them fine adventurers.",
+    const halfling = new Race("Halfling", 
+    /*Desc*/                "Pequeños pero capaces, los medianos prefieren las comodidades del hogar y el hogar, pero su suerte y destreza natural los convierte en buenos aventureros.",
     /*Velocidad*/            25, 
     /*Subrazas*/             createHalflingSubrace(25),
     /*Proficiencies*/        null,
-                            "../recursos/iconsRace/Race_Halfling.png",
-                            createHalflingFeat()
+    /*Imagen*/               "../recursos/iconsRace/Race_Halfling.png",
+    /*Features*/             createHalflingFeat()
     );
     return halfling;
 }
 
 function createDwarf() {
-    let dwarf = new Race("Dwarf", 
-    /*Desc*/             "The most common face in Faerûn, humans are known for their tenacity, creativity, and endless capacity for growth.",
+    const dwarf = new Race("Dwarf", 
+    /*Desc*/             "La cara más común en Faerûn, los humanos son conocidos por su tenacidad, creatividad y capacidad interminable de crecimiento.",
     /*Velocidad*/         25, 
     /*Subrazas*/          createDwarfSubrace(25),
     /*Proficiencies*/     [new Weapon("Hacha de Guerra"),
-                                    new Weapon("Hacha de Mano"),
-                                    new Weapon("Martillo ligero"),
-                                    new Weapon("Martillo de guerra")],
-                          "../recursos/iconsRace/Race_Dwarf.png",
-                          createDwarfFeat()
+                            new Weapon("Hacha de Mano"),
+                            new Weapon("Martillo ligero"),
+                            new Weapon("Martillo de guerra")],
+    /*Imagen*/             "../recursos/iconsRace/Race_Dwarf.png",
+    /*Features*/           createDwarfFeat()
     );
     return dwarf;
 }
 
 function createGnome() {
-    let gnome = new Race("Gnome", 
-    /*Desc*/             "As durable and unyielding as their homes of stone, dwarves are some of the finest warriors, miners, and smiths of Faerûn.",
+    const gnome = new Race("Gnome", 
+    /*Desc*/              "Tan duraderos e inquebrantables como sus casas de piedra, los enanos son algunos de los mejores guerreros, mineros y Smiths of Faerûn.",
     /*Velocidad*/         0, 
-    /*Subrazas*/        createGnomeSubrace(25),
-    /*Proficiencies*/   null,
-                        "../recursos/iconsRace/Race_Gnome.png",
-                        createGnomeFeat()
+    /*Subrazas*/          createGnomeSubrace(25),
+    /*Proficiencies*/     null,
+    /*Imagen*/            "../recursos/iconsRace/Race_Gnome.png",
+    /*Features*/          createGnomeFeat()
     )
     return gnome;
 }
 
 function createTiefling() {
-    let tiefling = new Race("Tiefling", 
-    /*Desc*/                "Descended from devils of the Nine Hells, tieflings face constant suspicion in Faerûn. Thankfully, their arcane abilities make them natural survivors.",
+    const tiefling = new Race("Tiefling", 
+    /*Desc*/                "Descendiendo de los demonios de los nueve infiernos, los Tieflings enfrentan una sospecha constante en Faerûn.Afortunadamente, sus habilidades arcanas los convierten en sobrevivientes naturales.",
     /*Velocidad*/            30, 
     /*Subrazas*/             createTieflingSubrace(30),
     /*Proficiencies*/        null,
-                              "../recursos/iconsRace/Race_Tiefling.png",
-                              createTieflingFeat()
+    /*Imagen*/               "../recursos/iconsRace/Race_Tiefling.png",
+    /*Features*/             createTieflingFeat()
     );
     return tiefling;
 }
 
 function createGithyanki() {
-    let githyanki = new Race("Githyanki",
-    /*Desc*/                 "With a ruthlessness borne from mind flayer enslavement, githyanki ride the Astral Sea atop red dragons, bringing their silver swords and psionic might to bear against any trace of the illithid menace.",
+    const githyanki = new Race("Githyanki",
+    /*Desc*/                 "Con una crueldad de esclavitud del desinterés mental, Githyanki viaja en el Mar Astral sobre los dragones rojos, trayendo sus espadas plateadas y su poderoso poder para soportar cualquier rastro de la amenaza de Illithid.",
     /*Velocidad*/             0,
     /*Subrazas*/              null,
     /*Proficiencies*/         [new Weapon("Espada Corta"),
@@ -136,20 +136,20 @@ function createGithyanki() {
                                           new Weapon("Mandoble"),
                                           new Armor("Armadura ligera"),
                                           new Armor("Armadura Media")],
-                               "../recursos/iconsRace/Race_Githyanki.png",
-                               createGithyankiFeat()
+    /*Imagen*/                "../recursos/iconsRace/Race_Githyanki.png",
+    /*Features*/              createGithyankiFeat()
     );
     return githyanki;
 }
 
 function createDragonborn() {
-    let dragonborn = new Race("Dragonborn", 
-    /*Desc*/                  "A proud race that values clan and skills above all else. Once enslaved by dragons, they strive to be self-sufficient, not wanting to be beholden to anyone, not even the gods.",
+    const dragonborn = new Race("Dragonborn", 
+    /*Desc*/                  "Una raza orgullosa que valora el clan y las habilidades por encima de todo.Una vez esclavizados por dragones, se esfuerzan por ser autosuficientes, no queriendo estar en deuda con nadie, ni siquiera con los dioses.",
     /*Velocidad*/              30, 
     /*Subrazas*/               createDragonbornSubrace(30),
     /*Proficiencies*/          null,
-                                "../recursos/iconsRace/Race_Dragonborn.png",
-                                null
+    /*Imagen*/                 "../recursos/iconsRace/Race_Dragonborn.png",
+    /*Features*/               null
     );
     return dragonborn;
 }

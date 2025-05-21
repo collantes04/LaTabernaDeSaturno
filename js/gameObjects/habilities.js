@@ -24,15 +24,15 @@ class ability{
 
     sumabilityPoint(index){
         if (this.pointpool > 0) {
-            this.abilityPoints[index] += 1;
-            this.pointpool -= 1;
+            this.abilityPoints[index]++;
+            this.pointpool--;
         }
     }
 
     subabilityPoint(index) {
         if (this.pointpool < 27) {
             this.abilityPoints[index]--;
-            this.pointpool += 1;
+            this.pointpool++;
         }
     }
 

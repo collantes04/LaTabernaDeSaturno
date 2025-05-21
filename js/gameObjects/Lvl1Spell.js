@@ -22,6 +22,10 @@ class Spell {
     get img(){
         return this._img;
     }
+
+    get dado(){
+        return this._dado;
+    }
 }
 
     const amistadAnimal = new Spell("Amistad animal", "Convence a una bestia para que no te ataque.",

@@ -5,9 +5,10 @@ function createability() {
 class ability{
     constructor(){
         this.pointpool = 27;
-        this.abilityPoints = [0, 0, 0, 0, 0, 0];
-        this.abilityModif = [];
+        this.abilityPoints = [8, 8, 8, 8, 8, 8]; 
+        this.abilityModif = [0, 0, 0, 0, 0, 0];
         this.abilityNames = ['Fuerza', 'Destreza', 'Complexión', 'Inteligencia', 'Sabiduría', 'Carísma'];
+          this.strengthMap = new Map(); 
     }
 
     getabilityPoints(index) {
@@ -22,85 +23,38 @@ class ability{
         return this.pointpool;
     }
 
-    sumabilityPoint(index){
+    sumabilityPoint(index) {
         if (this.pointpool > 0) {
             this.abilityPoints[index] += 1;
+            this.pointpool -= 1;
+            this.calculateabilityModifs(index); // ← actualiza el modificador
         }
-        this.pointpool -= 1;
     }
 
-    subabilityPoint(index) {
-        if (this.pointpool < 27) {
+     subabilityPoint(index) {
+        if (this.pointpool < 27 && this.abilityPoints[index] > 8) {
             this.abilityPoints[index] -= 1;
+            this.pointpool += 1;
+            this.calculateabilityModifs(index); // ← actualiza el modificador
         }
-        this.pointpool += 1;
     }
+
+    
 
     calculateabilityModifs(index) {
-        switch (this.abilityPoints[index]) {
-            case 1:
-                this.abilityModif[index] =  "-5";
-                break;
-        
-            case 2 || 3:
-                this.abilityModif[index] =  "-4";
-                break;
+        const score = this.abilityPoints[index];
+        const mod = Math.floor((score - 10) / 2);
+        this.abilityModif[index] = mod;
+        return mod;
+    }
 
-            case 4 || 5:
-                this.abilityModif[index] =  "-3";
-                break;
-
-            case 6 || 7:
-                this.abilityModif[index] =  "-2";
-                break;
-
-            case 8 || 9:
-                this.abilityModif[index] =  "-1";
-                break;
-
-            case 10 || 11:
-                this.abilityModif[index] =  "0";
-                break;
-
-            case 12 || 13:
-                this.abilityModif[index] =  "+1";
-                break;
-
-            case 14 || 15:
-                this.abilityModif[index] =  "+2";
-                break;
-
-            case 16 || 17:
-                this.abilityModif[index] =  "+3";
-                break;
-                
-            case 18 || 19:
-                this.abilityModif[index] =  "+4";
-                break;
-
-            case 20 || 21:
-                this.abilityModif[index] =  "+5";
-                break;
-
-            case 22 || 23:
-                this.abilityModif[index] =  "+6";
-                break;
-
-            case 24 || 25:
-                this.abilityModif[index] =  "+7";
-                break;
-
-            case 26 || 27:
-                this.abilityModif[index] =  "+8";
-                break;
-
-            case 28 || 29:
-                this.abilityModif[index] =  "+9";
-                break;
-
-            case 30:
-                this.abilityModif[index] =  "+10";
-                break;
+    
+   
+    setabilityPoints(index, value) {
+        if (index >= 0 && index < this.abilityPoints.length) {
+            this.pointpool -= (value - this.abilityPoints[index]);  
+            this.abilityPoints[index] = value;
+            this.calculateabilityModifs(index); // ← actualiza el modificador
         }
     }
 
@@ -124,7 +78,7 @@ class ability{
         this.strengthMap.set(string, true);
     }
 
-    setStrengthProficiency(string){
-        this.strengthMap.set(string, true);
+      setCharismaProficiency(string) {
+        this.strengthMap.set(string, true); // ← reemplazado el duplicado de Strength
     }
 }
