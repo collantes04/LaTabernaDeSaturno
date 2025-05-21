@@ -61,17 +61,17 @@ function createWarlockSubclass() {
 
 class Subclass {
     constructor(name, desc, image, proficiencies, spells, features) {
-        this.name = name;
-        this.desc = desc;
+        this._name = name;
+        this._desc = desc;
         this.image = image;
         this.proficiencies = proficiencies;
         this.spells = spells;
         this.features = features;
     }
     get name(){
-        return this.name;
+        return this._name;
     }
     get desc(){
-        return this.desc;
+        return this._desc;
     }
 }

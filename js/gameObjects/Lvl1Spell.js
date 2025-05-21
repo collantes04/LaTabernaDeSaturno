@@ -1,7 +1,7 @@
 
 class Spell {
     constructor(name, desc, img, dado, nivel) {
-        this.name = name;
+        this._name = name;
         this.desc = desc;
         this.img = img;
         this.dado = dado;
@@ -9,7 +9,7 @@ class Spell {
     }
     
     get name(){
-        return this.name;
+        return this._name;
     }
 }
 

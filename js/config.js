@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonRace = document.getElementById('mostrarRace');
     const botonSubrace = document.getElementById('mostrarSubrace');
     const botonClass = document.getElementById('mostrarClass');
-    const botonSubclase = document.getElementById('mostrarSubclase')
+    const botonSubclass = document.getElementById('mostrarSubclase')
     const botonBackground = document.getElementById('mostrarBackground');
     const botonAbilities = document.getElementById('mostrarAbilities');
     const mainscreen = document.getElementById('mainscreen');
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let razaSeleccionada = null;
     let claseSeleccionada = null;
     let razaGuardar = null;
+    let subrazaGuardada = null;
     
     function getability() {
         return ability;
@@ -143,12 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < subrazasHumanas.length; i++) {
+        for (let i = 0; i < subrace.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonSubraza${i}" type="button" onclick="seleccionarSubraza(${i})">
 
-                        <div class="textoClases">${subrace.SubraceName}</div>
+                        <div class="textoClases">${subrace[i].SubraceName}</div>
                     </button>
                 </div>
             `;
@@ -169,8 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
         window.seleccionarSubraza = function(index) {
             const infoPersonaje = document.getElementById('infoPersonaje');
-            const info = subrazasHumanas[index].descripcion;
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subrace[index].SubraceName}</strong>. ${subrace.SubraceDesc}</p>`;
+            const info = subrace[index].descripcion;
+            subrazaGuardada = subrace[index];
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subrace[index].SubraceName}</strong>. ${subrace[index].SubraceDesc}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -206,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < Clase.length; i++) {
+        for (let i = 0; i < clases.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonClases${i}" type="button" onclick="seleccionarClase(${i})">
@@ -243,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
             claseSeleccionadaIndex = index;
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = claseSeleccionada.Descripcion;
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${claseSeleccionada}</strong>. ${info}</p>`;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${claseSeleccionada.Nombre}</strong>. ${info}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -273,8 +275,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="${claseSeleccionada.Imagen}" alt="${claseSeleccionada}"> `;
                 }
                 informacionRazaSeleccionada.innerHTML = `
-                    <p><strong> ${claseSeleccionada.Nombre}</strong></p>
-                    <p><strong>${claseSeleccionada}</strong>: Level 1</p>
+                    <p><strong> ${razaGuardar.raceName} - ${subrazaGuardada.SubraceName}</strong></p>
+                    <p><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
                 `;
             }
             if ( claseSeleccionada.subclase !== null) {
@@ -284,15 +286,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
         };
-        function mostrarFeaturesDeClase(clase) {
+        
+        function mostrarFeaturesDeClase(claseSeleccionada) {
             const features = claseSeleccionada.hechizo;
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
-            features.forEach((feature, index) => {
+            features.forEach((feature) => {
                 const boton = document.createElement('button');
                 boton.className = 'feature-button';
-                boton.innerText =features ;
+                boton.innerText = features;
         
                 // Evento hover
                 boton.addEventListener('mouseenter', () => {
