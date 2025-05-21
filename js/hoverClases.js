@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function(){
             controlClase = null;
             return;
         }
-        let titulo = barbaro.getNombre();
+        let titulo = barbaro.Nombre;
         let descripcion = barbaro.Descripcion;
-        let imagen = barbaro.getImagen();
+        let imagen = barbaro.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = barbaro;
@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = bardo.getNombre();
+        let titulo = bardo.Nombre;
         let descripcion = bardo.Descripcion;
-        let imagen = bardo.getImagen();
+        let imagen = bardo.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = bardo;
@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = clerigo.getNombre();
+        let titulo = clerigo.Nombre;
         let descripcion = clerigo.Descripcion;
-        let imagen = clerigo.getImagen();
+        let imagen = clerigo.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = clerigo;
@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = druida.getNombre();
+        let titulo = druida.Nombre;
         let descripcion = druida.Descripcion;
-        let imagen = druida.getImagen();
+        let imagen = druida.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = druida;
@@ -148,9 +148,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = guerrero.getNombre();
+        let titulo = guerrero.Nombre;
         let descripcion = guerrero.Descripcion;
-        let imagen = guerrero.getImagen();
+        let imagen = guerrero.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = guerrero;
@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = monje.getNombre();
+        let titulo = monje.Nombre;
         let descripcion = monje.Descripcion;
-        let imagen = monje.getImagen();
+        let imagen = monje.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = monje;
@@ -192,9 +192,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = paladin.getNombre();
+        let titulo = paladin.Nombre;
         let descripcion = paladin.Descripcion;
-        let imagen = paladin.getImagen();
+        let imagen = paladin.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = paladin;
@@ -214,9 +214,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = explorador.getNombre();
+        let titulo = explorador.Nombre;
         let descripcion = explorador.Descripcion;
-        let imagen = explorador.getImagen();
+        let imagen = explorador.Imagen;
 
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = explorador;
@@ -237,9 +237,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = picaro.getNombre();
+        let titulo = picaro.Nombre;
         let descripcion = picaro.Descripcion;
-        let imagen = picaro.getImagen();
+        let imagen = picaro.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = picaro;
@@ -260,9 +260,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = hechicero.getNombre();
+        let titulo = hechicero.Nombre;
         let descripcion = hechicero.Descripcion;
-        let imagen = hechicero.getImagen();
+        let imagen = hechicero.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = hechicero;
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         let titulo = brujo.Nombre;
         let descripcion = brujo.Descripcion;
-        let imagen = brujo.getImagen();
+        let imagen = brujo.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = brujo;
@@ -306,9 +306,9 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = mago.getNombre();
+        let titulo = mago.Nombre;
         let descripcion = mago.Descripcion;
-        let imagen = mago.getImagen();
+        let imagen = mago.Imagen;
         
         divCreado = setEstructura(titulo, descripcion, imagen);
         controlClase = mago;
