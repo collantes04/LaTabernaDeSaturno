@@ -1,17 +1,17 @@
 
 function createBarbarian() {
     return new Clase("Barbaro", "Guerrero salvaje que canaliza la furia primitiva para desatar una fuerza brutal en combate.",
-        "/recursos/iconsClass/barbarian.png", null, null);
+        "/recursos/iconsClass/barbarian.png", [], [], null);
 }
 
 function createBard() {
     return new Clase("Bardo", "Artista versátil que utiliza magia, música y conocimiento para apoyar al grupo y manipular a sus enemigos.",
-        "/recursos/iconsClass/bard.png", bardoSpells(), null);
+        "/recursos/iconsClass/bard.png", [], bardoSpells(), null);
 }
 
 function createClerigo() {
     return new Clase("Clerigo", "Devoto canalizador del poder divino, experto en curación, protección y combate contra lo profano.",
-        "/recursos/iconsClass/cleric.png", clerigoSpells(), createClericSubclasses());
+        "/recursos/iconsClass/cleric.png", [], clerigoSpells(), createClericSubclasses());
 }
 
 function createDruid() {
@@ -21,17 +21,17 @@ function createDruid() {
 
 function createFighter() {
     return new Clase("Guerrero", "Maestro del combate armado, adaptable a cualquier estilo de lucha gracias a su entrenamiento y disciplina.",
-        "/recursos/iconsClass/figther.png", null, null);
+        "/recursos/iconsClass/figther.png", [], [], null);
 }
 
 function createMonk() {
     return new Clase("Monje", "Luchador espiritual que canaliza su energía interna o ki para realizar hazañas físicas y místicas.",
-        "/recursos/iconsClass/monk.png", null, null);
+        "/recursos/iconsClass/monk.png", [], [], null);
 }
 
 function createPaladin() {
     return new Clase("Paladin", "Campeón sagrado que combina habilidades marciales con magia divina, guiado por un juramento de justicia.",
-        "/recursos/iconsClass/paladin.png", null, createPaladinSubclasses());
+        "/recursos/iconsClass/paladin.png", [], [], createPaladinSubclasses());
 }
 
 function createRanger() {
@@ -41,8 +41,8 @@ function createRanger() {
 
 function createRogue() {
     return new Clase("Picaro", "Especialista en el sigilo, los trucos y los golpes letales; maestro del subterfugio y la sorpresa.",
-        "/recursos/iconsClass/rogue.png", null, null);
-}
+        "/recursos/iconsClass/rogue.png", [], [], null);
+}   
 
 function createSorcerer() {
     return new Clase("Hechicero", "Lanzador de conjuros que obtiene su poder mágico de una herencia sobrenatural o una fuerza innata.",
@@ -83,7 +83,7 @@ class Clase{
         this.desc  = desc;
         this.imagen = imagen;
         this.cantrip = cantrip;
-        this.spells  = spells;
+        this._spells  = spells;
         this.subclass = subclass;
     }
 

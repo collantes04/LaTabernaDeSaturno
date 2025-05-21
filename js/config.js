@@ -100,8 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const features = raza.raceFeat ;
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
+
+            if(features == null){
+                console.log("No tiene features");
+                return;
+            }
         
-            features.forEach((feature, index) => {
+            features.forEach((feature) => {
                 const boton = document.createElement('button');
                 boton.className = 'feature-button';
                 let img = document.createElement('img');
@@ -332,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let html = `<div id="grupoSelectorPersonaje">`;
     
-        for (let i = 0; i < subclasses.length; i++) {
+        for (let i = 0; i < subclasse.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonSubclase${i}" type="button" onclick="seleccionarSubclase(${i})">
@@ -359,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.seleccionarSubclase = function(index) {
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = subclasse.desc;
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subclasses.name}</strong>. ${subclasses[index].SubclassDesc}</p>`;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subclasse.name}</strong>. ${subclasse[index].SubclassDesc}</p>`;
     
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -378,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
     
             const subclaseIndex = selectedButton.id.replace('botonSubclase', '');
-            const subclase = subclasses[subclaseIndex];
+            const subclase = subclasse[subclaseIndex];
     
             let charsheet1 = document.getElementById('charsheet');
     
