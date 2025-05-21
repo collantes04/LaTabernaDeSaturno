@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
         let titulo = barbaro.getNombre();
-        let descripcion = barbaro.getDescripcion();
+        let descripcion = barbaro.Descripcion;
         let imagen = barbaro.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = bardo.getNombre();
-        let descripcion = bardo.getDescripcion();
+        let descripcion = bardo.Descripcion;
         let imagen = bardo.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = clerigo.getNombre();
-        let descripcion = clerigo.getDescripcion();
+        let descripcion = clerigo.Descripcion;
         let imagen = clerigo.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = druida.getNombre();
-        let descripcion = druida.getDescripcion();
+        let descripcion = druida.Descripcion;
         let imagen = druida.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = guerrero.getNombre();
-        let descripcion = guerrero.getDescripcion();
+        let descripcion = guerrero.Descripcion;
         let imagen = guerrero.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = monje.getNombre();
-        let descripcion = monje.getDescripcion();
+        let descripcion = monje.Descripcion;
         let imagen = monje.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = paladin.getNombre();
-        let descripcion = paladin.getDescripcion();
+        let descripcion = paladin.Descripcion;
         let imagen = paladin.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = explorador.getNombre();
-        let descripcion = explorador.getDescripcion();
+        let descripcion = explorador.Descripcion;
         let imagen = explorador.getImagen();
 
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = picaro.getNombre();
-        let descripcion = picaro.getDescripcion();
+        let descripcion = picaro.Descripcion;
         let imagen = picaro.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = hechicero.getNombre();
-        let descripcion = hechicero.getDescripcion();
+        let descripcion = hechicero.Descripcion;
         let imagen = hechicero.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', function(){
             return;
         }
 
-        let titulo = brujo.getNombre();
-        let descripcion = brujo.getDescripcion();
+        let titulo = brujo.Nombre;
+        let descripcion = brujo.Descripcion;
         let imagen = brujo.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         let titulo = mago.getNombre();
-        let descripcion = mago.getDescripcion();
+        let descripcion = mago.Descripcion;
         let imagen = mago.getImagen();
         
         divCreado = setEstructura(titulo, descripcion, imagen);

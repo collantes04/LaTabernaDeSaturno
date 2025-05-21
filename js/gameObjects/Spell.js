@@ -8,6 +8,5 @@ class Spell {
     }
     get name(){
         return this.name;
-        
     }
 }

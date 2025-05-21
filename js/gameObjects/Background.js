@@ -31,7 +31,27 @@ function createFolkHero() {
 }
 
 function createGuildArtisan() {
-    let guildArtisan = new Background("Artesano")
+    let guildArtisan = new Background("Artesano", "Your skill in a particular craft has earned you membership in a mercantile guild, offering privileges and protection while engaging in your art. Repairing and discovering rare crafts will bring new inspiration.", ["Percepción", "Persuasión"]);
+    abilities.setWisdomProficiency("Percepción");
+    abilities.setCharismaProficiency("Persuasión");
+}
+
+function createHauntedOne() {
+    let hauntedOne = new Background("Hechizado", "A wicked moment, person, or thing that cannot be slain by sword or spell haunts your mind and flickers in your peripheral vision. You carry it wherever your adventure takes you - or perhaps it carries you.", ["Medicina", "Intimidación"]);
+    abilities.setWisdomProficiency("Medicina");
+    abilities.setCharismaProficiency("Intimidación");
+}
+
+function createNoble() {
+    let noble = new Background("Noble", "You were raised in a family among the social elite, accustomed to power and privilege. Accumulating renown, power, and loyalty will raise your status.", ["Historia", "Persuasión"]);
+    abilities.setInteligenceProficiency("Historia");
+    abilities.setCharismaProficiency("Persuasión");
+}
+
+function createOutlander() {
+    let outlander = new Background("Exiliado", "You grew up in the wilds, learning to survive far from the comforts of civilisation. Surviving unusual hazards of the wild will enhance your prowess and understanding.", ["Atletismo", "Supervivencia"]);
+    abilities.setStrengthProficiency("Atletismo");
+    abilities.set
 }
 
 class Background {

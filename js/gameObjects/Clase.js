@@ -1,36 +1,36 @@
 function createBarbarian() {
     return new Clase("Barbaro", "Guerrero salvaje que canaliza la furia primitiva para desatar una fuerza brutal en combate.",
-        "recursos/classportraits/barbarian.png", [], null);
+        "recursos/classportraits/barbarian.png", null, null);
 }
 
 function createBard() {
     return new Clase("Bardo", "Artista versátil que utiliza magia, música y conocimiento para apoyar al grupo y manipular a sus enemigos.",
-        "recursos/classportraits/bard.png", [], null);
+        "recursos/classportraits/bard.png", [amistadAnimal, perdicion, personaEncantadora, curarHeridas,disfrazarse,susurrosDisonantes,fuegoHada,caidaPluma,palabraSanacion,heroismo,caminanteLargo,dormir,hablarAnimales,horribleRisaTasha,ondaTrueno], null);
 }
 
 function createClerigo() {
     return new Clase("Clerigo", "Devoto canalizador del poder divino, experto en curación, protección y combate contra lo profano.",
-        "recursos/classportraits/cleric.png", [], createClericSubclasses());
+        "recursos/classportraits/cleric.png", [perdicion, bendecir, dominio, cDAgua, pernoGuia, palabraSanacion, infligirHeridas, proteccionContraMalBien, santuario, escudoFe], createClericSubclasses());
 }
 
 function createDruid() {
     return new Clase("Druida", "Guardián de la naturaleza con la habilidad de transformarse en animales y conjurar la fuerza del mundo natural.",
-        "recursos/classportraits/druida.png", [], null);
+        "recursos/classportraits/druida.png", [amistadAnimal, personaEncantadora, cDAgua, mejoraSalto, ], null);
 }
 
 function createFighter() {
     return new Clase("Guerrero", "Maestro del combate armado, adaptable a cualquier estilo de lucha gracias a su entrenamiento y disciplina.",
-        "recursos/classportraits/fighter.png", [], null);
+        "recursos/classportraits/fighter.png", null, null);
 }
 
 function createMonk() {
     return new Clase("Monje", "Luchador espiritual que canaliza su energía interna o ki para realizar hazañas físicas y místicas.",
-        "recursos/classportraits/monje.png", [], null);
+        "recursos/classportraits/monje.png", null, null);
 }
 
 function createPaladin() {
     return new Clase("Paladin", "Campeón sagrado que combina habilidades marciales con magia divina, guiado por un juramento de justicia.",
-        "recursos/classportraits/paladin.png", [], createPaladinSubclasses());
+        "recursos/classportraits/paladin.png", null, createPaladinSubclasses());
 }
 
 function createRanger() {
@@ -40,7 +40,7 @@ function createRanger() {
 
 function createRogue() {
     return new Clase("Picaro", "Especialista en el sigilo, los trucos y los golpes letales; maestro del subterfugio y la sorpresa.",
-        "recursos/classportraits/rogue.png", [], null);
+        "recursos/classportraits/rogue.png", null, null);
 }
 
 function createSorcerer() {
@@ -82,7 +82,7 @@ class Clase{
         this.desc  = desc;
         this.imagen = imagen;
         this.cantrip = cantrip;
-        this.hechizo = spells;
+        this.hechizo = hechizo;
         this.subclase = subclass;
     }
 

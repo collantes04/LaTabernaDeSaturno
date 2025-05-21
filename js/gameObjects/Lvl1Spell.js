@@ -201,7 +201,7 @@ function createHechizosLvl1(){
         rayoEnfermedad,
         santuario,
         golpeAbrasador,
-        escudo,
+        blindaje,
         escudoFe,
         dormir,
         hablarAnimales,
