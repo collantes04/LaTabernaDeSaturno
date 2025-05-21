@@ -284,12 +284,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(subrazaGuardada != null){
                     informacionRazaSeleccionada.innerHTML = `
                     <p><strong> ${razaGuardar.raceName} - ${subrazaGuardada.SubraceName}</strong></p>
-                    <p><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
+                    <p id ="informacionClase"><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
                 `;
                 } else {
                     informacionRazaSeleccionada.innerHTML = `
                     <p><strong> ${razaGuardar.raceName}</strong></p>
-                    <p><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
+                    <p><strong>${claseSeleccionada.Nombre} </strong>: Level 1</p>
                 `;
                 }
 
@@ -301,6 +301,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 botonBackground.click(); 
 
             }
+
+            /* prueba*/
+             const arrayHechizos = claseSeleccionada.spells;
+            if (arrayHechizos && arrayHechizos.length > 0) {
+                let hechizosRow = document.getElementById('hechizos-row');
+                if (!hechizosRow) {
+                    hechizosRow = document.createElement('div');
+                    hechizosRow.id = 'hechizos-row';
+                    hechizosRow.style.display = 'flex';
+                    hechizosRow.style.flexWrap = 'wrap';
+                    hechizosRow.style.gap = '10px';
+                    charsheet.appendChild(hechizosRow);
+                } else {
+                    hechizosRow.innerHTML = ''; // limpiar si ya había
+                }
+
+                for (let i = 0; i < arrayHechizos.length; i++) {
+                    const img = document.createElement('img');
+                    img.setAttribute('src', arrayHechizos[i].img);
+                    img.setAttribute('class', 'feature-button');
+                    img.style.width = '60px';
+                    img.style.height = '60px';
+                    img.style.objectFit = 'cover';
+                    hechizosRow.appendChild(img);
+                }
+            }
+
+
         };
         
         function mostrarHechizosClases(claseSeleccionada) {
@@ -434,7 +462,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const subclaseIndex = selectedButton.id.replace('botonSubclase', '');
             const subclase = subclasse[subclaseIndex];
     
-            let charsheet1 = document.getElementById('charsheet');
+            const infoClase = document.getElementById('informacionClase');
+            if (infoClase && subclase) {
+                infoClase.innerHTML += ` ${subclase.name}`;
+            }
     
             if (typeof botonBackground !== 'undefined') {
                 botonBackground.click();
@@ -603,10 +634,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     botonGuardar.addEventListener('click', function () {
         const charsheet = document.getElementById('charsheet');
-        if (!charsheet) {
-            alert('No se encontró el div charsheet');
-            return;
-        }
 
         // Buscar si ya hay un contenedor para las stats
         let statsContainer = document.getElementById('stats-container');

@@ -66,6 +66,8 @@
     
     }
     </script>
+
+    
     <div id="padre">
         <header>
             <div id="cabecera">
@@ -107,6 +109,10 @@
                             <button type="button" id="mostrarAbilities" class="abilities" class="configButton">
                                 Habilidades
                             </button>
+
+                            <textarea id="ponerNombre" rows="1" placeholder="Nombre del personaje" maxlength="50"></textarea>
+
+
                         </div>
                 
                         <div id="mainscreen">
@@ -119,6 +125,7 @@
                 
                         <div id="charsheet">
                             <div id="ImagenClaseSeleccionada"></div>
+                            <div id="nombrePersonaje" style="color: white; margin-bottom: 8px;"></div>
                             <div id="informacionRazaSeleccionada"></div>
                             <div id="informacionBackgroundSeleccionada"></div>
                             <button type="button" id="confirmar" onclick="generarPDF()">Crear personaje</button>
@@ -134,4 +141,12 @@
     <footer>
     </footer>
 </body>
+<script>
+    const inputNombre = document.getElementById('ponerNombre');
+    const nombrePersonajeDiv = document.getElementById('nombrePersonaje');
+
+    inputNombre.addEventListener('input', () => {
+        nombrePersonajeDiv.textContent = inputNombre.value;
+    });
+</script>
 </html>

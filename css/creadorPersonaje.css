@@ -52,12 +52,11 @@ nav {
     está dentrro del formulario y no tiene color A PRIORI*/
 }
 
-/*De aqui para arriba no se toca*/
-
 #config{
     width: 21vh;
     height: 70vh;
     margin-top: 5vh;
+    backdrop-filter: blur(3px);
     /*background-color: aqua; */
     background: #0a0a00;
     background: linear-gradient(145deg,rgba(10, 10, 0, 0.14) 0%, rgba(48, 44, 0, 0.1) 50%, rgba(71, 58, 30, 0.2) 100%);
@@ -74,8 +73,16 @@ nav {
     background-color: rgb(170, 168, 137);
 }
 
+#ponerNombre{
+    width: 18vh;
+    height: 5em;
+    margin-top: 1vh;
+    margin-left: 1.5vh;
+    resize: none;
+}
+
 .habilidad-columna {
-     display: flex;
+    display: flex;
     flex-wrap: wrap;              /* Permite que pasen a la siguiente fila */
     justify-content: center;      /* Centra horizontalmente */
     gap: 50px 30px;               /* 50px vertical entre filas, 30px horizontal entre columnas */
@@ -124,7 +131,8 @@ nav {
     position: relative;
 
     background: RGBA(11,8,9,255);
-    background: linear-gradient(145deg,rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);  
+    background: linear-gradient(145deg,rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);
+    backdrop-filter: blur(8px);
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -140,6 +148,7 @@ nav {
     background: RGBA(11,8,9,255);
     background: linear-gradient(145deg,rgb(0, 0, 0) 0%, rgb(39, 37, 33) 50%, rgba(70, 59, 49, 0.68) 100%);  
     color: #9be6f3;
+    backdrop-filter: blur(8px);
 
     font-family: 'Arial', sans-serif; 
     font-size: 1.5em;  
@@ -168,7 +177,7 @@ nav {
 
     display: flex;
     flex-direction: column;       /* Para apilar contenido verticalmente */
-
+    backdrop-filter: blur(8px);
     text-align: center;  
     position: relative;    
 
@@ -327,6 +336,7 @@ footer{
         flex-wrap: wrap;
         width: 95%;
         height: auto;
+        
         padding-bottom: 1%;
         padding-top: 1%;
         margin-left: auto;

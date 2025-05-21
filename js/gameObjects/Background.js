@@ -83,7 +83,7 @@ class Background {
     constructor(name, desc,imagen, proficiency){
         this._name = name;
         this.desc = desc;
-        this._imagen=imagen
+        this._imagen = imagen
         this._proficiency = proficiency;
     }
     get name(){
