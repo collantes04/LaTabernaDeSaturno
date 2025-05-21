@@ -28,9 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mainscreen.innerHTML = '';
         let razaSeleccionadaIndex = null;
         let razaSeleccionada = '';
-
-
-    
         
         
         let html = `<div id="grupoSelectorPersonaje">`;
@@ -116,11 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 let img = document.createElement('img');
                 img.src = feature.FeatImg;
                 
-                img.style.width = '50px'; // Ajusta el tamaño según necesites
+                img.style.width = '50px'; 
                 img.style.height = '50px    ';
                 boton.appendChild(img);                
         
-                // Evento hover
                 boton.addEventListener('mouseenter', () => {
                     const book = document.getElementById('book');
                     book.innerHTML = `
@@ -544,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mainscreen.innerHTML = '';
 
     for (let i = 0; i < 6; i++) {
-        bility.setabilityPoints(i, 8); // Inicializa con 8
+        bility.setabilityPoints(i, 8); 
 
         const habilidadDiv = document.createElement('div');
         habilidadDiv.style.display = 'flex';
@@ -625,10 +621,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const botonGuardar = document.createElement('button');
-    botonGuardar.textContent = 'Guardar Stats en CharSheet';
-    botonGuardar.style.marginTop = '20px';
-    botonGuardar.style.padding = '10px 20px';
-    botonGuardar.style.fontSize = '16px';
+    botonGuardar.textContent = 'Guardar Stats';
+    botonGuardar.style.position = 'absolute';      
+    botonGuardar.style.bottom = '10px';            
+    botonGuardar.style.right = '10px';             
+    botonGuardar.style.marginTop = '0';            
+    botonGuardar.style.padding = '10px 10px';
+    botonGuardar.style.fontSize = '10px';
     botonGuardar.style.cursor = 'pointer';
     botonGuardar.setAttribute("type", "button");
 

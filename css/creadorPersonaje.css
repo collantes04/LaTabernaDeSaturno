@@ -329,6 +329,14 @@ footer{
 #cajaDado{
     text-align: center;
 }
+
+
+
+
+
+
+
+
 @media only screen and (orientation: portrait){
     #config{
         display: flex;
@@ -344,63 +352,104 @@ footer{
         gap: 1%;
     }
 
-    .race{
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1%;
-    }
-    
-    .subrace{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .class{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .background{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .abilities{
-        margin-left: auto;
-        margin-right: auto;
+    .race {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px; /* mucho menos que 10% */
     }
 
-    #mainscreen{
-        width: 90%;
-        height: 90vh;
+    .subrace, .class, .background, .abilities {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 1%;
-        
-    
-        position: relative;
-    
-        background: RGBA(11,8,9,255);
-        background: linear-gradient(145deg,rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);  
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-        justify-content: center; 
+        margin-bottom: 5px; /* agregar para unificar */
     }
-    #book{
-        width: 0;
-        height: 0;
-    }
+
+  
+   #book {
+    width: 300px;          /* tamaño fijo y compacto */
+    max-width: 90vw;       /* para que en móvil no se pase del ancho de pantalla */
+    height: auto;          /* alto automático según contenido */
+    padding: 10px;         /* un poco de espacio interior */
+    background-color: rgba(30, 30, 30, 0.8); /* fondo oscuro semi-transparente */
+    border-radius: 6px;    /* bordes redondeados */
+    color: #ccc;           /* letra clara */
+    font-size: 0.85rem;    /* letra más pequeña */
+    line-height: 1.2;      /* línea más ajustada */
+    overflow-wrap: break-word; /* para que no se salga texto largo */
+    box-sizing: border-box; /* para que padding no aumente tamaño total */
+    margin: 10px auto;     /* centrar horizontalmente y separarlo */
+}
     #charsheet{
         width: 75%;
         height: 90vh;
         margin-left: 12%;
         margin-right: 16%;
     }
-    #grupoSelectorPersonaje{
-        width: 95%;
+  #mainscreen {
+    width: 90%;
+    height: 139vh; /* ya definido */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    position: relative;
+    background: linear-gradient(145deg, rgba(11, 8, 9, 1) 0%, rgba(23, 19, 13, 1) 50%, rgba(18, 20, 21, 0.68) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    gap: 2px 6px;
+    overflow: hidden; /* opcional para que nada se salga */
+}
+
+#featureContainer {
+    width: 70%;
+    max-height: 80vh; /* limitar alto máximo al 80% de la altura del viewport */
+    overflow-y: auto; /* activar scroll vertical si se supera el alto */
+    margin: 0 auto;
+    padding: 10px;
+    background-color:transparent rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    box-sizing: border-box; /* para que padding no aumente tamaño */
+}
+
+#charsheet {
+    width: 75%;
+    height: 90vh;
+    margin-left: 12%;
+    margin-right: 16%;
+}
+@media (max-width: 600px) {
+    .habilidad-columna {
+        transform: scale(0.8);
+        transform-origin: top left;
+        display: inline-block;
+    }
+}
+#grupoSelectorPersonaje {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px 6px;
+    width: 85%;
+    height: auto; /* mejor auto para que no fuerce tamaño */
+    margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+    #grupoSelectorPersonaje {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+    .casillaSelectorPersonaje {
+        transform: scale(0.8);
+        transform-origin: top left;
+        margin: 1px;
+        padding: 2px;
+        width: 100px;
+        line-height: 1;
     }
     
     nav{
