@@ -51,7 +51,7 @@ function createNoble() {
 function createOutlander() {
     let outlander = new Background("Exiliado", "You grew up in the wilds, learning to survive far from the comforts of civilisation. Surviving unusual hazards of the wild will enhance your prowess and understanding.", ["Atletismo", "Supervivencia"]);
     abilities.setStrengthProficiency("Atletismo");
-    abilities.set
+    abilities.setWisdomProficiency("Supervivencia");
 }
 
 class Background {
