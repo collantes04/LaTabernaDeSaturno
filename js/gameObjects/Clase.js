@@ -1,3 +1,4 @@
+
 function createBarbarian() {
     return new Clase("Barbaro", "Guerrero salvaje que canaliza la furia primitiva para desatar una fuerza brutal en combate.",
         "recursos/classportraits/barbarian.png", null, null);
@@ -5,17 +6,17 @@ function createBarbarian() {
 
 function createBard() {
     return new Clase("Bardo", "Artista versátil que utiliza magia, música y conocimiento para apoyar al grupo y manipular a sus enemigos.",
-        "recursos/classportraits/bard.png", [amistadAnimal, perdicion, personaEncantadora, curarHeridas,disfrazarse,susurrosDisonantes,fuegoHada,caidaPluma,palabraSanacion,heroismo,caminanteLargo,dormir,hablarAnimales,horribleRisaTasha,ondaTrueno], null);
+        "recursos/classportraits/bard.png", bardoSpells(), null);
 }
 
 function createClerigo() {
     return new Clase("Clerigo", "Devoto canalizador del poder divino, experto en curación, protección y combate contra lo profano.",
-        "recursos/classportraits/cleric.png", [perdicion, bendecir, dominio, cDAgua, pernoGuia, palabraSanacion, infligirHeridas, proteccionContraMalBien, santuario, escudoFe], createClericSubclasses());
+        "recursos/classportraits/cleric.png", clerigoSpells(), createClericSubclasses());
 }
 
 function createDruid() {
     return new Clase("Druida", "Guardián de la naturaleza con la habilidad de transformarse en animales y conjurar la fuerza del mundo natural.",
-        "recursos/classportraits/druida.png", [amistadAnimal, personaEncantadora, cDAgua, mejoraSalto, ], null);
+        "recursos/classportraits/druida.png", druidaCantrip(), druidaSpells(), null);
 }
 
 function createFighter() {
@@ -35,7 +36,7 @@ function createPaladin() {
 
 function createRanger() {
     return new Clase("Explorador", "Aventurero ágil y autosuficiente, experto en la supervivencia, la caza y el combate en entornos hostiles.",
-        "recursos/classportraits/ranger.png", [], null);
+        "recursos/classportraits/ranger.png", null, rangerSpells(), null);
 }
 
 function createRogue() {
@@ -45,17 +46,17 @@ function createRogue() {
 
 function createSorcerer() {
     return new Clase("Hechicero", "Lanzador de conjuros que obtiene su poder mágico de una herencia sobrenatural o una fuerza innata.",
-        "recursos/classportraits/sorcerer.png", [], createSorcererSubclasses());
+        "recursos/classportraits/sorcerer.png", sorcererCantrip(), sorcererSpells(), createSorcererSubclasses());
 }
 
 function createWarlock() {
     return new Clase("Brujo", "Usuario de magia otorgada por un pacto con una entidad poderosa, con hechizos únicos y habilidades místicas.",
-        "recursos/classportraits/warlock.png", [], createWarlockSubclass());
+        "recursos/classportraits/warlock.png", warlockCantrip(), warlockSpells(), createWarlockSubclass());
 }
 
 function createWizard() {
     return new Clase("Mago", "Estudioso de la magia arcana, capaz de aprender y lanzar una amplia variedad de conjuros gracias a su intelecto.",
-        "recursos/classportraits/wizard.png", [], null);
+        "recursos/classportraits/wizard.png", wizardCantrip(), wizardSpells(), null);
 }
 
 
@@ -82,18 +83,18 @@ class Clase{
         this.desc  = desc;
         this.imagen = imagen;
         this.cantrip = cantrip;
-        this.hechizo = hechizo;
-        this.subclase = subclass;
+        this.spells  = spells;
+        this.subclass = subclass;
     }
 
     get Nombre(){
         return this.nombre;
     }
     get hechizo(){
-        return this.hechizo;
+        return this.spells;
     }
     get subclase(){
-        return this.subclase;
+        return this.subclass;
     }
 
     get Descripcion(){
@@ -103,5 +104,7 @@ class Clase{
     get Imagen(){
         return this.imagen;
     }
+
+
 }
 

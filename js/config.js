@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonRace = document.getElementById('mostrarRace');
     const botonSubrace = document.getElementById('mostrarSubrace');
     const botonClass = document.getElementById('mostrarClass');
+    const botonSubclase = document.getElementById('mostrarSubclase')
     const botonBackground = document.getElementById('mostrarBackground');
     const botonAbilities = document.getElementById('mostrarAbilities');
     const mainscreen = document.getElementById('mainscreen');

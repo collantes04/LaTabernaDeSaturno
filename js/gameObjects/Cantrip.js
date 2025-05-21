@@ -105,3 +105,27 @@ function createCantrips(){
         golpeVerdadero,
         burlaViciosa];
 }
+
+function druidaCantrip(){
+    return [guia, sprayVenenoso, producirLlama, resistencia, cachiporra, latigoEspinas];
+}
+
+function sorcererCantrip(){
+    return [salpicaduraAcido,guardianEspada,escalofrioHuesos,hojaAuge,tendonReventado,lucesDanzantes,pernoFuego,amigos,luz,manoMago,ilusionMenor,sprayVenenoso,rayoEscarcha,agarreImpactante,golpeVerdadero];
+}
+
+function warlockCantrip(){
+    return [guardianEspada,escalofrioHuesos,hojaAuge,explosionSobrenatural,amigos,manoMago,ilusionMenor,sprayVenenoso,cuentaMuertos,golpeVerdadero];
+}
+
+function wizardCantrip(){
+    return [salpicaduraAcido, guardianEspada, escalofrioHuesos, hojaAuge, tendonReventado, lucesDanzantes, pernoFuego, amigos,luz, manoMago,ilusionMenor,sprayVenenoso,rayoEscarcha,agarreImpactante,cuentaMuertos ,golpeVerdadero];
+}
+
+function getLightSpell() {
+    return [luz];
+}
+
+function getTrickerySpell() {
+    return
+}

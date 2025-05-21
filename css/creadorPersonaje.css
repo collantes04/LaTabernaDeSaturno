@@ -81,6 +81,12 @@ nav {
     margin-left: 1.5vh;
     background-color: rgb(255, 193, 79);
 }
+.subclase{
+    width: 18vh;
+    height: 5vh;
+    margin-left: 1.5vh;
+    background-color: rgb(5, 73, 104);
+}
 
 .class{
     width: 18vh;

@@ -182,7 +182,7 @@ function createHechizosLvl1(){
         fuegoHada,
         vidaFalsa,
         caidaPluma,
-        encuentroFamiliar,
+        encuentroFamiliar, 
         nubeNiebla,
         goodberry,
         grasa,
@@ -194,7 +194,8 @@ function createHechizosLvl1(){
         maleficio,
         marcaCazador,
         cuchilloHielo,
-        infligirHeridas,caminanteLargo,
+        infligirHeridas,
+        caminanteLargo,
         armaduraMago,
         misilMagico,
         proteccionContraMalBien,
@@ -210,4 +211,32 @@ function createHechizosLvl1(){
         ondaTrueno,
         rayoBruja,
         golpeIracundo];
+}
+
+function bardoSpells(){
+    return [amistadAnimal, perdicion, personaEncantadora, curarHeridas,disfrazarse,susurrosDisonantes,fuegoHada,caidaPluma,palabraSanacion,heroismo,caminanteLargo,dormir,hablarAnimales,horribleRisaTasha,ondaTrueno];
+}
+
+function clerigoSpells(){
+    return [guardianEspada, tendonReventado, guia, luz, producirLlama, resistencia, llamaSagrada, taumaturgia, cuentaMuertos], [perdicion, bendecir, dominio, cDAgua, pernoGuia, palabraSanacion, infligirHeridas, proteccionContraMalBien, santuario, escudoFe]
+}
+
+function druidaSpells(){
+    return [amistadAnimal, personaEncantadora, cDAgua, mejoraSalto, enredar, fuegoHada, nubeNiebla, goodberry, palabraSanacion, cuchilloHielo, caminanteLargo, hablarAnimales, ondaTrueno];
+}
+
+function rangerSpells(){
+    return [amistadAnimal, curarHeridas, mejoraSalto, golpeAtrapamiento, nubeNiebla, goodberry, granizoEspinas, marcaCazador, caminanteLargo, hablarAnimales];
+}
+
+function sorcererSpells(){
+    return [manosArdientes, personaEncantadora, orbeCromatico, sprayColor, disfrazarse, mejoraSalto, retiradaExpedita, vidaFalsa, caidaPluma, nubeNiebla, cuchilloHielo, armaduraMago, misilMagico, rayoEnfermedad, blindaje, dormir, ondaTrueno, rayoBruja];
+}
+
+function warlockSpells(){
+    return [armaduraAgathys, brazosHadar, personaEncantadora, retiradaExpedita, reprimendaInfernal, maleficio, proteccionContraMalBien, rayoBruja];
+}
+
+function wizardSpells(){
+    return [manosArdientes,personaEncantadora,orbeCromatico,sprayColor,disfrazarse,mejoraSalto,retiradaExpedita, vidaFalsa ,caidaPluma,encuentroFamiliar,nubeNiebla,grasa,cuchilloHielo,caminanteLargo,armaduraMago ,misilMagico,proteccionContraMalBien,rayoEnfermedad,blindaje,dormir,horribleRisaTasha,ondaTrueno,rayoBruja];
 }
