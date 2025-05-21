@@ -5,7 +5,7 @@ function createability() {
 class ability{
     constructor(){
         this.pointpool = 27;
-        this.abilityPoints = [0, 0, 0, 0, 0, 0];
+        this.abilityPoints = [8, 8, 8, 8, 8, 8];
         this.abilityModif = [];
         this.abilityNames = ['Fuerza', 'Destreza', 'Complexión', 'Inteligencia', 'Sabiduría', 'Carísma'];
     }
@@ -25,15 +25,15 @@ class ability{
     sumabilityPoint(index){
         if (this.pointpool > 0) {
             this.abilityPoints[index] += 1;
+            this.pointpool -= 1;
         }
-        this.pointpool -= 1;
     }
 
     subabilityPoint(index) {
         if (this.pointpool < 27) {
-            this.abilityPoints[index] -= 1;
+            this.abilityPoints[index]--;
+            this.pointpool += 1;
         }
-        this.pointpool += 1;
     }
 
     calculateabilityModifs(index) {

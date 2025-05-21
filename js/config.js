@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const clases = createClase();
     const ability = createability();
     botonSubrace.style.display = 'none';
+    botonSubclass.style.display = 'none';
     let razaSeleccionada = null;
     let claseSeleccionada = null;
     let razaGuardar = null;
@@ -120,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 boton.addEventListener('mouseenter', () => {
                     const book = document.getElementById('book');
                     book.innerHTML = `
-                    <h3>${feature.FeatNombre || 'Sin nombre'}</h3>
+                    <h3  style= "text-align: center;">${feature.FeatNombre || 'Sin nombre'}</h3>
                     <p>${feature.FeatDesc || 'Sin descripción'}</p>
                 `;
                 book.style.display = 'block';
@@ -260,8 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
     
-            mostrarHechizosClases
-(claseSeleccionada);
+            mostrarHechizosClases(claseSeleccionada);
         };
     
         window.confirmarClase = function() {
@@ -303,37 +303,56 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         function mostrarHechizosClases(claseSeleccionada) {
-            const features = claseSeleccionada.spells; //Esto son hechizos
+            const arrayHechizos = claseSeleccionada.spells; //Esto son hechizos
 
-            if(features == undefined){
+            if(arrayHechizos == undefined){
                 console.log("La clase " + claseSeleccionada.Nombre + " no tiene hechizos");
                 return;
             }
 
             const container = document.getElementById('featureContainer');
-            container.innerHTML = ''; 
+            container.innerHTML = '';
         
-            features.forEach((feature) => {
-                const boton = document.createElement('button');
-                boton.className = 'feature-button';
-                console.log(features)
-                    boton.innerText = features[0].name;
-    
-        
-                // Evento hover
-                boton.addEventListener('mouseenter', () => {
-                    const book = document.getElementById('book');
-                    book.innerText = feature.descripcion;
-                    book.style.display = 'block';
-                });
-        
-                boton.addEventListener('mouseleave', () => {
-                    const book = document.getElementById('book');
-                    book.innerText = '';
-                });
-                container.appendChild(boton);
-            });
+                console.log(arrayHechizos);
+
+                for (let i = 0; i < arrayHechizos.length; i++) {
+                    /*Se crea un botón nuevo por cada iteración, 
+                    cada botón tiene dentro nombre y descripción del hechizo
+                    y cada botón tiene la imagen adaptada de cada hechizo*/
+
+                    const boton = document.createElement('button');
+                    const img = document.createElement('img');
+
+                    boton.setAttribute("class", "feature-button");
+                    boton.setAttribute('type', 'button');
+                    boton.setAttribute('disabled', true);
+                    boton.className = 'feature-button';
+                    
+                    boton.appendChild(img);
+                    
+                    img.setAttribute('src', arrayHechizos[i].img);
+                    img.setAttribute('class', 'feature-button');
+
+                    boton.addEventListener('mouseenter', () => {
+                        const book = document.getElementById('book');
+                        book.innerHTML = `
+                        <h3 style= "text-align: center;">${arrayHechizos[i].name}</h3>
+                        <p>${arrayHechizos[i].desc}</p>`;
+                        book.style.display = 'block';
+                    });
+
+                    boton.addEventListener('mouseleave', () => {
+                        const book = document.getElementById('book');
+                        book.innerText = '';
+                    });
+
+                    container.appendChild(boton);
+                }
+
         }
+
+
+        
 
 
     });
@@ -496,11 +515,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const label = document.createElement('span');
             label.textContent = `${ability.getabilityNames(i)}`;
-            label.style.color = 'red';
+             label.textContent += '<br>'
+            label.style.color = 'white';
     
             const valor = document.createElement('span');
             valor.textContent = ability.getabilityPoints(i);
             valor.id = `valorHabilidad${i}`;
+            valor.style.color = 'white';
 
             const botonMas = document.createElement('button');
             botonMas.textContent = '+';
