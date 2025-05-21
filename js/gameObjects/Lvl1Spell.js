@@ -1,7 +1,6 @@
 const level = "1";
-const arrayHechizosLvl1 = [];
 
-function createHechizosLvl1(){
+
     const amistadAnimal = new Spell("Amistad animal", "Convence a una bestia para que no te ataque.",
         "recursos/iconsSpell/380px-Animal_Friendship.webp.png", null, level);
 
@@ -158,60 +157,6 @@ function createHechizosLvl1(){
     const golpeIracundo = new Spell("Golpe iracundo", "Este hechizo permite a los lanzadores de conjuros canalizar su ira a través de su arma cuerpo a cuerpo, posiblemente asustando a su objetivo al impactarlo. Tu arma absorbe tu ira mientras golpeas.", 
     "recursos/iconsSpell/300px-Wrathful_Smite.webp.png", "+1d6 Psíquico", level);
 
-    return arrayHechizosLvl1[
-        amistadAnimal,
-        armaduraAgathys,
-        brazosHadar,
-        perdicion,
-        bendecir,
-        manosArdientes,
-        personaEncantadora,
-        orbeCromatico,
-        sprayColor,
-        dominio,
-        dueloObligado,
-        cDAgua,
-        curarHeridas,
-        disfrazarse,
-        susurrosDisonantes,
-        favorDivino,
-        mejoraSalto,
-        golpeAtrapamiento,
-        enredar,
-        retiradaExpedita,
-        fuegoHada,
-        vidaFalsa,
-        caidaPluma,
-        encuentroFamiliar, 
-        nubeNiebla,
-        goodberry,
-        grasa,
-        pernoGuia,
-        granizoEspinas,
-        palabraSanacion,
-        reprimendaInfernal,
-        heroismo,
-        maleficio,
-        marcaCazador,
-        cuchilloHielo,
-        infligirHeridas,
-        caminanteLargo,
-        armaduraMago,
-        misilMagico,
-        proteccionContraMalBien,
-        rayoEnfermedad,
-        santuario,
-        golpeAbrasador,
-        blindaje,
-        escudoFe,
-        dormir,
-        hablarAnimales,
-        horribleRisaTasha,
-        golpeAtronador,
-        ondaTrueno,
-        rayoBruja,
-        golpeIracundo];
-}
 
 function bardoSpells(){
     return [amistadAnimal, perdicion, personaEncantadora, curarHeridas,disfrazarse,susurrosDisonantes,fuegoHada,caidaPluma,palabraSanacion,heroismo,caminanteLargo,dormir,hablarAnimales,horribleRisaTasha,ondaTrueno];

@@ -1,8 +1,7 @@
 const level = "0";
-let arrayCantrips = [];
 
 //La funcion crea y carga todos los objetos de los cantrips y los devuelve para el volcado de
-function createCantrips(){
+
     const salpicaduraAcido = new Spell("Salpicadura de ácido", "Lanza una burbuja de ácido que daña a cada criatura que golpea.",
     "recursos/iconsCantrip/300px-Acid_Splash.webp.png", "1d6 Ácido", level);
 
@@ -78,33 +77,6 @@ function createCantrips(){
     const burlaViciosa = new Spell("Burla Viciosa", "Inflige daño psíquico a los enemigos y les aplica desventaja en sus tiradas de ataque. Insultar a una criatura: tiene desventaja en su siguiente tirada de ataque.", 
         "recursos/iconsCantrip/380px-Vicious_Mockery.webp.png", "1d4 Psíquico", level);
 
-    return arrayCantrips = [
-        salpicaduraAcido,
-        guardianEspada,
-        escalofrioHuesos,
-        hojaAuge,
-        tendonReventado,
-        lucesDanzantes,
-        explosionSobrenatural,
-        pernoFuego,
-        amigos,
-        guia,
-        luz,
-        manoMago,
-        ilusionMenor,
-        sprayVenenoso,
-        producirLlama,
-        rayoEscarcha,
-        resistencia,
-        llamaSagrada,
-        cachiporra,
-        agarreImpactante,
-        taumaturgia,
-        latigoEspinas,
-        cuentaMuertos,
-        golpeVerdadero,
-        burlaViciosa];
-}
 
 function druidaCantrip(){
     return [guia, sprayVenenoso, producirLlama, resistencia, cachiporra, latigoEspinas];
@@ -127,5 +99,5 @@ function getLightSpell() {
 }
 
 function getTrickerySpell() {
-    return
+    return []
 }
