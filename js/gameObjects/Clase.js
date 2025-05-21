@@ -90,8 +90,8 @@ class Clase{
     get Nombre(){
         return this.nombre;
     }
-    get hechizo(){
-        return this.spells;
+    get spells(){
+        return this._spells;
     }
     get subclase(){
         return this.subclass;

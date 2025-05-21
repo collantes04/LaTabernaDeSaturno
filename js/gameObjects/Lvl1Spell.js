@@ -1,4 +1,7 @@
 
+
+const level = "1";
+
 class Spell {
     constructor(name, desc, img, dado, nivel) {
         this._name = name;
@@ -12,9 +15,6 @@ class Spell {
         return this._name;
     }
 }
-
-const level = "1";
-
 
     const amistadAnimal = new Spell("Amistad animal", "Convence a una bestia para que no te ataque.",
         "recursos/iconsSpell/380px-Animal_Friendship.webp.png", null, level);

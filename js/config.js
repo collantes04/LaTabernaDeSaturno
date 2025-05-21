@@ -260,7 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedButton.classList.add('botonSeleccionado');
             }
     
-            mostrarFeaturesDeClase(Clase[index]);
+            mostrarHechizosClases
+(claseSeleccionada);
         };
     
         window.confirmarClase = function() {
@@ -301,15 +302,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         
-        function mostrarFeaturesDeClase(claseSeleccionada) {
-            const features = claseSeleccionada.hechizo;
+        function mostrarHechizosClases(claseSeleccionada) {
+            const features = claseSeleccionada.spells; //Esto son hechizos
+
+            if(features == undefined){
+                console.log("La clase " + claseSeleccionada.Nombre + " no tiene hechizos");
+                return;
+            }
+
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
             features.forEach((feature) => {
                 const boton = document.createElement('button');
                 boton.className = 'feature-button';
-                boton.innerText = features;
+                console.log(features)
+                    boton.innerText = features[0].name;
+    
         
                 // Evento hover
                 boton.addEventListener('mouseenter', () => {
@@ -334,14 +343,17 @@ document.addEventListener('DOMContentLoaded', function() {
     botonSubclass.addEventListener('click', function () {
         mainscreen.innerHTML = '';
         const subclasse = claseSeleccionada.subclase;
-    
+        
+        if(subclasse == null){
+            console.log("No hay subclase para: " + claseSeleccionada.Nombre);
+        }
         let html = `<div id="grupoSelectorPersonaje">`;
     
         for (let i = 0; i < subclasse.length; i++) {
             html += `
                 <div class="casillaSelectorPersonaje">
                     <button id="botonSubclase${i}" type="button" onclick="seleccionarSubclase(${i})">
-                        <div class="textoClases">${subclasse.name}</div>
+                        <div class="textoClases">${subclasse[i].name}</div>
                     </button>
                 </div>
             `;
