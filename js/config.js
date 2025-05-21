@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const infoPersonaje = document.getElementById('infoPersonaje');
             const info = races[index].raceDesc;
-            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${races[index].raceName}</strong>. ${info}</p>`;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${razaSeleccionada.raceName}</strong>. ${info}</p>`;
         
             const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
             allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { nombre: "Invocación", descripcion: "Accedes a un poder oscuro o arcano que te da habilidades especiales según tu pacto." },
                 { nombre: "Descarga de Eldritch", descripcion: "Lanzas un ataque a distancia que inflige daño psíquico o arcano." }
             ],
-            "Mago": [
+            "Mago": [ 
                 { nombre: "Preparación de hechizos", descripcion: "Preparas tus hechizos antes de cada descanso largo y eliges el que usarás en combate." },
                 { nombre: "Conjuros arcanos", descripcion: "Accedes a una variedad de hechizos poderosos para controlar la magia, el daño y las ilusiones." }
             ]
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="${iconClase[claseSeleccionadaIndex]}" alt="${Clase[claseSeleccionadaIndex]}"> `;
                 }
                 informacionRazaSeleccionada.innerHTML = `
-                    <p><strong> ${razaGuardar}</strong></p>
+                    <p><strong> ${razaGuardar.raceName}</strong></p>
                     <p><strong>${clase}</strong>: Level 1</p>
                 `;
             }

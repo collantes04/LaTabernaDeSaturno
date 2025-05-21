@@ -68,5 +68,9 @@ class Clase{
         this.subclase = subclass;
         this.imagen = imagen;
     }
+
+    getNombre(){
+        return this.nombre;
+    }
 }
 
