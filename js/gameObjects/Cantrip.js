@@ -99,5 +99,9 @@ function getLightSpell() {
 }
 
 function getDeathSpell() {
-    return [escalofrioHuesos, ]
+    return [escalofrioHuesos]
+}
+
+function name(params) {
+    
 }
