@@ -200,3 +200,35 @@ function warlockSpells(){
 function wizardSpells(){
     return [manosArdientes,personaEncantadora,orbeCromatico,sprayColor,disfrazarse,mejoraSalto,retiradaExpedita, vidaFalsa ,caidaPluma,encuentroFamiliar,nubeNiebla,grasa,cuchilloHielo,caminanteLargo,armaduraMago ,misilMagico,proteccionContraMalBien,rayoEnfermedad,blindaje,dormir,horribleRisaTasha,ondaTrueno,rayoBruja];
 }
+
+function getLifeSpells(){
+    return[curarHeridas, bendecir];
+}
+
+function getLightSpells() {
+    return[manosArdientes, fuegoHada];
+}
+
+function getTrickerySpells() {
+    return[personaEncantadora, disfrazarse];
+}
+
+function getKnowledgeSpells() {
+    return[dominio, dormir];
+}
+
+function getNatureSpells() {
+    return[hablarAnimales, amistadAnimal];
+}
+
+function getTempestSpells() {
+    return[ondaTrueno, nubeNiebla];
+}
+
+function getWarSpells() {
+    return[favorDivino, escudoFe];
+}
+
+function getDeathSpells() {
+    return[vidaFalsa, rayoEnfermedad];
+}
