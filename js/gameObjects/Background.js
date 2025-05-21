@@ -1,3 +1,11 @@
+class Background {
+    constructor(name, desc, proficiency){
+        this.name = name;
+        this.desc = desc;
+        this.proficiency = proficiency;
+    }
+}
+
 let abilities = getabilities();
 
 function createAcolyte() {
@@ -57,17 +65,10 @@ function createSoldier() {
 
 function createUrchin() {
     let urchin = new Background("Pillo", "After surviving a poor and bleak childhood, you know how to make the most out of very little. Using your street smarts bolsters your spirit for the journey ahead.", ["Manejo De Manos", "Sigilo"]);
-    return urchin
+    return urchin;
 }
 
-createBackgrounds() {
+function createBackgrounds() {
     return [createAcolyte, createCharlatan, createCriminal, createEntertainer, createFolkHero, createGuildArtisan, createHauntedOne, createNoble, createOutlander, createSage, createSoldier, createUrchin]
 }
 
-class Background {
-    constructor(name, desc, proficiency){
-        this.name = name;
-        this.desc = desc;
-        this.proficiency = proficiency;
-    }
-}

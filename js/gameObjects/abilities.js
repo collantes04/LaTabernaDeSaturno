@@ -8,11 +8,6 @@ class ability{
         this.abilityPoints = [0, 0, 0, 0, 0, 0];
         this.abilityModif = [];
         this.abilityNames = ['Fuerza', 'Destreza', 'Complexión', 'Inteligencia', 'Sabiduría', 'Carísma'];
-        this.strengthMap = new Map('Atletismo'=false);
-        this.dexterityMap = new Map('Acrobacia'=false, 'Manejo De Manos'=false, 'Sigilo'=false);
-        this.intelligenceMap = new Map('Arcana'=false, 'Historia'=false, 'Investigación'=false, 'Naturaleza'=false, 'Religión'=false);
-        this.wisdomMap = new Map('Manejo De Animales'=false, 'Percepción'=false, 'Medicina'=false, 'Percepción'=false, 'Supervivencia'=false);
-        this.charismaMap = new Map('Engaño'=false, 'Intimidación'=false, 'Actuación'=false, 'Persuasión'=false);
     }
 
     getabilityPoints(index) {
