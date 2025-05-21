@@ -116,7 +116,3 @@ function getLightSpell() {
 function getDeathSpell() {
     return [escalofrioHuesos]
 }
-
-function name(params) {
-    
-}
