@@ -98,6 +98,6 @@ function getLightSpell() {
     return [luz];
 }
 
-function getTrickerySpell() {
-    return []
+function getDeathSpell() {
+    return [escalofrioHuesos, ]
 }
