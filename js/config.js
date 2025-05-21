@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonAbilities = document.getElementById('mostrarAbilities');
     const mainscreen = document.getElementById('mainscreen');
     const charsheet = document.getElementById('charsheet')
-    const botonRaceBarbaro = document.getElementById('');
+    const botonRaceBarbaro = document.getElementById('mostrarSubclase');
     const races = createRaza();
     const clases = createClase();
     const ability = createability();
