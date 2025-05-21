@@ -178,4 +178,19 @@ class Subrace{
         this.raceFeat = feat;
         this.spellist = spells;
     }
+
+    get SubraceName(){
+        return this.name;
+    }
+    get SubraceDesc(){
+        return this.desc;
+    }
+    get SubraceFeat(){
+        return this.raceFeat
+    }
+    get SubraceSpellist(){
+        return this.spellist;
+    }
+    
+
 }

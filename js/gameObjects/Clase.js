@@ -58,6 +58,23 @@ function createWizard() {
         "recursos/classportraits/wizard.png", [], null);
 }
 
+
+function createClase(){
+    let barbarian = createBarbarian();
+    let bard = createBard();
+    let clerigo = createClerigo();
+    let druid = createDruid();
+    let fighter = createFighter();
+    let monk = createMonk();
+    let paladin = createPaladin();
+    let ranger = createRanger();
+    let rogue = createRogue();
+    let sorcerer = createSorcerer();
+    let warlock = createWarlock();
+    let wizard = createWizard();
+    return [barbarian, bard, clerigo, druid, fighter, monk, paladin, ranger, rogue, sorcerer, warlock, wizard];
+}
+
 class Clase{
 
     constructor(nombre, desc, imagen, spells, subclass) {
@@ -69,15 +86,21 @@ class Clase{
         this.subclase = subclass;
     }
 
-    getNombre(){
+    get Nombre(){
         return this.nombre;
     }
+    get hechizo(){
+        return this.hechizo;
+    }
+    get subclase(){
+        return this.subclase;
+    }
 
-    getDescripcion(){
+    get Descripcion(){
         return this.desc;
     }
 
-    getImagen(){
+    get Imagen(){
         return this.imagen;
     }
 }
