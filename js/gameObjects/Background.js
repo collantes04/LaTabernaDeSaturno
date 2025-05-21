@@ -30,8 +30,8 @@ function createFolkHero() {
     abilities.setWisdomProficiency("Supervivencia");
 }
 
-function createGuildArtisan("") {
-    
+function createGuildArtisan() {
+    let guildArtisan = new Background("Artesano")
 }
 
 class Background {

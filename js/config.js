@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>${claseSeleccionada}</strong>: Level 1</p>
                 `;
             }
-            if ( claseSeleccionada.su !== 'undefined') {
+            if ( claseSeleccionada.subclase !== 'undefined') {
                 botonSubclass.click(); 
             }else{
                 botonBackground.click(); 
