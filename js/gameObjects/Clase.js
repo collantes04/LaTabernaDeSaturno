@@ -77,11 +77,11 @@ function createClase(){
 
 class Clase{
 
-    constructor(nombre, desc, imagen, spells, subclass) {
+    constructor(nombre, desc, imagen, cantrip, spells, subclass) {
         this.nombre = nombre;
         this.desc  = desc;
         this.imagen = imagen;
-        this.cantrip = null;
+        this.cantrip = cantrip;
         this.hechizo = spells;
         this.subclase = subclass;
     }

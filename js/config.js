@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonRaceBarbaro = document.getElementById('');
     const races = createRaza();
     const clases = createClase();
-    const hability = createHability();
+    const ability = createability();
     botonSubrace.style.display = 'none';
     let razaSeleccionada = null;
     let claseSeleccionada = null;
     let razaGuardar = null;
     
+    function getability() {
+        return ability;
+    }
 
     botonRace.addEventListener('click', function() {
         mainscreen.innerHTML = '';
@@ -273,8 +276,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>${claseSeleccionada}</strong>: Level 1</p>
                 `;
             }
-            if (typeof botonBackground !== 'undefined') {
+            if ( claseSeleccionada.su !== 'undefined') {
+                botonSubclass.click(); 
+            }else{
                 botonBackground.click(); 
+
             }
         };
         function mostrarFeaturesDeClase(clase) {
@@ -285,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
             features.forEach((feature, index) => {
                 const boton = document.createElement('button');
                 boton.className = 'feature-button';
-                boton.innerText =fe ;
+                boton.innerText =features ;
         
                 // Evento hover
                 boton.addEventListener('mouseenter', () => {
@@ -303,6 +309,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
+    });
+
+
+
+    botonSubclass.addEventListener('click', function () {
+        mainscreen.innerHTML = '';
+        const subclasse = claseSeleccionada.subclase;
+    
+        let html = `<div id="grupoSelectorPersonaje">`;
+    
+        for (let i = 0; i < subclasses.length; i++) {
+            html += `
+                <div class="casillaSelectorPersonaje">
+                    <button id="botonSubclase${i}" type="button" onclick="seleccionarSubclase(${i})">
+                        <div class="textoClases">${subclasse.name}</div>
+                    </button>
+                </div>
+            `;
+        }
+    
+        html += `</div>`;
+        html += `
+            <div id="infoPersonaje">
+                <p>Selecciona una subclase para ver la información.</p>
+            </div>
+        `;
+        html += `
+            <div id="botonConfirmarSeleccionMainscreen">
+                <button id="botonConfirmarSubclase" type="button" onclick="confirmarSubclase()">Siguiente</button>
+            </div>
+        `;
+    
+        mainscreen.innerHTML += html;
+    
+        window.seleccionarSubclase = function(index) {
+            const infoPersonaje = document.getElementById('infoPersonaje');
+            const info = subclasse.desc;
+            infoPersonaje.innerHTML = `<p>Has seleccionado: <strong>${subclasses.name}</strong>. ${subclasses[index].SubclassDesc}</p>`;
+    
+            const allButtons = document.querySelectorAll('#grupoSelectorPersonaje button');
+            allButtons.forEach(button => button.classList.remove('botonSeleccionado'));
+    
+            const selectedButton = document.getElementById(`botonSubclase${index}`);
+            if (selectedButton) {
+                selectedButton.classList.add('botonSeleccionado');
+            }
+        };
+    
+        window.confirmarSubclase = function() {
+            const selectedButton = document.querySelector('.botonSeleccionado');
+            if (!selectedButton) {
+                alert("Por favor, selecciona una subclase antes de continuar.");
+                return;
+            }
+    
+            const subclaseIndex = selectedButton.id.replace('botonSubclase', '');
+            const subclase = subclasses[subclaseIndex];
+    
+            let charsheet1 = document.getElementById('charsheet');
+    
+            if (typeof botonBackground !== 'undefined') {
+                botonBackground.click();
+            }
+        };
     });
 
     botonBackground.addEventListener('click', function() {
@@ -395,11 +465,11 @@ document.addEventListener('DOMContentLoaded', function() {
             habilidadDiv.style.marginBottom = '10px';
     
             const label = document.createElement('span');
-            label.textContent = `${hability.getHabilityNames(i)}`;
+            label.textContent = `${ability.getabilityNames(i)}`;
             label.style.color = 'red';
     
             const valor = document.createElement('span');
-            valor.textContent = hability.getHabilityPoints(i);
+            valor.textContent = ability.getabilityPoints(i);
             valor.id = `valorHabilidad${i}`;
 
             const botonMas = document.createElement('button');
@@ -408,8 +478,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault(); // Esto previene cualquier acción predeterminada, como recargar la página
                 //habilidades[i]++;
                 //valor.textContent = habilidades[i];
-                hability.sumHabilityPoint(i);
-                valor.textContent = hability.getHabilityPoints(i);
+                ability.sumabilityPoint(i);
+                valor.textContent = ability.getabilityPoints(i);
             });
     
             const botonMenos = document.createElement('button');
@@ -420,8 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 //    habilidades[i]--;
                 //    valor.textContent = habilidades[i];
                 //}
-                hability.subHabilityPoint(i);
-                valor.textContent = hability.getHabilityPoint(i);
+                ability.subabilityPoint(i);
+                valor.textContent = ability.getabilityPoint(i);
             });
     
             habilidadDiv.appendChild(label);

@@ -69,4 +69,10 @@ class Subclass {
         this.spells = spells;
         this.features = features;
     }
+    get name(){
+        return this.name;
+    }
+    get desc(){
+        return this.desc;
+    }
 }

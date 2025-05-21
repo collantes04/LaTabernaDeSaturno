@@ -6,4 +6,8 @@ class Spell {
         this.dado = dado;
         this.nivel = nivel;
     }
+    get name(){
+        return this.name;
+        
+    }
 }
