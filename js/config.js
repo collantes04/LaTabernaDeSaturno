@@ -274,10 +274,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     ImagenClaseSeleccionada.innerHTML = `
                     <img src="${claseSeleccionada.Imagen}" alt="${claseSeleccionada}"> `;
                 }
-                informacionRazaSeleccionada.innerHTML = `
+
+                if(subrazaGuardada != null){
+                    informacionRazaSeleccionada.innerHTML = `
                     <p><strong> ${razaGuardar.raceName} - ${subrazaGuardada.SubraceName}</strong></p>
                     <p><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
                 `;
+                } else {
+                    informacionRazaSeleccionada.innerHTML = `
+                    <p><strong> ${razaGuardar.raceName}</strong></p>
+                    <p><strong>${claseSeleccionada.Nombre}</strong>: Level 1</p>
+                `;
+                }
+
             }
             if ( claseSeleccionada.subclase !== null) {
                 botonSubclass.click(); 
