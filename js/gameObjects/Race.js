@@ -184,6 +184,9 @@ class Race {
     get raceName() {
         return this._name;
     }
+    get raceFeat(){
+        return this.raceFeat;
+    }
 
     get raceDesc() {
         return this._desc;

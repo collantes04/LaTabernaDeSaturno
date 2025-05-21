@@ -20,31 +20,23 @@ document.addEventListener('DOMContentLoaded', function() {
         let razaSeleccionada = '';
 
 
-        //const Races = [races[0].raceName, races[1].raceName, races[2].raceName, races[3].raceName, races[4].raceName, races[5].raceName, races[6].raceName, races[7].raceName, races[8].raceName, races[9].raceName, races[10].raceName];
-        //const iconRaces = [
-        //    races[0].raceImage, races[1].raceImage, races[2].raceImage, races[3].raceImage,
-        //    races[4].raceImage, races[5].raceImage, races[6].raceImage, races[7].raceImage,
-        //    races[8].raceImage, races[9].raceImage, races[10].raceImage
-        //];
-        //const raceInfo = [
-        //    races[0].raceDesc(), races[1].raceDesc, races[2].raceDesc, races[3].raceDesc, races[4].raceDesc, races[5].raceDesc, races[6].raceDesc, races[7].raceDesc, races[8].raceDesc, races[9].raceDesc, races[10].raceDesc
-        //];
-        const raceFeatures = {
-            "Human": [
-                { nombre: "Versatilidad", descripcion: "Los humanos ganan +1 a todas sus puntuaciones de habilidad." },
-                { nombre: "Idioma extra", descripcion: "Pueden hablar, leer y escribir un idioma adicional." }
-            ],
-            "Elf": [
-                { nombre: "Visión en la oscuridad", descripcion: "Puedes ver en la oscuridad hasta 60 pies." },
-                { nombre: "Sentidos agudos", descripcion: "Proficiente en la habilidad de Percepción." },
-                { nombre: "Trance", descripcion: "Los elfos no duermen, solo meditan durante 4 horas." }
-            ],
-            "Half-Orc": [
-                { nombre: "Furia salvaje", descripcion: "Al hacer un golpe crítico, lanzas un dado adicional." },
-                { nombre: "Resistencia imparable", descripcion: "Cuando tus PV bajan a 0, puedes quedarte con 1 una vez por descanso largo." }
-            ]
-            // Puedes seguir agregando otras razas aquí
-        };
+       
+        // const raceFeatures = {
+        //     "Human": [
+        //         { nombre: "Versatilidad", descripcion: "Los humanos ganan +1 a todas sus puntuaciones de habilidad." },
+        //         { nombre: "Idioma extra", descripcion: "Pueden hablar, leer y escribir un idioma adicional." }
+        //     ],
+        //     "Elf": [
+        //         { nombre: "Visión en la oscuridad", descripcion: "Puedes ver en la oscuridad hasta 60 pies." },
+        //         { nombre: "Sentidos agudos", descripcion: "Proficiente en la habilidad de Percepción." },
+        //         { nombre: "Trance", descripcion: "Los elfos no duermen, solo meditan durante 4 horas." }
+        //     ],
+        //     "Half-Orc": [
+        //         { nombre: "Furia salvaje", descripcion: "Al hacer un golpe crítico, lanzas un dado adicional." },
+        //         { nombre: "Resistencia imparable", descripcion: "Cuando tus PV bajan a 0, puedes quedarte con 1 una vez por descanso largo." }
+        //     ]
+        //     // Puedes seguir agregando otras razas aquí
+        // };
         
         
         let html = `<div id="grupoSelectorPersonaje">`;
@@ -115,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         function mostrarFeaturesDeRaza(raza) {
-            const features = raza.feature;
+            const features = raza.raceFeat ;
             const container = document.getElementById('featureContainer');
             container.innerHTML = ''; 
         
@@ -474,17 +466,19 @@ document.addEventListener('DOMContentLoaded', function() {
         mainscreen.innerHTML = '';
 
         // Crear y mostrar las habilidades
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 6; i++) {
             const habilidadDiv = document.createElement('div');
             habilidadDiv.style.marginBottom = '10px';
     
             const label = document.createElement('span');
             label.textContent = `Habilidad ${i + 1}: `;
+            label.style.color = 'red';
     
             const valor = document.createElement('span');
             valor.textContent = habilidades[i];
             valor.id = `valorHabilidad${i}`;
-    
+            //habilidades.style.color = 'white';
+
             const botonMas = document.createElement('button');
             botonMas.textContent = '+';
             botonMas.addEventListener('click', function (event) {
